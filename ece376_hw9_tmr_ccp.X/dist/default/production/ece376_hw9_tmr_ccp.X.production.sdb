@@ -1,0 +1,304 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4620 ]
+[d frameptr 4065 ]
+"16 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/lcd_driver.c
+[e E2464 lcd_display_t `uc
+QAPASS_EBAY 0
+QAPASS_AMAZON 1
+ADAFRUIT_STANDARD_16x2 2
+ADAFRUIT_STANDARD_20x4 3
+]
+"17
+[e E2469 lcd_bit_mode_t `uc
+MODE_4BIT 0
+MODE_8BIT 1
+]
+"85 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_p1.c
+[e E2475 buttons_t `uc
+BUTTON0 0
+BUTTON1 1
+BUTTON2 2
+BUTTON3 3
+BUTTON4 4
+BUTTON5 5
+BUTTON6 6
+BUTTON7 7
+]
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"93 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_p1.c
+[v _isr isr `IIH(v  1 e 1 0 ]
+"125
+[v _main main `(v  1 e 1 0 ]
+"41 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/ccp.c
+[v _CCP1_Init_Default CCP1_Init_Default `(v  1 e 1 0 ]
+"45 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/lcd_driver.c
+[v _LCD_enable_toggle LCD_enable_toggle `(v  1 s 1 LCD_enable_toggle ]
+"126
+[v _LCD_write_data_byte_4bit LCD_write_data_byte_4bit `(v  1 e 1 0 ]
+"152
+[v _LCD_write_data_byte_8bit LCD_write_data_byte_8bit `(v  1 e 1 0 ]
+"175
+[v _LCD_write_instr_byte_4bit LCD_write_instr_byte_4bit `(v  1 e 1 0 ]
+"200
+[v _LCD_write_instr_byte_8bit LCD_write_instr_byte_8bit `(v  1 e 1 0 ]
+"427
+[v _LCD_clear_display LCD_clear_display `(uc  1 e 1 0 ]
+"31 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/timer.c
+[v _Timer1_Init_Default Timer1_Init_Default `(v  1 e 1 0 ]
+"54
+[v _Timer1_Enable Timer1_Enable `(v  1 e 1 0 ]
+"189 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S431 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"230
+[s S440 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 CCP2 1 0 :1:3 
+`uc 1 KBI0 1 0 :1:4 
+`uc 1 KBI1 1 0 :1:5 
+`uc 1 KBI2 1 0 :1:6 
+`uc 1 KBI3 1 0 :1:7 
+]
+[s S449 . 1 `uc 1 AN12 1 0 :1:0 
+`uc 1 AN10 1 0 :1:1 
+`uc 1 AN8 1 0 :1:2 
+`uc 1 AN9 1 0 :1:3 
+`uc 1 AN11 1 0 :1:4 
+`uc 1 PGM 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
+]
+[s S458 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S461 . 1 `S431 1 . 1 0 `S440 1 . 1 0 `S449 1 . 1 0 `S458 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES461  1 e 1 @3969 ]
+"360
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+"535
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+[s S161 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"572
+[s S170 . 1 `uc 1 PSP0 1 0 :1:0 
+`uc 1 PSP1 1 0 :1:1 
+`uc 1 PSP2 1 0 :1:2 
+`uc 1 PSP3 1 0 :1:3 
+`uc 1 PSP4 1 0 :1:4 
+`uc 1 PSP5 1 0 :1:5 
+`uc 1 PSP6 1 0 :1:6 
+`uc 1 PSP7 1 0 :1:7 
+]
+[s S179 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 P1B 1 0 :1:5 
+`uc 1 P1C 1 0 :1:6 
+`uc 1 P1D 1 0 :1:7 
+]
+[s S184 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 SS2 1 0 :1:7 
+]
+[u S187 . 1 `S161 1 . 1 0 `S170 1 . 1 0 `S179 1 . 1 0 `S184 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES187  1 e 1 @3971 ]
+[s S114 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"1131
+[s S123 . 1 `uc 1 LC0 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+`uc 1 LC2 1 0 :1:2 
+`uc 1 LC3 1 0 :1:3 
+`uc 1 LC4 1 0 :1:4 
+`uc 1 LC5 1 0 :1:5 
+`uc 1 LC6 1 0 :1:6 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S132 . 1 `S114 1 . 1 0 `S123 1 . 1 0 ]
+[v _LATCbits LATCbits `VES132  1 e 1 @3979 ]
+"1602
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"1824
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"2046
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+[s S26 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 PSPIE 1 0 :1:7 
+]
+"2519
+[s S35 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+]
+[u S39 . 1 `S26 1 . 1 0 `S35 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES39  1 e 1 @3997 ]
+[s S306 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"2596
+[s S315 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+]
+[u S319 . 1 `S306 1 . 1 0 `S315 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES319  1 e 1 @3998 ]
+[s S58 . 1 `uc 1 CCP2IE 1 0 :1:0 
+`uc 1 TMR3IE 1 0 :1:1 
+`uc 1 HLVDIE 1 0 :1:2 
+`uc 1 BCLIE 1 0 :1:3 
+`uc 1 EEIE 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CMIE 1 0 :1:6 
+`uc 1 OSCFIE 1 0 :1:7 
+]
+"2749
+[s S67 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIE 1 0 :1:2 
+]
+[u S70 . 1 `S58 1 . 1 0 `S67 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES70  1 e 1 @4000 ]
+"3529
+[v _T3CON T3CON `VEuc  1 e 1 @4017 ]
+"4155
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @4026 ]
+"4234
+[v _CCPR2 CCPR2 `VEus  1 e 2 @4027 ]
+"4255
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @4029 ]
+"4352
+[v _CCPR1 CCPR1 `VEus  1 e 2 @4030 ]
+"4444
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"5224
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+[s S382 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"6406
+[s S391 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S400 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S404 . 1 `S382 1 . 1 0 `S391 1 . 1 0 `S400 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES404  1 e 1 @4082 ]
+"79 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_p1.c
+[v _ccp_compare_val_final ccp_compare_val_final `us  1 s 2 ccp_compare_val_final ]
+"80
+[v _compare_count compare_count `VEuc  1 s 1 compare_count ]
+"81
+[v _reset_comp_count_flag reset_comp_count_flag `VEuc  1 s 1 reset_comp_count_flag ]
+"85
+[v _LAST_BUTTON_PRESSED LAST_BUTTON_PRESSED `E2475  1 e 1 0 ]
+"16 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/lcd_driver.c
+[v _CURRENT_DISP CURRENT_DISP `E2464  1 s 1 CURRENT_DISP ]
+"17
+[v _DISP_BIT_MODE DISP_BIT_MODE `E2469  1 s 1 DISP_BIT_MODE ]
+"18
+[v _init_complete init_complete `uc  1 s 1 init_complete ]
+"22
+[v _current_entry_mode current_entry_mode `uc  1 s 1 current_entry_mode ]
+"23
+[v _current_disp_ctrl current_disp_ctrl `uc  1 s 1 current_disp_ctrl ]
+"24
+[v _current_func_set current_func_set `uc  1 s 1 current_func_set ]
+"26
+[v _address_counter address_counter `uc  1 s 1 address_counter ]
+"125 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_p1.c
+[v _main main `(v  1 e 1 0 ]
+{
+"246
+} 0
+"31 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/timer.c
+[v _Timer1_Init_Default Timer1_Init_Default `(v  1 e 1 0 ]
+{
+[v Timer1_Init_Default@period_val period_val `us  1 p 2 2 ]
+"44
+} 0
+"41 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/ccp.c
+[v _CCP1_Init_Default CCP1_Init_Default `(v  1 e 1 0 ]
+{
+[v CCP1_Init_Default@comp_val comp_val `us  1 p 2 0 ]
+"45
+} 0
+"54 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/timer.c
+[v _Timer1_Enable Timer1_Enable `(v  1 e 1 0 ]
+{
+"56
+} 0
+"93 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_p1.c
+[v _isr isr `IIH(v  1 e 1 0 ]
+{
+"122
+} 0
