@@ -3,6 +3,29 @@
  * Author: Abdullah Almosalami
  *
  * Created on November 7, 2021, 12:28 AM
+ * 
+ * ****************************************************************************
+ * The Assigned Problem
+ * ****************************************************************************
+ * Using Timer1 and CCP1 in Compare mode, have the PIC
+ * generate an accurate set of frequencies (to the closest 100ns) based on
+ * button presses. For example, RB0 pressed --> RC0 outputs note A0; RB1
+ * pressed --> RC0 outputs note A1; and so on...
+ * 
+ * ****************************************************************************
+ * My Solution
+ * ****************************************************************************
+ * I use the enumerated variable LAST_BUTTON_PRESSED to indicate which button
+ * was pressed. This acts as the "state" of this machine. This variable is
+ * updated in the while(1) loop. The actual toggling of RC0 is done in the
+ * interrupt routine servicing the CCP1 interrupt. The trick was setting the
+ * CCPR1 register with the right value to get the required frequency output.
+ * Two of the frequencies, A0 and A1, had periods longer than what Timer1 could
+ * even count to. So the compare_count and reset_comp_count_flag variables
+ * were utilized to account for this. If you go through the code, it should make
+ * sense if you follow how these state variables change through code execution.
+ * If it doesn't make sense, contact me! I'd be happy to explain :D.
+ * 
  */
 
 
@@ -141,7 +164,6 @@ void main(void) {
 	
 	// Now turn on Timer1 and unmask the CCP1 interrupt flag, allow peripheral interrupts, and global interrupts...
 	Timer1_Enable();
-	ENABLE_CCP1_INTERRUPT;
 	ENABLE_PERIPHERAL_INTERRUPTS;
 	ei();
 
