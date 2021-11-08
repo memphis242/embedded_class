@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/ccp.c src/lcd_driver.c src/timer.c ece376_hw9_p1.c
+SOURCEFILES_QUOTED_IF_SPACED=src/ccp.c src/lcd_driver.c src/timer.c ece376_hw9_ccp_comp.c inc/ece376_hw9_ccp_capt.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/ccp.p1 ${OBJECTDIR}/src/lcd_driver.p1 ${OBJECTDIR}/src/timer.p1 ${OBJECTDIR}/ece376_hw9_p1.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/ccp.p1.d ${OBJECTDIR}/src/lcd_driver.p1.d ${OBJECTDIR}/src/timer.p1.d ${OBJECTDIR}/ece376_hw9_p1.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/ccp.p1 ${OBJECTDIR}/src/lcd_driver.p1 ${OBJECTDIR}/src/timer.p1 ${OBJECTDIR}/ece376_hw9_ccp_comp.p1 ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/ccp.p1.d ${OBJECTDIR}/src/lcd_driver.p1.d ${OBJECTDIR}/src/timer.p1.d ${OBJECTDIR}/ece376_hw9_ccp_comp.p1.d ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/ccp.p1 ${OBJECTDIR}/src/lcd_driver.p1 ${OBJECTDIR}/src/timer.p1 ${OBJECTDIR}/ece376_hw9_p1.p1
+OBJECTFILES=${OBJECTDIR}/src/ccp.p1 ${OBJECTDIR}/src/lcd_driver.p1 ${OBJECTDIR}/src/timer.p1 ${OBJECTDIR}/ece376_hw9_ccp_comp.p1 ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1
 
 # Source Files
-SOURCEFILES=src/ccp.c src/lcd_driver.c src/timer.c ece376_hw9_p1.c
+SOURCEFILES=src/ccp.c src/lcd_driver.c src/timer.c ece376_hw9_ccp_comp.c inc/ece376_hw9_ccp_capt.c
 
 
 
@@ -118,13 +118,21 @@ ${OBJECTDIR}/src/timer.p1: src/timer.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/src/timer.d ${OBJECTDIR}/src/timer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/src/timer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ece376_hw9_p1.p1: ece376_hw9_p1.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/ece376_hw9_ccp_comp.p1: ece376_hw9_ccp_comp.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ece376_hw9_p1.p1.d 
-	@${RM} ${OBJECTDIR}/ece376_hw9_p1.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -I"src" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x800  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ece376_hw9_p1.p1 ece376_hw9_p1.c 
-	@-${MV} ${OBJECTDIR}/ece376_hw9_p1.d ${OBJECTDIR}/ece376_hw9_p1.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ece376_hw9_p1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/ece376_hw9_ccp_comp.p1.d 
+	@${RM} ${OBJECTDIR}/ece376_hw9_ccp_comp.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -I"src" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x800  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ece376_hw9_ccp_comp.p1 ece376_hw9_ccp_comp.c 
+	@-${MV} ${OBJECTDIR}/ece376_hw9_ccp_comp.d ${OBJECTDIR}/ece376_hw9_ccp_comp.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ece376_hw9_ccp_comp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1: inc/ece376_hw9_ccp_capt.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/inc" 
+	@${RM} ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1.d 
+	@${RM} ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -I"src" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x800  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1 inc/ece376_hw9_ccp_capt.c 
+	@-${MV} ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.d ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/src/ccp.p1: src/ccp.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -151,13 +159,21 @@ ${OBJECTDIR}/src/timer.p1: src/timer.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/src/timer.d ${OBJECTDIR}/src/timer.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/src/timer.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ece376_hw9_p1.p1: ece376_hw9_p1.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/ece376_hw9_ccp_comp.p1: ece376_hw9_ccp_comp.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ece376_hw9_p1.p1.d 
-	@${RM} ${OBJECTDIR}/ece376_hw9_p1.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -I"src" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x800  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ece376_hw9_p1.p1 ece376_hw9_p1.c 
-	@-${MV} ${OBJECTDIR}/ece376_hw9_p1.d ${OBJECTDIR}/ece376_hw9_p1.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ece376_hw9_p1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/ece376_hw9_ccp_comp.p1.d 
+	@${RM} ${OBJECTDIR}/ece376_hw9_ccp_comp.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -I"src" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x800  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ece376_hw9_ccp_comp.p1 ece376_hw9_ccp_comp.c 
+	@-${MV} ${OBJECTDIR}/ece376_hw9_ccp_comp.d ${OBJECTDIR}/ece376_hw9_ccp_comp.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ece376_hw9_ccp_comp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1: inc/ece376_hw9_ccp_capt.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/inc" 
+	@${RM} ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1.d 
+	@${RM} ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"inc" -I"src" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file -mcodeoffset=0x800  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1 inc/ece376_hw9_ccp_capt.c 
+	@-${MV} ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.d ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/inc/ece376_hw9_ccp_capt.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

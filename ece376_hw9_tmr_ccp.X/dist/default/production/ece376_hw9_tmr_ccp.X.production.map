@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\ece376_hw9_tmr_ccp.X.production.sym \
   --cmf=dist/default/production\ece376_hw9_tmr_ccp.X.production.cmf -z \
-  -Q18F4620 -oC:\Users\almos\AppData\Local\Temp\sg2k.2 \
+  -Q18F4620 -oC:\Users\almos\AppData\Local\Temp\s9vo.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ece376_hw9_tmr_ccp.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=080h-0F7Fh -pstack=STACK \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\almos\AppData\Local\Temp\sg2k.o \
+  C:\Users\almos\AppData\Local\Temp\s9vo.o \
   dist/default/production\ece376_hw9_tmr_ccp.X.production.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 18F4620
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\almos\AppData\Local\Temp\sg2k.o
+C:\Users\almos\AppData\Local\Temp\s9vo.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                80E      80E        4      404       0
@@ -46,16 +46,17 @@ dist/default/production\ece376_hw9_tmr_ccp.X.production.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 temp                                 15       15        1        1       1
-                intcode_body                        9E4      9E4       7C      404       0
-                text3                               AC8      AC8        4      564       0
-                text2                               AB0      AB0       10      404       0
-                text1                               A9A      A9A       16      404       0
-                text0                               812      812      1D2      404       0
-                cstackCOMRAM                          F        F        6        1       1
-                dataCOMRAM                            8        8        7        1       1
-                bssCOMRAM                             1        1        7        1       1
-                cinit                               A60      A60       3A      404       0
-                idataCOMRAM                         AC0      AC0        7      404       0
+                intcode_body                        9EA      9EA       7C      404       0
+                text3                               ACE      ACE        4      567       0
+                text2                               AB6      AB6       10      404       0
+                text1                               AA0      AA0       16      404       0
+                text0                               812      812      1D8      404       0
+                cstackCOMRAM                          E        E        6        1       1
+                dataCOMRAM                            1        1        7        1       1
+                bssCOMRAM                             8        8        6        1       1
+                cinit                               A66      A66       3A      404       0
+                nvCOMRAM                             14       14        1        1       1
+                idataCOMRAM                         AC6      AC6        7      404       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -64,13 +65,13 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                             808      808        6         0
                 init                                80E      80E        4         0
                 reset_vec                           800      800        4         0
-                intcode_body                        9E4      9E4       7C         0
-                text3                               AC8      AC8        4         0
-                text2                               AB0      AB0       10         0
-                text1                               A9A      A9A       16         0
-                text0                               812      812      1D2         0
-                cinit                               A60      A60       3A         0
-                idataCOMRAM                         AC0      AC0        7         0
+                intcode_body                        9EA      9EA       7C         0
+                text3                               ACE      ACE        4         0
+                text2                               AB6      AB6       10         0
+                text1                               AA0      AA0       16         0
+                text0                               812      812      1D8         0
+                cinit                               A66      A66       3A         0
+                idataCOMRAM                         AC6      AC6        7         0
 
         CLASS   CONST          
 
@@ -80,9 +81,10 @@ TOTAL           Name                               Link     Load   Length     Sp
 
         CLASS   COMRAM         
                 temp                                 15       15        1         1
-                cstackCOMRAM                          F        F        6         1
-                dataCOMRAM                            8        8        7         1
-                bssCOMRAM                             1        1        7         1
+                cstackCOMRAM                          E        E        6         1
+                dataCOMRAM                            1        1        7         1
+                bssCOMRAM                             8        8        6         1
+                nvCOMRAM                             14       14        1         1
 
         CLASS   ABS1           
 
@@ -138,10 +140,10 @@ TOTAL           Name                               Link     Load   Length     Sp
 
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
-                bssCOMRAM                      000001  000015  000016         1       1  COMRAM  
+                dataCOMRAM                     000001  000015  000016         1       1  COMRAM  
                 reset_vec                      000800  000004  000804       400       0  CODE    
-                intcode                        000808  0002BF  000AC7       404       0  CODE    
-                text3                          000AC8  000004  000ACC       564       0  CODE    
+                intcode                        000808  0002C5  000ACD       404       0  CODE    
+                text3                          000ACE  000004  000AD2       567       0  CODE    
 
 
 UNUSED ADDRESS RANGES
@@ -165,12 +167,12 @@ UNUSED ADDRESS RANGES
         BANK9            000900-0009FF              100
         BIGRAM           000016-000F7F              F6A
         CODE             000804-000807                4
-                         000AC7-000AC7                1
-                         000ACC-00FFFF             F534
+                         000ACD-000ACD                1
+                         000AD2-00FFFF             F52E
         COMRAM           000016-00007F               6A
         CONST            000804-000807                4
-                         000AC7-000AC7                1
-                         000ACC-00FFFF             F534
+                         000ACD-000ACD                1
+                         000AD2-00FFFF             F52E
         EEDATA           F00000-F003FF              400
         FARRAM           000000-000000                1
         MEDIUMCONST      001000-00FFFF             F000
@@ -181,18 +183,18 @@ UNUSED ADDRESS RANGES
 
                                   Symbol Table
 
-CCP1_Init_Default@comp_val     cstackCOMRAM 00000F
-Timer1_Init_Default@period_val cstackCOMRAM 000011
+CCP1_Init_Default@comp_val     cstackCOMRAM 00000E
+Timer1_Init_Default@period_val cstackCOMRAM 000010
 _ADCON1                        (abs)        000FC1
 _CCP1CON                       (abs)        000FBD
-_CCP1_Init_Default             text2        000AB0
+_CCP1_Init_Default             text2        000AB6
 _CCP2CON                       (abs)        000FBA
 _CCPR1                         (abs)        000FBE
 _CCPR2                         (abs)        000FBB
-_CURRENT_DISP                  bssCOMRAM    000007
-_DISP_BIT_MODE                 bssCOMRAM    000006
+_CURRENT_DISP                  bssCOMRAM    00000D
+_DISP_BIT_MODE                 bssCOMRAM    00000C
 _INTCONbits                    (abs)        000FF2
-_LAST_BUTTON_PRESSED           dataCOMRAM   00000A
+_LAST_BUTTON_PRESSED           dataCOMRAM   000003
 _LATCbits                      (abs)        000F8B
 _PIE1bits                      (abs)        000F9D
 _PIE2bits                      (abs)        000FA0
@@ -207,8 +209,8 @@ _T3CON                         (abs)        000FB1
 _TRISB                         (abs)        000F93
 _TRISC                         (abs)        000F94
 _TRISD                         (abs)        000F95
-_Timer1_Enable                 text3        000AC8
-_Timer1_Init_Default           text1        000A9A
+_Timer1_Enable                 text3        000ACE
+_Timer1_Init_Default           text1        000AA0
 __HRAM                         (abs)        000000
 __Habs1                        abs1         000000
 __Hbank0                       bank0        000000
@@ -257,6 +259,7 @@ __Hintret                      intret       000000
 __Hintsave_regs                intsave_regs 000000
 __Hirdata                      irdata       000000
 __Hmediumconst                 mediumconst  000000
+__HnvCOMRAM                    nvCOMRAM     000000
 __HnvFARRAM                    nvFARRAM     000000
 __Hnvbit                       nvbit        000000
 __Hnvrram                      nvrram       000000
@@ -331,6 +334,7 @@ __Lintret                      intret       000000
 __Lintsave_regs                intsave_regs 000000
 __Lirdata                      irdata       000000
 __Lmediumconst                 mediumconst  000000
+__LnvCOMRAM                    nvCOMRAM     000000
 __LnvFARRAM                    nvFARRAM     000000
 __Lnvbit                       nvbit        000000
 __Lnvrram                      nvrram       000000
@@ -357,7 +361,7 @@ __Ltext0                       text0        000000
 __Ltext1                       text1        000000
 __Ltext2                       text2        000000
 __Ltext3                       text3        000000
-__S0                           (abs)        000ACC
+__S0                           (abs)        000AD2
 __S1                           (abs)        000016
 __S2                           (abs)        000000
 __S4                           (abs)        000000
@@ -369,25 +373,26 @@ ___rparam_used                 (abs)        000001
 ___sp                          stack        000000
 __accesstop                    (abs)        000080
 __activetblptr                 (abs)        000002
-__end_of_CCP1_Init_Default     text2        000AC0
-__end_of_Timer1_Enable         text3        000ACC
-__end_of_Timer1_Init_Default   text1        000AB0
-__end_of__initialization       cinit        000A8C
-__end_of_isr                   intcode_body 000A60
-__end_of_main                  text0        0009E4
-__initialization               cinit        000A60
+__end_of_CCP1_Init_Default     text2        000AC6
+__end_of_Timer1_Enable         text3        000AD2
+__end_of_Timer1_Init_Default   text1        000AB6
+__end_of__initialization       cinit        000A92
+__end_of_isr                   intcode_body 000A66
+__end_of_main                  text0        0009EA
+__initialization               cinit        000A66
 __mediumconst                  mediumconst  000000
-__pbssCOMRAM                   bssCOMRAM    000001
-__pcinit                       cinit        000A60
-__pcstackCOMRAM                cstackCOMRAM 00000F
-__pdataCOMRAM                  dataCOMRAM   000008
-__pidataCOMRAM                 idataCOMRAM  000AC0
+__pbssCOMRAM                   bssCOMRAM    000008
+__pcinit                       cinit        000A66
+__pcstackCOMRAM                cstackCOMRAM 00000E
+__pdataCOMRAM                  dataCOMRAM   000001
+__pidataCOMRAM                 idataCOMRAM  000AC6
 __pintcode                     intcode      000808
-__pintcode_body                intcode_body 0009E4
+__pintcode_body                intcode_body 0009EA
+__pnvCOMRAM                    nvCOMRAM     000014
 __ptext0                       text0        000812
-__ptext1                       text1        000A9A
-__ptext2                       text2        000AB0
-__ptext3                       text3        000AC8
+__ptext1                       text1        000AA0
+__ptext2                       text2        000AB6
+__ptext3                       text3        000ACE
 __ramtop                       ramtop       001000
 __size_of_CCP1_Init_Default    (abs)        000000
 __size_of_Timer1_Enable        (abs)        000000
@@ -395,20 +400,20 @@ __size_of_Timer1_Init_Default  (abs)        000000
 __size_of_isr                  (abs)        000000
 __size_of_main                 (abs)        000000
 __smallconst                   smallconst   000000
-_address_counter               bssCOMRAM    000003
-_ccp_compare_val_final         dataCOMRAM   000008
-_compare_count                 bssCOMRAM    000002
-_current_disp_ctrl             dataCOMRAM   00000E
-_current_entry_mode            dataCOMRAM   00000C
-_current_func_set              dataCOMRAM   00000B
-_init_complete                 bssCOMRAM    000005
+_address_counter               bssCOMRAM    000009
+_ccp_compare_val_final         dataCOMRAM   000001
+_compare_count                 bssCOMRAM    000008
+_current_disp_ctrl             dataCOMRAM   000007
+_current_entry_mode            dataCOMRAM   000005
+_current_func_set              dataCOMRAM   000004
+_init_complete                 bssCOMRAM    00000B
 _isr                           intcode      000808
 _main                          text0        000812
-_reset_comp_count_flag         bssCOMRAM    000001
+_reset_comp_count_flag         nvCOMRAM     000014
 btemp                          temp         000015
-end_of_initialization          cinit        000A8C
+end_of_initialization          cinit        000A92
 int$flags                      temp         000015
-int_func                       intcode_body 0009E4
+int_func                       intcode_body 0009EA
 intlevel0                      text         000000
 intlevel1                      text         000000
 intlevel2                      text         000000
@@ -416,7 +421,7 @@ intlevel3                      text         000000
 stackhi                        (abs)        000F7F
 stacklo                        (abs)        000080
 start                          init         00080E
-start_initialization           cinit        000A60
+start_initialization           cinit        000A66
 ttemp5                         temp         000016
 ttemp6                         temp         000019
 ttemp7                         temp         00001D
@@ -427,7 +432,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 125 in file "inc/ece376_hw9_p1.c"
+		line 149 in file "ece376_hw9_ccp_comp.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -547,7 +552,7 @@ Total ram usage:        0 bytes
 
  *************** function _isr *****************
  Defined at:
-		line 93 in file "inc/ece376_hw9_p1.c"
+		line 117 in file "ece376_hw9_ccp_comp.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -579,24 +584,24 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 src/ccp.c
-		_CCP1_Init_Default		CODE           	0AB0	0000	16
+		_CCP1_Init_Default		CODE           	0AB6	0000	16
 
 src/ccp.c estimated size: 16
 
+ece376_hw9_ccp_comp.c
+		_main          		CODE           	0812	0000	472
+		_isr           		CODE           	0808	0000	130
+
+ece376_hw9_ccp_comp.c estimated size: 602
+
 shared
-		__initialization		CODE           	0A60	0000	44
+		__initialization		CODE           	0A66	0000	44
 
 shared estimated size: 44
 
-inc/ece376_hw9_p1.c
-		_main          		CODE           	0812	0000	466
-		_isr           		CODE           	0808	0000	130
-
-inc/ece376_hw9_p1.c estimated size: 596
-
 src/timer.c
-		_Timer1_Init_Default		CODE           	0A9A	0000	22
-		_Timer1_Enable 		CODE           	0AC8	0000	4
+		_Timer1_Init_Default		CODE           	0AA0	0000	22
+		_Timer1_Enable 		CODE           	0ACE	0000	4
 
 src/timer.c estimated size: 26
 

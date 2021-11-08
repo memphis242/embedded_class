@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"85 inc/ece376_hw9_p1.c
-[; ;inc/ece376_hw9_p1.c: 85: enum buttons_t LAST_BUTTON_PRESSED = BUTTON7;
+"109 ece376_hw9_ccp_comp.c
+[; ;ece376_hw9_ccp_comp.c: 109: enum buttons_t LAST_BUTTON_PRESSED = BUTTON7;
 [c E2475 0 1 2 3 4 5 6 7 .. ]
 [n E2475 buttons_t BUTTON0 BUTTON1 BUTTON2 BUTTON3 BUTTON4 BUTTON5 BUTTON6 BUTTON7  ]
 [t ~ __interrupt . k ]
@@ -66,11 +66,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "189
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 189: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
 [v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
-"63 inc/timer.h
-[; ;inc/timer.h: 63: void Timer1_Init_Default(uint16_t period_val);
+"63 inc\timer.h
+[; ;inc\timer.h: 63: void Timer1_Init_Default(uint16_t period_val);
 [v _Timer1_Init_Default `(v ~T0 @X0 0 ef1`us ]
 "64
-[; ;inc/timer.h: 64: void Timer1_Enable(void);
+[; ;inc\timer.h: 64: void Timer1_Enable(void);
 [v _Timer1_Enable `(v ~T0 @X0 0 ef ]
 "6380 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 6380:     struct {
@@ -114,71 +114,71 @@ Version 4.0 HI-TECH Software Intermediate Code
 "230
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 230: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
 [v _PORTBbits `VS15 ~T0 @X0 0 e@3969 ]
-"12 inc/ece376_hw9_p1.c
+"36 ece376_hw9_ccp_comp.c
 [p x OSC  =  HSPLL       ]
-"13
-[p x FCMEN  =  OFF       ]
-"14
-[p x IESO  =  OFF        ]
-"17
-[p x PWRT  =  OFF        ]
-"18
-[p x BOREN  =  SBORDIS   ]
-"19
-[p x BORV  =  3          ]
-"22
-[p x WDT  =  OFF         ]
-"23
-[p x WDTPS  =  32768     ]
-"26
-[p x CCP2MX  =  PORTC    ]
-"27
-[p x PBADEN  =  OFF      ]
-"28
-[p x LPT1OSC  =  OFF     ]
-"29
-[p x MCLRE  =  ON        ]
-"32
-[p x STVREN  =  ON       ]
-"33
-[p x LVP  =  OFF         ]
-"34
-[p x XINST  =  OFF       ]
 "37
-[p x CP0  =  OFF         ]
+[p x FCMEN  =  OFF       ]
 "38
-[p x CP1  =  OFF         ]
-"39
-[p x CP2  =  OFF         ]
-"40
-[p x CP3  =  OFF         ]
+[p x IESO  =  OFF        ]
+"41
+[p x PWRT  =  OFF        ]
+"42
+[p x BOREN  =  SBORDIS   ]
 "43
-[p x CPB  =  OFF         ]
-"44
-[p x CPD  =  OFF         ]
+[p x BORV  =  3          ]
+"46
+[p x WDT  =  OFF         ]
 "47
-[p x WRT0  =  OFF        ]
-"48
-[p x WRT1  =  OFF        ]
-"49
-[p x WRT2  =  OFF        ]
+[p x WDTPS  =  32768     ]
 "50
-[p x WRT3  =  OFF        ]
+[p x CCP2MX  =  PORTC    ]
+"51
+[p x PBADEN  =  OFF      ]
+"52
+[p x LPT1OSC  =  OFF     ]
 "53
-[p x WRTC  =  OFF        ]
-"54
-[p x WRTB  =  OFF        ]
-"55
-[p x WRTD  =  OFF        ]
+[p x MCLRE  =  ON        ]
+"56
+[p x STVREN  =  ON       ]
+"57
+[p x LVP  =  OFF         ]
 "58
-[p x EBTR0  =  OFF       ]
-"59
-[p x EBTR1  =  OFF       ]
-"60
-[p x EBTR2  =  OFF       ]
+[p x XINST  =  OFF       ]
 "61
-[p x EBTR3  =  OFF       ]
+[p x CP0  =  OFF         ]
+"62
+[p x CP1  =  OFF         ]
+"63
+[p x CP2  =  OFF         ]
 "64
+[p x CP3  =  OFF         ]
+"67
+[p x CPB  =  OFF         ]
+"68
+[p x CPD  =  OFF         ]
+"71
+[p x WRT0  =  OFF        ]
+"72
+[p x WRT1  =  OFF        ]
+"73
+[p x WRT2  =  OFF        ]
+"74
+[p x WRT3  =  OFF        ]
+"77
+[p x WRTC  =  OFF        ]
+"78
+[p x WRTB  =  OFF        ]
+"79
+[p x WRTD  =  OFF        ]
+"82
+[p x EBTR0  =  OFF       ]
+"83
+[p x EBTR1  =  OFF       ]
+"84
+[p x EBTR2  =  OFF       ]
+"85
+[p x EBTR3  =  OFF       ]
+"88
 [p x EBTRB  =  OFF       ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
@@ -591,230 +591,227 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"79 inc/ece376_hw9_p1.c
-[; ;inc/ece376_hw9_p1.c: 79: static uint16_t ccp_compare_val_final = 2840u;
+"103 ece376_hw9_ccp_comp.c
+[; ;ece376_hw9_ccp_comp.c: 103: static uint16_t ccp_compare_val_final = 2840u;
 [v _ccp_compare_val_final `us ~T0 @X0 1 s ]
 [i _ccp_compare_val_final
 -> -> 2840 `ui `us
 ]
-"80
-[; ;inc/ece376_hw9_p1.c: 80: static volatile uint8_t compare_count = 0u;
+"104
+[; ;ece376_hw9_ccp_comp.c: 104: static volatile uint8_t compare_count = 0u;
 [v _compare_count `Vuc ~T0 @X0 1 s ]
 [i _compare_count
 -> -> 0 `ui `uc
 ]
-"81
-[; ;inc/ece376_hw9_p1.c: 81: static volatile uint8_t reset_comp_count_flag = 0x00;
+"105
+[; ;ece376_hw9_ccp_comp.c: 105: static volatile uint8_t reset_comp_count_flag = 0x00;
 [v _reset_comp_count_flag `Vuc ~T0 @X0 1 s ]
 [i _reset_comp_count_flag
 -> -> 0 `i `uc
 ]
-"85
-[; ;inc/ece376_hw9_p1.c: 85: enum buttons_t LAST_BUTTON_PRESSED = BUTTON7;
+"109
+[; ;ece376_hw9_ccp_comp.c: 109: enum buttons_t LAST_BUTTON_PRESSED = BUTTON7;
 [v _LAST_BUTTON_PRESSED `E2475 ~T0 @X0 1 e ]
 [i _LAST_BUTTON_PRESSED
 . `E2475 7
 ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"93
-[; ;inc/ece376_hw9_p1.c: 93: void __attribute__((picinterrupt(("")))) isr(void){
+"117
+[; ;ece376_hw9_ccp_comp.c: 117: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T39 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"99
-[; ;inc/ece376_hw9_p1.c: 99:     if(PIR1bits.CCP1IF && PIE1bits.CCP1IE){
+"123
+[; ;ece376_hw9_ccp_comp.c: 123:     if(PIR1bits.CCP1IF && PIE1bits.CCP1IE){
 [e $ ! && != -> . . _PIR1bits 0 2 `i -> 0 `i != -> . . _PIE1bits 0 2 `i -> 0 `i 271  ]
 {
-"101
-[; ;inc/ece376_hw9_p1.c: 101:         if(compare_count == 0) {
+"125
+[; ;ece376_hw9_ccp_comp.c: 125:         if(compare_count == 0) {
 [e $ ! == -> _compare_count `i -> 0 `i 272  ]
 {
-"102
-[; ;inc/ece376_hw9_p1.c: 102:    reset_comp_count_flag = 0x01;
+"126
+[; ;ece376_hw9_ccp_comp.c: 126:    reset_comp_count_flag = 0x01;
 [e = _reset_comp_count_flag -> -> 1 `i `uc ]
-"103
-[; ;inc/ece376_hw9_p1.c: 103:    if((LAST_BUTTON_PRESSED == BUTTON0) || (LAST_BUTTON_PRESSED == BUTTON1)){
+"127
+[; ;ece376_hw9_ccp_comp.c: 127:    if((LAST_BUTTON_PRESSED == BUTTON0) || (LAST_BUTTON_PRESSED == BUTTON1)){
 [e $ ! || == -> _LAST_BUTTON_PRESSED `ui -> . `E2475 0 `ui == -> _LAST_BUTTON_PRESSED `ui -> . `E2475 1 `ui 273  ]
 {
-"104
-[; ;inc/ece376_hw9_p1.c: 104:                 (CCPR1 = 0xFFFF);
+"128
+[; ;ece376_hw9_ccp_comp.c: 128:                 (CCPR1 = 0xFFFF);
 [e = _CCPR1 -> -> 65535 `ui `us ]
-"105
-[; ;inc/ece376_hw9_p1.c: 105:             }
+"129
+[; ;ece376_hw9_ccp_comp.c: 129:             }
 }
 [e :U 273 ]
-"107
-[; ;inc/ece376_hw9_p1.c: 107:    (LATCbits.LATC0 ^= 0x1);
+"131
+[; ;ece376_hw9_ccp_comp.c: 131:    (LATCbits.LATC0 ^= 0x1);
 [e =^ . . _LATCbits 0 0 -> -> 1 `i `Vuc ]
-"109
-[; ;inc/ece376_hw9_p1.c: 109:   } else {
+"133
+[; ;ece376_hw9_ccp_comp.c: 133:   } else {
 }
 [e $U 274  ]
 [e :U 272 ]
 {
-"110
-[; ;inc/ece376_hw9_p1.c: 110:    compare_count--;
+"134
+[; ;ece376_hw9_ccp_comp.c: 134:    compare_count--;
 [e -- _compare_count -> -> 1 `i `Vuc ]
-"111
-[; ;inc/ece376_hw9_p1.c: 111:    if(compare_count == 0) {
+"135
+[; ;ece376_hw9_ccp_comp.c: 135:    if(compare_count == 0) {
 [e $ ! == -> _compare_count `i -> 0 `i 275  ]
 {
-"112
-[; ;inc/ece376_hw9_p1.c: 112:     (CCPR1 = ccp_compare_val_final);
+"136
+[; ;ece376_hw9_ccp_comp.c: 136:     (CCPR1 = ccp_compare_val_final);
 [e = _CCPR1 _ccp_compare_val_final ]
-"113
-[; ;inc/ece376_hw9_p1.c: 113:    }
+"137
+[; ;ece376_hw9_ccp_comp.c: 137:    }
 }
 [e :U 275 ]
-"114
-[; ;inc/ece376_hw9_p1.c: 114:   }
+"138
+[; ;ece376_hw9_ccp_comp.c: 138:   }
 }
 [e :U 274 ]
-"117
-[; ;inc/ece376_hw9_p1.c: 117:   (PIR1bits.CCP1IF = 0u);
+"141
+[; ;ece376_hw9_ccp_comp.c: 141:   (PIR1bits.CCP1IF = 0u);
 [e = . . _PIR1bits 0 2 -> -> 0 `ui `uc ]
-"119
-[; ;inc/ece376_hw9_p1.c: 119:     }
+"143
+[; ;ece376_hw9_ccp_comp.c: 143:     }
 }
 [e :U 271 ]
-"121
-[; ;inc/ece376_hw9_p1.c: 121:     return;
+"145
+[; ;ece376_hw9_ccp_comp.c: 145:     return;
 [e $UE 270  ]
-"122
-[; ;inc/ece376_hw9_p1.c: 122: }
+"146
+[; ;ece376_hw9_ccp_comp.c: 146: }
 [e :UE 270 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"125
-[; ;inc/ece376_hw9_p1.c: 125: void main(void) {
+"149
+[; ;ece376_hw9_ccp_comp.c: 149: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"128
-[; ;inc/ece376_hw9_p1.c: 128:  TRISC &= 0xFE;
+"152
+[; ;ece376_hw9_ccp_comp.c: 152:  TRISC &= 0xFE;
 [e =& _TRISC -> -> 254 `i `Vuc ]
-"130
-[; ;inc/ece376_hw9_p1.c: 130:  ADCON1 |= 0x0F;
+"154
+[; ;ece376_hw9_ccp_comp.c: 154:  ADCON1 |= 0x0F;
 [e =| _ADCON1 -> -> 15 `i `Vuc ]
-"131
-[; ;inc/ece376_hw9_p1.c: 131:  TRISB = 0xFF;
+"155
+[; ;ece376_hw9_ccp_comp.c: 155:  TRISB = 0xFF;
 [e = _TRISB -> -> 255 `i `uc ]
-"132
-[; ;inc/ece376_hw9_p1.c: 132:     PORTB = 0x00;
+"156
+[; ;ece376_hw9_ccp_comp.c: 156:     PORTB = 0x00;
 [e = _PORTB -> -> 0 `i `uc ]
-"140
-[; ;inc/ece376_hw9_p1.c: 140:  Timer1_Init_Default(0x7FFF);
-[e ( _Timer1_Init_Default (1 -> -> 32767 `i `us ]
-"143
-[; ;inc/ece376_hw9_p1.c: 143:  Timer1_Enable();
+"164
+[; ;ece376_hw9_ccp_comp.c: 164:  Timer1_Init_Default(0xFFFF);
+[e ( _Timer1_Init_Default (1 -> -> 65535 `ui `us ]
+"167
+[; ;ece376_hw9_ccp_comp.c: 167:  Timer1_Enable();
 [e ( _Timer1_Enable ..  ]
-"144
-[; ;inc/ece376_hw9_p1.c: 144:  (PIE1bits.CCP1IE = 1u);
-[e = . . _PIE1bits 0 2 -> -> 1 `ui `uc ]
-"145
-[; ;inc/ece376_hw9_p1.c: 145:  (INTCONbits.PEIE = 1u);
+"168
+[; ;ece376_hw9_ccp_comp.c: 168:  (INTCONbits.PEIE = 1u);
 [e = . . _INTCONbits 1 6 -> -> 1 `ui `uc ]
-"146
-[; ;inc/ece376_hw9_p1.c: 146:  (INTCONbits.GIE = 1);
+"169
+[; ;ece376_hw9_ccp_comp.c: 169:  (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"149
-[; ;inc/ece376_hw9_p1.c: 149:  reset_comp_count_flag = 0x00;
-[e = _reset_comp_count_flag -> -> 0 `i `uc ]
-"150
-[; ;inc/ece376_hw9_p1.c: 150:  while(1){
+"172
+[; ;ece376_hw9_ccp_comp.c: 172:  reset_comp_count_flag = 0x01;
+[e = _reset_comp_count_flag -> -> 1 `i `uc ]
+"173
+[; ;ece376_hw9_ccp_comp.c: 173:  while(1){
 [e :U 278 ]
 {
-"152
-[; ;inc/ece376_hw9_p1.c: 152:   if(reset_comp_count_flag) {
+"175
+[; ;ece376_hw9_ccp_comp.c: 175:   if(reset_comp_count_flag) {
 [e $ ! != -> _reset_comp_count_flag `i -> 0 `i 280  ]
 {
-"157
-[; ;inc/ece376_hw9_p1.c: 157:    if(PORTBbits.RB0) {
+"180
+[; ;ece376_hw9_ccp_comp.c: 180:    if(PORTBbits.RB0) {
 [e $ ! != -> . . _PORTBbits 0 0 `i -> 0 `i 281  ]
 {
-"158
-[; ;inc/ece376_hw9_p1.c: 158:     LAST_BUTTON_PRESSED = BUTTON0;
+"181
+[; ;ece376_hw9_ccp_comp.c: 181:     LAST_BUTTON_PRESSED = BUTTON0;
 [e = _LAST_BUTTON_PRESSED . `E2475 0 ]
-"159
-[; ;inc/ece376_hw9_p1.c: 159:    } else if(PORTBbits.RB1) {
+"182
+[; ;ece376_hw9_ccp_comp.c: 182:    } else if(PORTBbits.RB1) {
 }
 [e $U 282  ]
 [e :U 281 ]
 [e $ ! != -> . . _PORTBbits 0 1 `i -> 0 `i 283  ]
 {
-"160
-[; ;inc/ece376_hw9_p1.c: 160:     LAST_BUTTON_PRESSED = BUTTON1;
+"183
+[; ;ece376_hw9_ccp_comp.c: 183:     LAST_BUTTON_PRESSED = BUTTON1;
 [e = _LAST_BUTTON_PRESSED . `E2475 1 ]
-"161
-[; ;inc/ece376_hw9_p1.c: 161:    } else if(PORTBbits.RB2) {
+"184
+[; ;ece376_hw9_ccp_comp.c: 184:    } else if(PORTBbits.RB2) {
 }
 [e $U 284  ]
 [e :U 283 ]
 [e $ ! != -> . . _PORTBbits 0 2 `i -> 0 `i 285  ]
 {
-"162
-[; ;inc/ece376_hw9_p1.c: 162:     LAST_BUTTON_PRESSED = BUTTON2;
+"185
+[; ;ece376_hw9_ccp_comp.c: 185:     LAST_BUTTON_PRESSED = BUTTON2;
 [e = _LAST_BUTTON_PRESSED . `E2475 2 ]
-"163
-[; ;inc/ece376_hw9_p1.c: 163:    } else if(PORTBbits.RB3) {
+"186
+[; ;ece376_hw9_ccp_comp.c: 186:    } else if(PORTBbits.RB3) {
 }
 [e $U 286  ]
 [e :U 285 ]
 [e $ ! != -> . . _PORTBbits 0 3 `i -> 0 `i 287  ]
 {
-"164
-[; ;inc/ece376_hw9_p1.c: 164:     LAST_BUTTON_PRESSED = BUTTON3;
+"187
+[; ;ece376_hw9_ccp_comp.c: 187:     LAST_BUTTON_PRESSED = BUTTON3;
 [e = _LAST_BUTTON_PRESSED . `E2475 3 ]
-"165
-[; ;inc/ece376_hw9_p1.c: 165:    } else if(PORTBbits.RB4) {
+"188
+[; ;ece376_hw9_ccp_comp.c: 188:    } else if(PORTBbits.RB4) {
 }
 [e $U 288  ]
 [e :U 287 ]
 [e $ ! != -> . . _PORTBbits 0 4 `i -> 0 `i 289  ]
 {
-"166
-[; ;inc/ece376_hw9_p1.c: 166:     LAST_BUTTON_PRESSED = BUTTON4;
+"189
+[; ;ece376_hw9_ccp_comp.c: 189:     LAST_BUTTON_PRESSED = BUTTON4;
 [e = _LAST_BUTTON_PRESSED . `E2475 4 ]
-"167
-[; ;inc/ece376_hw9_p1.c: 167:    } else if(PORTBbits.RB5) {
+"190
+[; ;ece376_hw9_ccp_comp.c: 190:    } else if(PORTBbits.RB5) {
 }
 [e $U 290  ]
 [e :U 289 ]
 [e $ ! != -> . . _PORTBbits 0 5 `i -> 0 `i 291  ]
 {
-"168
-[; ;inc/ece376_hw9_p1.c: 168:     LAST_BUTTON_PRESSED = BUTTON5;
+"191
+[; ;ece376_hw9_ccp_comp.c: 191:     LAST_BUTTON_PRESSED = BUTTON5;
 [e = _LAST_BUTTON_PRESSED . `E2475 5 ]
-"169
-[; ;inc/ece376_hw9_p1.c: 169:    } else if(PORTBbits.RB6) {
+"192
+[; ;ece376_hw9_ccp_comp.c: 192:    } else if(PORTBbits.RB6) {
 }
 [e $U 292  ]
 [e :U 291 ]
 [e $ ! != -> . . _PORTBbits 0 6 `i -> 0 `i 293  ]
 {
-"170
-[; ;inc/ece376_hw9_p1.c: 170:     LAST_BUTTON_PRESSED = BUTTON6;
+"193
+[; ;ece376_hw9_ccp_comp.c: 193:     LAST_BUTTON_PRESSED = BUTTON6;
 [e = _LAST_BUTTON_PRESSED . `E2475 6 ]
-"171
-[; ;inc/ece376_hw9_p1.c: 171:    } else if(PORTBbits.RB7) {
+"194
+[; ;ece376_hw9_ccp_comp.c: 194:    } else if(PORTBbits.RB7) {
 }
 [e $U 294  ]
 [e :U 293 ]
 [e $ ! != -> . . _PORTBbits 0 7 `i -> 0 `i 295  ]
 {
-"172
-[; ;inc/ece376_hw9_p1.c: 172:     LAST_BUTTON_PRESSED = BUTTON7;
+"195
+[; ;ece376_hw9_ccp_comp.c: 195:     LAST_BUTTON_PRESSED = BUTTON7;
 [e = _LAST_BUTTON_PRESSED . `E2475 7 ]
-"173
-[; ;inc/ece376_hw9_p1.c: 173:    } else {
+"196
+[; ;ece376_hw9_ccp_comp.c: 196:    } else {
 }
 [e $U 296  ]
 [e :U 295 ]
 {
-"175
-[; ;inc/ece376_hw9_p1.c: 175:    }
+"198
+[; ;ece376_hw9_ccp_comp.c: 198:    }
 }
 [e :U 296 ]
 [e :U 294 ]
@@ -824,132 +821,132 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 286 ]
 [e :U 284 ]
 [e :U 282 ]
-"178
-[; ;inc/ece376_hw9_p1.c: 178:    switch(LAST_BUTTON_PRESSED) {
+"201
+[; ;ece376_hw9_ccp_comp.c: 201:    switch(LAST_BUTTON_PRESSED) {
 [e $U 298  ]
 {
-"182
-[; ;inc/ece376_hw9_p1.c: 182:     case BUTTON0:
-[e :U 299 ]
-"186
-[; ;inc/ece376_hw9_p1.c: 186:      ccp_compare_val_final = 50746u;
-[e = _ccp_compare_val_final -> -> 50746 `ui `us ]
-"187
-[; ;inc/ece376_hw9_p1.c: 187:      compare_count = 2u;
-[e = _compare_count -> -> 2 `ui `uc ]
-"188
-[; ;inc/ece376_hw9_p1.c: 188:      (CCPR1 = 0xFFFF);
-[e = _CCPR1 -> -> 65535 `ui `us ]
-"189
-[; ;inc/ece376_hw9_p1.c: 189:      break;
-[e $U 297  ]
-"191
-[; ;inc/ece376_hw9_p1.c: 191:     case BUTTON1:
-[e :U 300 ]
-"195
-[; ;inc/ece376_hw9_p1.c: 195:      ccp_compare_val_final = 25373u;
-[e = _ccp_compare_val_final -> -> 25373 `ui `us ]
-"196
-[; ;inc/ece376_hw9_p1.c: 196:      compare_count = 1u;
-[e = _compare_count -> -> 1 `ui `uc ]
-"197
-[; ;inc/ece376_hw9_p1.c: 197:      (CCPR1 = 0xFFFF);
-[e = _CCPR1 -> -> 65535 `ui `us ]
-"198
-[; ;inc/ece376_hw9_p1.c: 198:      break;
-[e $U 297  ]
-"200
-[; ;inc/ece376_hw9_p1.c: 200:     case BUTTON2:
-[e :U 301 ]
-"202
-[; ;inc/ece376_hw9_p1.c: 202:      ccp_compare_val_final = 45454u;
-[e = _ccp_compare_val_final -> -> 45454 `ui `us ]
-"203
-[; ;inc/ece376_hw9_p1.c: 203:      compare_count = 0;
-[e = _compare_count -> -> 0 `i `uc ]
-"204
-[; ;inc/ece376_hw9_p1.c: 204:      (CCPR1 = ccp_compare_val_final);
-[e = _CCPR1 _ccp_compare_val_final ]
 "205
-[; ;inc/ece376_hw9_p1.c: 205:      break;
-[e $U 297  ]
-"207
-[; ;inc/ece376_hw9_p1.c: 207:     case BUTTON3:
-[e :U 302 ]
-"208
-[; ;inc/ece376_hw9_p1.c: 208:      ccp_compare_val_final = 22727u;
-[e = _ccp_compare_val_final -> -> 22727 `ui `us ]
+[; ;ece376_hw9_ccp_comp.c: 205:     case BUTTON0:
+[e :U 299 ]
 "209
-[; ;inc/ece376_hw9_p1.c: 209:      compare_count = 0u;
-[e = _compare_count -> -> 0 `ui `uc ]
+[; ;ece376_hw9_ccp_comp.c: 209:      ccp_compare_val_final = 50746u;
+[e = _ccp_compare_val_final -> -> 50746 `ui `us ]
 "210
-[; ;inc/ece376_hw9_p1.c: 210:      (CCPR1 = ccp_compare_val_final);
-[e = _CCPR1 _ccp_compare_val_final ]
+[; ;ece376_hw9_ccp_comp.c: 210:      compare_count = 2u;
+[e = _compare_count -> -> 2 `ui `uc ]
 "211
-[; ;inc/ece376_hw9_p1.c: 211:      break;
+[; ;ece376_hw9_ccp_comp.c: 211:      (CCPR1 = 0xFFFF);
+[e = _CCPR1 -> -> 65535 `ui `us ]
+"212
+[; ;ece376_hw9_ccp_comp.c: 212:      break;
 [e $U 297  ]
-"213
-[; ;inc/ece376_hw9_p1.c: 213:     case BUTTON4:
-[e :U 303 ]
 "214
-[; ;inc/ece376_hw9_p1.c: 214:      ccp_compare_val_final = 11363u;
-[e = _ccp_compare_val_final -> -> 11363 `ui `us ]
-"215
-[; ;inc/ece376_hw9_p1.c: 215:      compare_count = 0u;
-[e = _compare_count -> -> 0 `ui `uc ]
-"216
-[; ;inc/ece376_hw9_p1.c: 216:      (CCPR1 = ccp_compare_val_final);
-[e = _CCPR1 _ccp_compare_val_final ]
-"217
-[; ;inc/ece376_hw9_p1.c: 217:      break;
-[e $U 297  ]
+[; ;ece376_hw9_ccp_comp.c: 214:     case BUTTON1:
+[e :U 300 ]
+"218
+[; ;ece376_hw9_ccp_comp.c: 218:      ccp_compare_val_final = 25373u;
+[e = _ccp_compare_val_final -> -> 25373 `ui `us ]
 "219
-[; ;inc/ece376_hw9_p1.c: 219:     case BUTTON5:
-[e :U 304 ]
+[; ;ece376_hw9_ccp_comp.c: 219:      compare_count = 1u;
+[e = _compare_count -> -> 1 `ui `uc ]
 "220
-[; ;inc/ece376_hw9_p1.c: 220:      ccp_compare_val_final = 5681u;
-[e = _ccp_compare_val_final -> -> 5681 `ui `us ]
+[; ;ece376_hw9_ccp_comp.c: 220:      (CCPR1 = 0xFFFF);
+[e = _CCPR1 -> -> 65535 `ui `us ]
 "221
-[; ;inc/ece376_hw9_p1.c: 221:      compare_count = 0u;
-[e = _compare_count -> -> 0 `ui `uc ]
-"222
-[; ;inc/ece376_hw9_p1.c: 222:      (CCPR1 = ccp_compare_val_final);
-[e = _CCPR1 _ccp_compare_val_final ]
+[; ;ece376_hw9_ccp_comp.c: 221:      break;
+[e $U 297  ]
 "223
-[; ;inc/ece376_hw9_p1.c: 223:      break;
-[e $U 297  ]
+[; ;ece376_hw9_ccp_comp.c: 223:     case BUTTON2:
+[e :U 301 ]
 "225
-[; ;inc/ece376_hw9_p1.c: 225:     case BUTTON6:
-[e :U 305 ]
+[; ;ece376_hw9_ccp_comp.c: 225:      ccp_compare_val_final = 45454u;
+[e = _ccp_compare_val_final -> -> 45454 `ui `us ]
 "226
-[; ;inc/ece376_hw9_p1.c: 226:      ccp_compare_val_final = 2840u;
-[e = _ccp_compare_val_final -> -> 2840 `ui `us ]
+[; ;ece376_hw9_ccp_comp.c: 226:      compare_count = 0;
+[e = _compare_count -> -> 0 `i `uc ]
 "227
-[; ;inc/ece376_hw9_p1.c: 227:      compare_count = 0u;
-[e = _compare_count -> -> 0 `ui `uc ]
+[; ;ece376_hw9_ccp_comp.c: 227:      (CCPR1 = ccp_compare_val_final);
+[e = _CCPR1 _ccp_compare_val_final ]
 "228
-[; ;inc/ece376_hw9_p1.c: 228:      (CCPR1 = ccp_compare_val_final);
-[e = _CCPR1 _ccp_compare_val_final ]
-"229
-[; ;inc/ece376_hw9_p1.c: 229:      break;
+[; ;ece376_hw9_ccp_comp.c: 228:      break;
 [e $U 297  ]
+"230
+[; ;ece376_hw9_ccp_comp.c: 230:     case BUTTON3:
+[e :U 302 ]
 "231
-[; ;inc/ece376_hw9_p1.c: 231:     case BUTTON7:
-[e :U 306 ]
+[; ;ece376_hw9_ccp_comp.c: 231:      ccp_compare_val_final = 22725u;
+[e = _ccp_compare_val_final -> -> 22725 `ui `us ]
 "232
-[; ;inc/ece376_hw9_p1.c: 232:      ccp_compare_val_final = 1420u;
-[e = _ccp_compare_val_final -> -> 1420 `ui `us ]
-"233
-[; ;inc/ece376_hw9_p1.c: 233:      compare_count = 0u;
+[; ;ece376_hw9_ccp_comp.c: 232:      compare_count = 0u;
 [e = _compare_count -> -> 0 `ui `uc ]
-"234
-[; ;inc/ece376_hw9_p1.c: 234:      (CCPR1 = ccp_compare_val_final);
+"233
+[; ;ece376_hw9_ccp_comp.c: 233:      (CCPR1 = ccp_compare_val_final);
 [e = _CCPR1 _ccp_compare_val_final ]
-"235
-[; ;inc/ece376_hw9_p1.c: 235:      break;
+"234
+[; ;ece376_hw9_ccp_comp.c: 234:      break;
 [e $U 297  ]
+"236
+[; ;ece376_hw9_ccp_comp.c: 236:     case BUTTON4:
+[e :U 303 ]
 "237
-[; ;inc/ece376_hw9_p1.c: 237:    }
+[; ;ece376_hw9_ccp_comp.c: 237:      ccp_compare_val_final = 11337u;
+[e = _ccp_compare_val_final -> -> 11337 `ui `us ]
+"238
+[; ;ece376_hw9_ccp_comp.c: 238:      compare_count = 0u;
+[e = _compare_count -> -> 0 `ui `uc ]
+"239
+[; ;ece376_hw9_ccp_comp.c: 239:      (CCPR1 = ccp_compare_val_final);
+[e = _CCPR1 _ccp_compare_val_final ]
+"240
+[; ;ece376_hw9_ccp_comp.c: 240:      break;
+[e $U 297  ]
+"242
+[; ;ece376_hw9_ccp_comp.c: 242:     case BUTTON5:
+[e :U 304 ]
+"243
+[; ;ece376_hw9_ccp_comp.c: 243:      ccp_compare_val_final = 5667u;
+[e = _ccp_compare_val_final -> -> 5667 `ui `us ]
+"244
+[; ;ece376_hw9_ccp_comp.c: 244:      compare_count = 0u;
+[e = _compare_count -> -> 0 `ui `uc ]
+"245
+[; ;ece376_hw9_ccp_comp.c: 245:      (CCPR1 = ccp_compare_val_final);
+[e = _CCPR1 _ccp_compare_val_final ]
+"246
+[; ;ece376_hw9_ccp_comp.c: 246:      break;
+[e $U 297  ]
+"248
+[; ;ece376_hw9_ccp_comp.c: 248:     case BUTTON6:
+[e :U 305 ]
+"249
+[; ;ece376_hw9_ccp_comp.c: 249:      ccp_compare_val_final = 2843u;
+[e = _ccp_compare_val_final -> -> 2843 `ui `us ]
+"250
+[; ;ece376_hw9_ccp_comp.c: 250:      compare_count = 0u;
+[e = _compare_count -> -> 0 `ui `uc ]
+"251
+[; ;ece376_hw9_ccp_comp.c: 251:      (CCPR1 = ccp_compare_val_final);
+[e = _CCPR1 _ccp_compare_val_final ]
+"252
+[; ;ece376_hw9_ccp_comp.c: 252:      break;
+[e $U 297  ]
+"254
+[; ;ece376_hw9_ccp_comp.c: 254:     case BUTTON7:
+[e :U 306 ]
+"255
+[; ;ece376_hw9_ccp_comp.c: 255:      ccp_compare_val_final = 1420u;
+[e = _ccp_compare_val_final -> -> 1420 `ui `us ]
+"256
+[; ;ece376_hw9_ccp_comp.c: 256:      compare_count = 0u;
+[e = _compare_count -> -> 0 `ui `uc ]
+"257
+[; ;ece376_hw9_ccp_comp.c: 257:      (CCPR1 = ccp_compare_val_final);
+[e = _CCPR1 _ccp_compare_val_final ]
+"258
+[; ;ece376_hw9_ccp_comp.c: 258:      break;
+[e $U 297  ]
+"260
+[; ;ece376_hw9_ccp_comp.c: 260:    }
 }
 [e $U 297  ]
 [e :U 298 ]
@@ -963,23 +960,23 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E2475 7 `ui 306
  297 ]
 [e :U 297 ]
-"239
-[; ;inc/ece376_hw9_p1.c: 239:    reset_comp_count_flag = 0x00;
+"262
+[; ;ece376_hw9_ccp_comp.c: 262:    reset_comp_count_flag = 0x00;
 [e = _reset_comp_count_flag -> -> 0 `i `uc ]
-"241
-[; ;inc/ece376_hw9_p1.c: 241:   }
+"264
+[; ;ece376_hw9_ccp_comp.c: 264:   }
 }
 [e :U 280 ]
-"243
-[; ;inc/ece376_hw9_p1.c: 243:  }
+"266
+[; ;ece376_hw9_ccp_comp.c: 266:  }
 }
 [e :U 277 ]
 [e $U 278  ]
 [e :U 279 ]
-"245
-[; ;inc/ece376_hw9_p1.c: 245:     return;
+"268
+[; ;ece376_hw9_ccp_comp.c: 268:     return;
 [e $UE 276  ]
-"246
-[; ;inc/ece376_hw9_p1.c: 246: }
+"269
+[; ;ece376_hw9_ccp_comp.c: 269: }
 [e :UE 276 ]
 }

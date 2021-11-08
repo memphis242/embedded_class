@@ -22,8 +22,9 @@
  * CCPR1 register with the right value to get the required frequency output.
  * Two of the frequencies, A0 and A1, had periods longer than what Timer1 could
  * even count to. So the compare_count and reset_comp_count_flag variables
- * were utilized to account for this. If you go through the code, it should make
- * sense if you follow how these state variables change through code execution.
+ * were utilized to account for this (i.e., to help chain successive compare
+ * interrupts). If you go through the code, it should make sense if you follow
+ * how these state variables change through code execution.
  * If it doesn't make sense, contact me! I'd be happy to explain :D.
  * 
  */
@@ -160,7 +161,7 @@ void main(void) {
 	// **************************************************
 
 	// Now Timer1 and CCP1...
-	Timer1_Init_Default(0x7FFF);
+	Timer1_Init_Default(0xFFFF);    // Just to start off, I'll put max compare value
 	
 	// Now turn on Timer1 and unmask the CCP1 interrupt flag, allow peripheral interrupts, and global interrupts...
 	Timer1_Enable();
@@ -168,7 +169,7 @@ void main(void) {
 	ei();
 
     
-	reset_comp_count_flag = 0x00;
+	reset_comp_count_flag = 0x01;
 	while(1){
         
 		if(reset_comp_count_flag) {		// Only update once reset_comp_count_flag has been set...
@@ -227,25 +228,25 @@ void main(void) {
 					break;
 					
 				case BUTTON3:
-					ccp_compare_val_final = 22727u;
+					ccp_compare_val_final = 22725u;
 					compare_count = 0u;
 					CCP1_SET_COMP_VAL(ccp_compare_val_final);
 					break;
 					
 				case BUTTON4:
-					ccp_compare_val_final = 11363u;
+					ccp_compare_val_final = 11337u;
 					compare_count = 0u;
 					CCP1_SET_COMP_VAL(ccp_compare_val_final);
 					break;
 				
 				case BUTTON5:
-					ccp_compare_val_final = 5681u;
+					ccp_compare_val_final = 5667u;
 					compare_count = 0u;
 					CCP1_SET_COMP_VAL(ccp_compare_val_final);
 					break;
 					
 				case BUTTON6:
-					ccp_compare_val_final = 2840u;
+					ccp_compare_val_final = 2843u;
 					compare_count = 0u;
 					CCP1_SET_COMP_VAL(ccp_compare_val_final);
 					break;

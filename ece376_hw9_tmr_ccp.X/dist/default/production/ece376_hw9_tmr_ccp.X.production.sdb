@@ -15,7 +15,7 @@ ADAFRUIT_STANDARD_20x4 3
 MODE_4BIT 0
 MODE_8BIT 1
 ]
-"85 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_p1.c
+"109 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_comp.c
 [e E2475 buttons_t `uc
 BUTTON0 0
 BUTTON1 1
@@ -50,9 +50,9 @@ BUTTON7 7
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"93 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_p1.c
+"117 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_comp.c
 [v _isr isr `IIH(v  1 e 1 0 ]
-"125
+"149
 [v _main main `(v  1 e 1 0 ]
 "41 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/ccp.c
 [v _CCP1_Init_Default CCP1_Init_Default `(v  1 e 1 0 ]
@@ -253,13 +253,13 @@ BUTTON7 7
 ]
 [u S404 . 1 `S382 1 . 1 0 `S391 1 . 1 0 `S400 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES404  1 e 1 @4082 ]
-"79 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_p1.c
+"103 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_comp.c
 [v _ccp_compare_val_final ccp_compare_val_final `us  1 s 2 ccp_compare_val_final ]
-"80
+"104
 [v _compare_count compare_count `VEuc  1 s 1 compare_count ]
-"81
+"105
 [v _reset_comp_count_flag reset_comp_count_flag `VEuc  1 s 1 reset_comp_count_flag ]
-"85
+"109
 [v _LAST_BUTTON_PRESSED LAST_BUTTON_PRESSED `E2475  1 e 1 0 ]
 "16 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/lcd_driver.c
 [v _CURRENT_DISP CURRENT_DISP `E2464  1 s 1 CURRENT_DISP ]
@@ -275,10 +275,10 @@ BUTTON7 7
 [v _current_func_set current_func_set `uc  1 s 1 current_func_set ]
 "26
 [v _address_counter address_counter `uc  1 s 1 address_counter ]
-"125 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_p1.c
+"149 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_comp.c
 [v _main main `(v  1 e 1 0 ]
 {
-"246
+"269
 } 0
 "31 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/timer.c
 [v _Timer1_Init_Default Timer1_Init_Default `(v  1 e 1 0 ]
@@ -297,8 +297,8 @@ BUTTON7 7
 {
 "56
 } 0
-"93 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_p1.c
+"117 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_comp.c
 [v _isr isr `IIH(v  1 e 1 0 ]
 {
-"122
+"146
 } 0

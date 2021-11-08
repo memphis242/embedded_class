@@ -1,4 +1,4 @@
-# 1 "inc/ece376_hw9_p1.c"
+# 1 "ece376_hw9_ccp_comp.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "inc/ece376_hw9_p1.c" 2
-# 12 "inc/ece376_hw9_p1.c"
+# 1 "ece376_hw9_ccp_comp.c" 2
+# 36 "ece376_hw9_ccp_comp.c"
 #pragma config OSC = HSPLL
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
@@ -4440,7 +4440,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 69 "inc/ece376_hw9_p1.c" 2
+# 93 "ece376_hw9_ccp_comp.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
@@ -4527,20 +4527,20 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 70 "inc/ece376_hw9_p1.c" 2
+# 94 "ece376_hw9_ccp_comp.c" 2
 
-# 1 "inc/ccp.h" 1
-# 64 "inc/ccp.h"
+# 1 "inc\\ccp.h" 1
+# 64 "inc\\ccp.h"
 void CCP1_Init_Default(uint16_t comp_val);
 void CCP2_Init_Default(uint16_t comp_val);
-# 71 "inc/ece376_hw9_p1.c" 2
+# 95 "ece376_hw9_ccp_comp.c" 2
 
-# 1 "inc/timer.h" 1
-# 63 "inc/timer.h"
+# 1 "inc\\timer.h" 1
+# 63 "inc\\timer.h"
 void Timer1_Init_Default(uint16_t period_val);
 void Timer1_Enable(void);
 void Timer1_Disable(void);
-# 72 "inc/ece376_hw9_p1.c" 2
+# 96 "ece376_hw9_ccp_comp.c" 2
 
 
 
@@ -4609,16 +4609,15 @@ void main(void) {
 
 
 
- Timer1_Init_Default(0x7FFF);
+ Timer1_Init_Default(0xFFFF);
 
 
  Timer1_Enable();
- (PIE1bits.CCP1IE = 1u);
  (INTCONbits.PEIE = 1u);
  (INTCONbits.GIE = 1);
 
 
- reset_comp_count_flag = 0x00;
+ reset_comp_count_flag = 0x01;
  while(1){
 
   if(reset_comp_count_flag) {
@@ -4677,25 +4676,25 @@ void main(void) {
      break;
 
     case BUTTON3:
-     ccp_compare_val_final = 22727u;
+     ccp_compare_val_final = 22725u;
      compare_count = 0u;
      (CCPR1 = ccp_compare_val_final);
      break;
 
     case BUTTON4:
-     ccp_compare_val_final = 11363u;
+     ccp_compare_val_final = 11337u;
      compare_count = 0u;
      (CCPR1 = ccp_compare_val_final);
      break;
 
     case BUTTON5:
-     ccp_compare_val_final = 5681u;
+     ccp_compare_val_final = 5667u;
      compare_count = 0u;
      (CCPR1 = ccp_compare_val_final);
      break;
 
     case BUTTON6:
-     ccp_compare_val_final = 2840u;
+     ccp_compare_val_final = 2843u;
      compare_count = 0u;
      (CCPR1 = ccp_compare_val_final);
      break;

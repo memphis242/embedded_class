@@ -22,7 +22,8 @@
         <itemPath>src/lcd_driver.c</itemPath>
         <itemPath>src/timer.c</itemPath>
       </logicalFolder>
-      <itemPath>ece376_hw9_p1.c</itemPath>
+      <itemPath>ece376_hw9_ccp_comp.c</itemPath>
+      <itemPath>inc/ece376_hw9_ccp_capt.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
