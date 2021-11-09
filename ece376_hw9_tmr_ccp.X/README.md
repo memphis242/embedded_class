@@ -17,7 +17,9 @@ Part of the requirement must be to measure time to 100ns (i.e. use Timer1 Captur
 2. C-Code and flow chart.
 3. Test: Collect data in lab to verify that your interrupts are working properly.
 4. Validation: Collect data to validate your design works.
-5. Demo
+5. Demo  
+
+##### My Demo link: 
 
 #### Timer1 Compare
 Problem 6-10) Use Timer1 Compare to output precise frequencies. Some suggestions are:  
@@ -29,4 +31,6 @@ Other...
 7. C-Code and flow chart.
 8. Test: Collect data in lab to verify that your interrupts are working properly.
 9. Validation: Collect data to validate your design works.
-10. Demo
+10. Demo  
+
+##### My Demo link: https://youtu.be/dsG4ypv3q6Q
