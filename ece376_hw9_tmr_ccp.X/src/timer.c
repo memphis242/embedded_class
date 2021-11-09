@@ -39,7 +39,7 @@ void Timer1_Init_Default(uint16_t period_val){
 //    CCP1_Compare_Val(period_val);
     
     // Set up CCP2 as compare with T1CON and load the CCPR2 compare registers
-    CCP1_Init_Default(period_val);
+    CCP1_Compare_Init_Default(period_val);
     
 }
 
