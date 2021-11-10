@@ -328,7 +328,7 @@ text0 1010 1767 CODE 1010 0
 %locals
 dist/default/production\ece376_hw9_tmr_ccp.X.production.o
 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h
-C:\Users\almos\AppData\Local\Temp\sbis.s
+C:\Users\almos\AppData\Local\Temp\sfdc.s
 1362 16C2 0 CODE 0
 1364 16C2 0 CODE 0
 1367 16C2 0 CODE 0
@@ -359,7 +359,7 @@ C:\Users\almos\AppData\Local\Temp\sbis.s
 1449 16F4 0 CODE 0
 1450 16F6 0 CODE 0
 1451 16F8 0 CODE 0
-inc/ece376_hw9_ccp_capt.c
+ece376_hw9_ccp_capt.c
 155 1010 0 CODE 0
 163 1010 0 CODE 0
 164 1012 0 CODE 0
@@ -570,11 +570,11 @@ src/ccp.c
 64 1752 0 CODE 0
 65 1756 0 CODE 0
 66 1758 0 CODE 0
-C:\Users\almos\AppData\Local\Temp\sbis.s
+C:\Users\almos\AppData\Local\Temp\sfdc.s
 4171 808 0 CODE 0
-inc/ece376_hw9_ccp_capt.c
+ece376_hw9_ccp_capt.c
 126 808 0 CODE 0
-inc/ece376_hw9_ccp_capt.c
+ece376_hw9_ccp_capt.c
 126 1540 0 CODE 0
 132 1542 0 CODE 0
 133 155E 0 CODE 0

@@ -45,7 +45,7 @@ MODE_8BIT 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"126 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_ccp_capt.c
+"126 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
 [v _isr isr `IIH(v  1 e 1 0 ]
 "155
 [v _main main `(v  1 e 1 0 ]
@@ -250,7 +250,7 @@ MODE_8BIT 1
 ]
 [u S446 . 1 `S424 1 . 1 0 `S433 1 . 1 0 `S442 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES446  1 e 1 @4082 ]
-"115 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_ccp_capt.c
+"115 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
 [v _elapsed_time elapsed_time `VEul  1 s 4 elapsed_time ]
 "116
 [v _timer1_overflow_count timer1_overflow_count `VEul  1 s 4 timer1_overflow_count ]
@@ -272,7 +272,7 @@ MODE_8BIT 1
 [v _current_func_set current_func_set `uc  1 s 1 current_func_set ]
 "26
 [v _address_counter address_counter `uc  1 s 1 address_counter ]
-"155 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_ccp_capt.c
+"155 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
 [v _main main `(v  1 e 1 0 ]
 {
 "174
@@ -383,7 +383,7 @@ MODE_8BIT 1
 {
 "66
 } 0
-"126 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\inc/ece376_hw9_ccp_capt.c
+"126 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
 [v _isr isr `IIH(v  1 e 1 0 ]
 {
 "152

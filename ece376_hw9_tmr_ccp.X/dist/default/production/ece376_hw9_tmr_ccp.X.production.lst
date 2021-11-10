@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Wed Nov 10 14:48:14 2021
+                                                                                               Wed Nov 10 14:51:23 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	18F4620
@@ -335,7 +335,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    321 ;;
    322 ;; *************** function _main *****************
    323 ;; Defined at:
-   324 ;;		line 155 in file "inc/ece376_hw9_ccp_capt.c"
+   324 ;;		line 155 in file "ece376_hw9_ccp_capt.c"
    325 ;; Parameters:    Size  Location     Type
    326 ;;		None
    327 ;; Auto vars:     Size  Location     Type
@@ -385,42 +385,42 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    366  001010                     _main:
    367                           	callstack 27
    368  001010                     
-   369                           ;inc/ece376_hw9_ccp_capt.c: 163:  TRISC |= (1u << 2);
+   369                           ;ece376_hw9_ccp_capt.c: 163:  TRISC |= (1u << 2);
    370  001010  8494               	bsf	148,2,c	;volatile
    371  001012                     
-   372                           ;inc/ece376_hw9_ccp_capt.c: 164:  ADCON1 |= 0x0F;
+   372                           ;ece376_hw9_ccp_capt.c: 164:  ADCON1 |= 0x0F;
    373  001012  0E0F               	movlw	15
    374  001014  12C1               	iorwf	193,f,c	;volatile
    375  001016                     
-   376                           ;inc/ece376_hw9_ccp_capt.c: 165:  TRISB |= (1u << 0);
+   376                           ;ece376_hw9_ccp_capt.c: 165:  TRISB |= (1u << 0);
    377  001016  8093               	bsf	147,0,c	;volatile
    378  001018                     
-   379                           ;inc/ece376_hw9_ccp_capt.c: 166:     TRISD &= ~(1u << 0);
+   379                           ;ece376_hw9_ccp_capt.c: 166:     TRISD &= ~(1u << 0);
    380  001018  9095               	bcf	149,0,c	;volatile
    381  00101A                     
-   382                           ;inc/ece376_hw9_ccp_capt.c: 168:     PORTB = 0x00;
+   382                           ;ece376_hw9_ccp_capt.c: 168:     PORTB = 0x00;
    383  00101A  0E00               	movlw	0
    384  00101C  6E81               	movwf	129,c	;volatile
    385  00101E                     
-   386                           ;inc/ece376_hw9_ccp_capt.c: 169:     PORTC = 0x00;
+   386                           ;ece376_hw9_ccp_capt.c: 169:     PORTC = 0x00;
    387  00101E  0E00               	movlw	0
    388  001020  6E82               	movwf	130,c	;volatile
    389  001022                     
-   390                           ;inc/ece376_hw9_ccp_capt.c: 172:  LCD_Init_ECE376();
+   390                           ;ece376_hw9_ccp_capt.c: 172:  LCD_Init_ECE376();
    391  001022  ECCF  F008         	call	_LCD_Init_ECE376	;wreg free
    392  001026                     
-   393                           ;inc/ece376_hw9_ccp_capt.c: 173:     LCD_set_cursor_position(1,1);
+   393                           ;ece376_hw9_ccp_capt.c: 173:     LCD_set_cursor_position(1,1);
    394  001026  0E01               	movlw	1
    395  001028  6E09               	movwf	LCD_set_cursor_position@pos_on_line^0,c
    396  00102A  0E01               	movlw	1
    397  00102C  EC41  F009         	call	_LCD_set_cursor_position
    398  001030                     
-   399                           ;inc/ece376_hw9_ccp_capt.c: 174:     for(uint8_t i=0; i<13; i++){
+   399                           ;ece376_hw9_ccp_capt.c: 174:     for(uint8_t i=0; i<13; i++){
    400  001030  0E00               	movlw	0
    401  001032  6E27               	movwf	main@i^0,c
    402  001034                     l1954:
    403                           
-   404                           ;inc/ece376_hw9_ccp_capt.c: 175:         LCD_write_data_byte_4bit(init_msg[i]);
+   404                           ;ece376_hw9_ccp_capt.c: 175:         LCD_write_data_byte_4bit(init_msg[i]);
    405  001034  0E01               	movlw	low _init_msg
    406  001036  2427               	addwf	main@i^0,w,c
    407  001038  6EF6               	movwf	tblptrl,c
@@ -433,7 +433,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    414  001042  50F5               	movf	tablat,w,c
    415  001044  EC15  F00B         	call	_LCD_write_data_byte_4bit
    416  001048                     
-   417                           ;inc/ece376_hw9_ccp_capt.c: 176:     }
+   417                           ;ece376_hw9_ccp_capt.c: 176:     }
    418  001048  2A27               	incf	main@i^0,f,c
    419  00104A  0E0C               	movlw	12
    420  00104C  6427               	cpfsgt	main@i^0,c
@@ -443,7 +443,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    424  001056  EF1A  F008         	goto	l1954
    425  00105A                     u740:
    426  00105A                     
-   427                           ;inc/ece376_hw9_ccp_capt.c: 178:     _delay((unsigned long)((2000)*(40000000u/4000.0)));
+   427                           ;ece376_hw9_ccp_capt.c: 178:     _delay((unsigned long)((2000)*(40000000u/4000.0)));
    428  00105A  0E66               	movlw	102
    429  00105C  6E1C               	movwf	(??_main+1)^0,c
    430  00105E  0E76               	movlw	118
@@ -458,23 +458,23 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    439  00106E  D7FA               	bra	u777
    440  001070  F000               	nop	
    441  001072                     
-   442                           ;inc/ece376_hw9_ccp_capt.c: 179:     LCD_clear_display();
+   442                           ;ece376_hw9_ccp_capt.c: 179:     LCD_clear_display();
    443  001072  EC7E  F00B         	call	_LCD_clear_display	;wreg free
    444  001076                     
-   445                           ;inc/ece376_hw9_ccp_capt.c: 180:     LCD_set_cursor_position(1,1);
+   445                           ;ece376_hw9_ccp_capt.c: 180:     LCD_set_cursor_position(1,1);
    446  001076  0E01               	movlw	1
    447  001078  6E09               	movwf	LCD_set_cursor_position@pos_on_line^0,c
    448  00107A  0E01               	movlw	1
    449  00107C  EC41  F009         	call	_LCD_set_cursor_position
    450  001080                     
-   451                           ;inc/ece376_hw9_ccp_capt.c: 183:  Timer1_Init_Default();
+   451                           ;ece376_hw9_ccp_capt.c: 183:  Timer1_Init_Default();
    452  001080  ECAD  F00B         	call	_Timer1_Init_Default	;wreg free
    453  001084                     
-   454                           ;inc/ece376_hw9_ccp_capt.c: 184:     CCP1_Capture_Init_Default();
+   454                           ;ece376_hw9_ccp_capt.c: 184:     CCP1_Capture_Init_Default();
    455  001084  ECA9  F00B         	call	_CCP1_Capture_Init_Default	;wreg free
    456  001088                     l1970:
    457                           
-   458                           ;inc/ece376_hw9_ccp_capt.c: 190:   if(PORTBbits.RB0) {
+   458                           ;ece376_hw9_ccp_capt.c: 190:   if(PORTBbits.RB0) {
    459  001088  A081               	btfss	129,0,c	;volatile
    460  00108A  EF49  F008         	goto	u751
    461  00108E  EF4B  F008         	goto	u750
@@ -482,7 +482,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    463  001092  EF44  F008         	goto	l1970
    464  001096                     u750:
    465  001096                     
-   466                           ;inc/ece376_hw9_ccp_capt.c: 191:             elapsed_time = 0u;
+   466                           ;ece376_hw9_ccp_capt.c: 191:             elapsed_time = 0u;
    467  001096  0E00               	movlw	0
    468  001098  6E28               	movwf	_elapsed_time^0,c	;volatile
    469  00109A  0E00               	movlw	0
@@ -492,13 +492,13 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    473  0010A2  0E00               	movlw	0
    474  0010A4  6E2B               	movwf	(_elapsed_time+3)^0,c	;volatile
    475  0010A6                     
-   476                           ;inc/ece376_hw9_ccp_capt.c: 194:             Timer1_Enable();
+   476                           ;ece376_hw9_ccp_capt.c: 194:             Timer1_Enable();
    477  0010A6  ECB2  F00B         	call	_Timer1_Enable	;wreg free
    478  0010AA                     
-   479                           ;inc/ece376_hw9_ccp_capt.c: 195:             (INTCONbits.PEIE = 1u);
+   479                           ;ece376_hw9_ccp_capt.c: 195:             (INTCONbits.PEIE = 1u);
    480  0010AA  8CF2               	bsf	242,6,c	;volatile
    481  0010AC                     
-   482                           ;inc/ece376_hw9_ccp_capt.c: 196:             (INTCONbits.GIE = 1);
+   482                           ;ece376_hw9_ccp_capt.c: 196:             (INTCONbits.GIE = 1);
    483  0010AC  8EF2               	bsf	242,7,c	;volatile
    484  0010AE                     l1980:
    485  0010AE  502C               	movf	_game_done_flag^0,w,c	;volatile
@@ -548,8 +548,8 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    529  001124  6E15               	movwf	(___lldiv@divisor+3)^0,c
    530  001126  EC0A  F00A         	call	___lldiv	;wreg free
    531                           
-   532                           ;inc/ece376_hw9_ccp_capt.c: 211:             uint16_t num_of_us = (uint16_t) ((elapsed_t
-      +                          ime % 10000000u) % 10000u) / 10u;
+   532                           ;ece376_hw9_ccp_capt.c: 211:             uint16_t num_of_us = (uint16_t) ((elapsed_time 
+      +                          % 10000000u) % 10000u) / 10u;
    533  00112A  0E80               	movlw	128
    534  00112C  6E09               	movwf	___llmod@divisor^0,c
    535  00112E  0E96               	movlw	150
@@ -2039,7 +2039,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1952                           
   1953 ;; *************** function _isr *****************
   1954 ;; Defined at:
-  1955 ;;		line 126 in file "inc/ece376_hw9_ccp_capt.c"
+  1955 ;;		line 126 in file "ece376_hw9_ccp_capt.c"
   1956 ;; Parameters:    Size  Location     Type
   1957 ;;		None
   1958 ;; Auto vars:     Size  Location     Type
@@ -2088,7 +2088,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1996                           	callstack 27
   1997  001540  0006               	pop		; remove dummy address from shadow register refresh
   1998  001542                     
-  1999                           ;inc/ece376_hw9_ccp_capt.c: 132:     if(PIR1bits.TMR1IF && PIE1bits.TMR1IE) {
+  1999                           ;ece376_hw9_ccp_capt.c: 132:     if(PIR1bits.TMR1IF && PIE1bits.TMR1IE) {
   2000  001542  A09E               	btfss	158,0,c	;volatile
   2001  001544  EFA6  F00A         	goto	i2u34_41
   2002  001548  EFA8  F00A         	goto	i2u34_40
@@ -2102,7 +2102,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   2010  00155A  EFB6  F00A         	goto	i2l1400
   2011  00155E                     i2u35_40:
   2012  00155E                     
-  2013                           ;inc/ece376_hw9_ccp_capt.c: 133:         timer1_overflow_count++;
+  2013                           ;ece376_hw9_ccp_capt.c: 133:         timer1_overflow_count++;
   2014  00155E  0E01               	movlw	1
   2015  001560  2632               	addwf	_timer1_overflow_count^0,f,c	;volatile
   2016  001562  0E00               	movlw	0
@@ -2110,11 +2110,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   2018  001566  2234               	addwfc	(_timer1_overflow_count+2)^0,f,c	;volatile
   2019  001568  2235               	addwfc	(_timer1_overflow_count+3)^0,f,c	;volatile
   2020  00156A                     
-  2021                           ;inc/ece376_hw9_ccp_capt.c: 135:         (PIR1bits.TMR1IF = 0u);
+  2021                           ;ece376_hw9_ccp_capt.c: 135:         (PIR1bits.TMR1IF = 0u);
   2022  00156A  909E               	bcf	158,0,c	;volatile
   2023  00156C                     i2l1400:
   2024                           
-  2025                           ;inc/ece376_hw9_ccp_capt.c: 143:     if(PIR1bits.CCP1IF && PIE1bits.CCP1IE){
+  2025                           ;ece376_hw9_ccp_capt.c: 143:     if(PIR1bits.CCP1IF && PIE1bits.CCP1IE){
   2026  00156C  A49E               	btfss	158,2,c	;volatile
   2027  00156E  EFBB  F00A         	goto	i2u36_41
   2028  001572  EFBD  F00A         	goto	i2u36_40
@@ -2128,8 +2128,8 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   2036  001584  EFD9  F00A         	goto	i2l218
   2037  001588                     i2u37_40:
   2038  001588                     
-  2039                           ;inc/ece376_hw9_ccp_capt.c: 144:         elapsed_time = ((uint32_t) 0xFFFFFFFF * timer1_
-      +                          overflow_count) + (uint32_t) CCPR1;
+  2039                           ;ece376_hw9_ccp_capt.c: 144:         elapsed_time = ((uint32_t) 0xFFFFFFFF * timer1_over
+      +                          flow_count) + (uint32_t) CCPR1;
   2040  001588  50BE               	movf	190,w,c	;volatile
   2041  00158A  6E01               	movwf	??_isr^0,c
   2042  00158C  50BF               	movf	191,w,c	;volatile
@@ -2149,11 +2149,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   2056  0015A8  5804               	subwfb	(??_isr+3)^0,w,c
   2057  0015AA  6E2B               	movwf	(_elapsed_time+3)^0,c	;volatile
   2058  0015AC                     
-  2059                           ;inc/ece376_hw9_ccp_capt.c: 145:   game_done_flag = 0x01u;
+  2059                           ;ece376_hw9_ccp_capt.c: 145:   game_done_flag = 0x01u;
   2060  0015AC  0E01               	movlw	1
   2061  0015AE  6E2C               	movwf	_game_done_flag^0,c	;volatile
   2062  0015B0                     
-  2063                           ;inc/ece376_hw9_ccp_capt.c: 148:   (PIR1bits.CCP1IF = 0u);
+  2063                           ;ece376_hw9_ccp_capt.c: 148:   (PIR1bits.CCP1IF = 0u);
   2064  0015B0  949E               	bcf	158,2,c	;volatile
   2065  0015B2                     i2l218:
   2066  0015B2  923A               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
@@ -2713,7 +2713,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Wed Nov 10 14:48:14 2021
+Symbol Table                                                                                   Wed Nov 10 14:51:23 2021
 
         ?_CCP1_Capture_Init_Default 0001                                  l21 1758  
                                 l62 1350                                  l64 1372  

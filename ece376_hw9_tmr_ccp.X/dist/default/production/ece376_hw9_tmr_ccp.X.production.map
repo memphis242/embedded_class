@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\ece376_hw9_tmr_ccp.X.production.sym \
   --cmf=dist/default/production\ece376_hw9_tmr_ccp.X.production.cmf -z \
-  -Q18F4620 -oC:\Users\almos\AppData\Local\Temp\sbis.2 \
+  -Q18F4620 -oC:\Users\almos\AppData\Local\Temp\sfdc.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ece376_hw9_tmr_ccp.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=080h-0F7Fh -pstack=STACK \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\almos\AppData\Local\Temp\sbis.o \
+  C:\Users\almos\AppData\Local\Temp\sfdc.o \
   dist/default/production\ece376_hw9_tmr_ccp.X.production.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 18F4620
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\almos\AppData\Local\Temp\sbis.o
+C:\Users\almos\AppData\Local\Temp\sfdc.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                80E      80E        4      404       0
@@ -531,7 +531,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 155 in file "inc/ece376_hw9_ccp_capt.c"
+		line 155 in file "ece376_hw9_ccp_capt.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -992,7 +992,7 @@ Total ram usage:        0 bytes
 
  *************** function _isr *****************
  Defined at:
-		line 126 in file "inc/ece376_hw9_ccp_capt.c"
+		line 126 in file "ece376_hw9_ccp_capt.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1028,6 +1028,12 @@ src/ccp.c
 
 src/ccp.c estimated size: 8
 
+ece376_hw9_ccp_capt.c
+		_main          		CODE           	1010	0000	398
+		_isr           		CODE           	0808	0000	124
+
+ece376_hw9_ccp_capt.c estimated size: 522
+
 src/lcd_driver.c
 		_LCD_Init_ECE376		CODE           	119E	0000	228
 		_LCD_write_instr_byte_4bit		CODE           	1676	0000	76
@@ -1043,12 +1049,6 @@ C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\llmod.c
 		___llmod       		CODE           	14B8	0000	136
 
 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\llmod.c estimated size: 136
-
-inc/ece376_hw9_ccp_capt.c
-		_main          		CODE           	1010	0000	398
-		_isr           		CODE           	0808	0000	124
-
-inc/ece376_hw9_ccp_capt.c estimated size: 522
 
 shared
 		_init_msg      		SMALLCONST     	1001	0000	14
