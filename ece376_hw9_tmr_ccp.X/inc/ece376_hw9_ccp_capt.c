@@ -7,24 +7,39 @@
  * ****************************************************************************
  * The Assigned Problem
  * ****************************************************************************
- * Using Timer1 and CCP1 in Compare mode, have the PIC
- * generate an accurate set of frequencies (to the closest 100ns) based on
- * button presses. For example, RB0 pressed --> RC0 outputs note A0; RB1
- * pressed --> RC0 outputs note A1; and so on...
+ * Using Timer1 and CCP1 in Capture mode, measure reflex time of the user.
+ * For example, have the user press a button to start the game. Then, at some
+ * random point 3 to 7 seconds after, an LED lights up and the user must press
+ * a button as soon as they can afterwards. Use this button press to trigger
+ * the capture event and collect the needed time information.
  * 
  * ****************************************************************************
  * My Solution
  * ****************************************************************************
- * I use the enumerated variable LAST_BUTTON_PRESSED to indicate which button
- * was pressed. This acts as the "state" of this machine. This variable is
- * updated in the while(1) loop. The actual toggling of RC0 is done in the
- * interrupt routine servicing the CCP1 interrupt. The trick was setting the
- * CCPR1 register with the right value to get the required frequency output.
- * Two of the frequencies, A0 and A1, had periods longer than what Timer1 could
- * even count to. So the compare_count and reset_comp_count_flag variables
- * were utilized to account for this. If you go through the code, it should make
- * sense if you follow how these state variables change through code execution.
- * If it doesn't make sense, contact me! I'd be happy to explain :D.
+ * The CCP1 pin is RC2 so I'll place a button there for that. And I'll use a
+ * display to show the reaction time result.
+ * 
+ * In addition, I will use RB0 to start the game, which will include enabling
+ * Timer1 and CCP1 in Capture mode, awaiting RC1 to go high (i.e., user to press
+ * the button). I will also enable Timer1 interrupts so that if it overflows,
+ * I will increment a counter timer1_overflow_count. Once RC2 is pressed and a
+ * CCP1 capture is triggered and an interrupt is generated, I will set the elapsed
+ * time in a uint32_t time_elapsed variable (which will be able to hold up to
+ * 2^32 100ns counts, which amounts to about 7 min; time_elapsed will account for
+ * timer1_overflow_count and the value captured in the CCPR1 register-pair.
+ * This elapsed time value is then displayed.
+ * 
+ * NOTE: Since Timer1 is 16-bit and we are using a prescalar of 1 on an instruction
+ * clock rate of 10MHz, then it overflows every ~6.5 ms! Hence, unless you're dealing
+ * with Superman, expect there to be some tiemr1_overflow_count counts.
+ * 
+ * For now, I will not attempt to generate a random time from 3 to 7 seconds and
+ * will just go with 4s using __delay_ms().
+ * 
+ * For translating the elapsed_time amount into seconds::milliseconds::microseconds,
+ * I did some division and modulo operations, as can be seen below.
+ * 
+ * More can be understood by reading the code. Or contact me for questions.
  * 
  */
 
@@ -93,19 +108,14 @@
 #include <stdint.h>
 #include "ccp.h"
 #include "timer.h"
-
-
-#define TOGGLE_RC0  (LATCbits.LATC0 ^= 0x1)
+#include "lcd_driver.h"
 
 
 // as global variables...
-static uint16_t ccp_compare_val_final = 2840u;
-static volatile uint8_t compare_count = 0u;		// Volatile because this is changed in the ISR
-static volatile uint8_t reset_comp_count_flag = 0x00;	// Volatile because this is changed in the ISR
-// Just to conveniently represent which button was last pressed, I'll use an enum data type...
-enum buttons_t { BUTTON0, BUTTON1, BUTTON2, BUTTON3, BUTTON4, BUTTON5, BUTTON6, BUTTON7 };
-// Just to start, I'll make RB7 as the last button pressed...
-enum buttons_t LAST_BUTTON_PRESSED = BUTTON7;
+volatile static uint32_t elapsed_time = 0u;
+volatile static uint32_t timer1_overflow_count = 0u;
+volatile static uint8_t game_done_flag = 0x00u;
+const static char init_msg[] = "Init success!";
 
 
 /******************************************************************************
@@ -116,29 +126,26 @@ enum buttons_t LAST_BUTTON_PRESSED = BUTTON7;
 void __interrupt() isr(void){
       
     /* ****************************************************
-     * CCP1 INTERRUPT
+     * Timer1 Interrupt
+     * ****************************************************
+     */
+    if(TMR1_IF && TMR1_ENABLE_BIT) {
+        timer1_overflow_count++;
+        // Clear flag
+        CLEAR_TMR1_IF;
+    }
+    
+    
+    /* ****************************************************
+     * CCP1 INTERRUPT (Capture)
      * ****************************************************
      */
     if(CCP1_IF_BIT && CCP1_INT_ENABLE_BIT){
+        elapsed_time = ((uint32_t) 0xFFFFFFFF * timer1_overflow_count) + (uint32_t) CCPR1;
+		game_done_flag = 0x01u;
         
-        if(compare_count == 0) {	// If this is now the last interrupt cycle...
-			reset_comp_count_flag = 0x01;
-			if((LAST_BUTTON_PRESSED == BUTTON0) || (LAST_BUTTON_PRESSED == BUTTON1)){
-                CCP1_SET_COMP_VAL(0xFFFF);	// These are for notes A0 and A1, which require chained interrupts
-            }
-            
-			TOGGLE_RC0;	// Toggle RC0
-			
-		} else {
-			compare_count--;
-			if(compare_count == 0) {	// Next interrupt will be last interrupt cycle...
-				CCP1_SET_COMP_VAL(ccp_compare_val_final);
-			}
-		}
-		
 		// Clear flag
 		CLEAR_CCP1_IF;
-        
     }
     
     return;
@@ -147,120 +154,63 @@ void __interrupt() isr(void){
 
 void main(void) {
     
-    // Configure I/O
-	TRISC &= 0xFE;	// RC0 as output, leave the rest as whatever they were before
-	// And then for the buttons, PORTB...
+    // Initialization...
+    /* Configure I/O
+     * We're using RC2 as the CCP1 trigger input,
+     * RB0 as the button-start,
+     * and RD0 as the output LED
+     */
+	TRISC |= (1u << 2);
 	ADCON1 |= 0x0F;	// Just have all pins be digital
-	TRISB = 0xFF;
+	TRISB |= (1u << 0);
+    TRISD &= ~(1u << 0);
+    // Clear ports just to make things clear
     PORTB = 0x00;
+    PORTC = 0x00;
 	
 	
-	// **************************************************
-	// whatever the LCD stuff you want...
-	// **************************************************
+	LCD_Init_ECE376();
+    LCD_set_cursor_position(1,1);
+    for(uint8_t i=0; i<13; i++){
+        LCD_write_data_byte_4bit(init_msg[i]);
+    }
+    
+    __delay_ms(2000);   // Hold the display for 2s
+    LCD_clear_display();
+    LCD_set_cursor_position(1,1);
 
 	// Now Timer1 and CCP1...
-	Timer1_Init_Default(0x7FFF);
-	
-	// Now turn on Timer1 and unmask the CCP1 interrupt flag, allow peripheral interrupts, and global interrupts...
-	Timer1_Enable();
-	ENABLE_PERIPHERAL_INTERRUPTS;
-	ei();
-
+	Timer1_Init_Default();
+    CCP1_Capture_Init_Default();
     
-	reset_comp_count_flag = 0x00;
+    
+    // Now while(1) loop...
 	while(1){
         
-		if(reset_comp_count_flag) {		// Only update once reset_comp_count_flag has been set...
-			
-			// update LAST_BUTTON_PRESSED to whatever is the most recent button pressed...
-			// NOTE this checks RB0 first then down to RB7. If more than one button is pressed, the highest button is chosen
-			// e.g., if RB1 and RB4 are both pressed, then RB4 is chosen...
-			if(PORTBbits.RB0) {
-				LAST_BUTTON_PRESSED = BUTTON0;
-			} else if(PORTBbits.RB1) {
-				LAST_BUTTON_PRESSED = BUTTON1;
-			} else if(PORTBbits.RB2) {
-				LAST_BUTTON_PRESSED = BUTTON2;
-			} else if(PORTBbits.RB3) {
-				LAST_BUTTON_PRESSED = BUTTON3;
-			} else if(PORTBbits.RB4) {
-				LAST_BUTTON_PRESSED = BUTTON4;
-			} else if(PORTBbits.RB5) {
-				LAST_BUTTON_PRESSED = BUTTON5;
-			} else if(PORTBbits.RB6) {
-				LAST_BUTTON_PRESSED = BUTTON6;
-			} else if(PORTBbits.RB7) {
-				LAST_BUTTON_PRESSED = BUTTON7;
-			} else {
-				// do nothing, leave LAST_BUTTON_PRESSED as is...
-			}
-			
-			// Now update ccp_compare_val_final and compare_count based on LAST_BUTTON_PRESSED
-			switch(LAST_BUTTON_PRESSED) {
-				
-				// Since Timer1 and CCP1 are only 16-bit at most, they can only go as high as 65,536 counts
-				// To do more than that, I will use multiple successive interrupts to toggle...
-				case BUTTON0:
-					// Note A0 is 27.5 Hz, or ~36,363,363 ns period, which is 363,636 100ns cycles
-					// We toggle twice as fast, or at half the period, so 181,818 100ns cycles, or
-					// 65,536 * 2 + 50,746
-					ccp_compare_val_final = 50746u;	
-					compare_count = 2u;
-					CCP1_SET_COMP_VAL(0xFFFF);
-					break;
-					
-				case BUTTON1:
-					// Note A1 is 50 Hz, or ~18,181,818 ns period, which is 181,818 100ns cycles
-					// For toggling at half periods, that is 90,909 100ns cycles, or
-					// 65,536 * 1 + 25373
-					ccp_compare_val_final = 25373u;
-					compare_count = 1u;
-					CCP1_SET_COMP_VAL(0xFFFF);
-					break;
-					
-				case BUTTON2:
-					// You get the idea now...
-					ccp_compare_val_final = 45454u;
-					compare_count = 0;
-					CCP1_SET_COMP_VAL(ccp_compare_val_final);
-					break;
-					
-				case BUTTON3:
-					ccp_compare_val_final = 22665u;
-					compare_count = 0u;
-					CCP1_SET_COMP_VAL(ccp_compare_val_final);
-					break;
-					
-				case BUTTON4:
-					ccp_compare_val_final = 11363u;
-					compare_count = 0u;
-					CCP1_SET_COMP_VAL(ccp_compare_val_final);
-					break;
-				
-				case BUTTON5:
-					ccp_compare_val_final = 5681u;
-					compare_count = 0u;
-					CCP1_SET_COMP_VAL(ccp_compare_val_final);
-					break;
-					
-				case BUTTON6:
-					ccp_compare_val_final = 2840u;
-					compare_count = 0u;
-					CCP1_SET_COMP_VAL(ccp_compare_val_final);
-					break;
-					
-				case BUTTON7:
-					ccp_compare_val_final = 1420u;
-					compare_count = 0u;
-					CCP1_SET_COMP_VAL(ccp_compare_val_final);
-					break;
-			
-			}
-			
-			reset_comp_count_flag = 0x00;	// Reset this flag
-			
-		}
+		if(PORTBbits.RB0) {
+            elapsed_time = 0u;  // Reset elapsed_time
+            
+            // Now turn on Timer1 and unmask peripheral interrupts and enable all unmasked interrupts...
+            Timer1_Enable();
+            ENABLE_PERIPHERAL_INTERRUPTS;
+            ei();
+            
+            // Wait for user to play game
+            while(!game_done_flag);
+            
+            // Now display time_elapsed!
+            /* First convert time_elapsed into s::ms::us --> warning: division ahead...
+             * Note, at 100ns steps, it's 10,000,000 steps per second, 10,000 steps per ms, and 10 steps per us
+             * Also note that
+             *      - num_of_seconds will be within 0 to 429s,
+             *      - num_of_ms will be within 0 and 999
+             *      - num_of_us will be within 0 and 999
+             */
+            uint16_t num_of_seconds = (uint16_t) (elapsed_time / 10000000u);
+            uint16_t num_of_ms = (uint16_t) ((elapsed_time % 10000000u) / 10000u);    // Take remainder and then that / 10,000 is ms
+            uint16_t num_of_us = (uint16_t) ((elapsed_time % 10000000u) % 10000u) / 10u;   // Take the remainder of the ms division and / 10 is us
+                    
+        }
 		
 	}
     

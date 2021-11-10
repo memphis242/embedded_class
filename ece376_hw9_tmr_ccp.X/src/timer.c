@@ -28,19 +28,8 @@
  * 
  * Returns: none
  */
-void Timer1_Init_Default(uint16_t period_val){
-    
-    // Configure T1CON and T3CON so that Timer1 is used for CCP2
-    TMR1_DEFAULT;
-    TMR1_FOR_COMP_CCP;
-    
-//    // Set up CCP1 as compare with T1CON and load the CCPR1 compare registers
-//    CCP1_Init_Default();
-//    CCP1_Compare_Val(period_val);
-    
-    // Set up CCP2 as compare with T1CON and load the CCPR2 compare registers
-    CCP1_Compare_Init_Default(period_val);
-    
+void Timer1_Init_Default(void){
+    TMR1_DEFAULT;    
 }
 
 /* Function: Timer1_Enable

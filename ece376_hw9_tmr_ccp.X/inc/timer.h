@@ -41,7 +41,7 @@
 #define TMR1_ENABLE_INTERRUPT   (PIE1bits.TMR1IE = 1u)
 #define TMR1_IF                 PIR1bits.TMR1IF
 #define TMR1_ENABLE_BIT         PIE1bits.TMR1IE
-#define TMR1_CLEAR_IF           (TMR1_IF = 0u)
+#define CLEAR_TMR1_IF           (TMR1_IF = 0u)
 
 // TIMER3 MODULE
 // T3CON - Timer3 Control Register
@@ -60,7 +60,7 @@
 // Function declaration
 
 // Timer1
-void Timer1_Init_Default(uint16_t period_val);
+void Timer1_Init_Default(void);
 void Timer1_Enable(void);
 void Timer1_Disable(void);
 

@@ -453,14 +453,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "41 src/ccp.c
-[; ;src/ccp.c: 41: void CCP1_Init_Default(uint16_t comp_val){
-[v _CCP1_Init_Default `(v ~T0 @X0 1 ef1`us ]
+[; ;src/ccp.c: 41: void CCP1_Compare_Init_Default(uint16_t comp_val){
+[v _CCP1_Compare_Init_Default `(v ~T0 @X0 1 ef1`us ]
 {
-[e :U _CCP1_Init_Default ]
+[e :U _CCP1_Compare_Init_Default ]
 [v _comp_val `us ~T0 @X0 1 r1 ]
 [f ]
 "42
-[; ;src/ccp.c: 42:     (CCP1CON = 0x0B);
+[; ;src/ccp.c: 42:     (CCP1CON = 0xB);
 [e = _CCP1CON -> -> 11 `i `uc ]
 "43
 [; ;src/ccp.c: 43:     (CCPR1 = comp_val);
@@ -473,14 +473,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 270 ]
 }
 "46
-[; ;src/ccp.c: 46: void CCP2_Init_Default(uint16_t comp_val){
-[v _CCP2_Init_Default `(v ~T0 @X0 1 ef1`us ]
+[; ;src/ccp.c: 46: void CCP2_Compare_Init_Default(uint16_t comp_val){
+[v _CCP2_Compare_Init_Default `(v ~T0 @X0 1 ef1`us ]
 {
-[e :U _CCP2_Init_Default ]
+[e :U _CCP2_Compare_Init_Default ]
 [v _comp_val `us ~T0 @X0 1 r1 ]
 [f ]
 "47
-[; ;src/ccp.c: 47:     (CCP2CON = 0x0B);
+[; ;src/ccp.c: 47:     (CCP2CON = 0xB);
 [e = _CCP2CON -> -> 11 `i `uc ]
 "48
 [; ;src/ccp.c: 48:     (CCPR2 = comp_val);
@@ -491,4 +491,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50
 [; ;src/ccp.c: 50: }
 [e :UE 271 ]
+}
+"63
+[; ;src/ccp.c: 63: void CCP1_Capture_Init_Default(void){
+[v _CCP1_Capture_Init_Default `(v ~T0 @X0 1 ef ]
+{
+[e :U _CCP1_Capture_Init_Default ]
+[f ]
+"64
+[; ;src/ccp.c: 64:     (CCP1CON = 0x5);
+[e = _CCP1CON -> -> 5 `i `uc ]
+"65
+[; ;src/ccp.c: 65:     (PIE1bits.CCP1IE = 1u);
+[e = . . _PIE1bits 0 2 -> -> 1 `ui `uc ]
+"66
+[; ;src/ccp.c: 66: }
+[e :UE 272 ]
+}
+"67
+[; ;src/ccp.c: 67: void CCP2_Capture_Init_Default(void){
+[v _CCP2_Capture_Init_Default `(v ~T0 @X0 1 ef ]
+{
+[e :U _CCP2_Capture_Init_Default ]
+[f ]
+"68
+[; ;src/ccp.c: 68:     (CCP2CON = 0x5);
+[e = _CCP2CON -> -> 5 `i `uc ]
+"69
+[; ;src/ccp.c: 69:     (PIE2bits.CCP2IE = 1u);
+[e = . . _PIE2bits 0 0 -> -> 1 `ui `uc ]
+"70
+[; ;src/ccp.c: 70: }
+[e :UE 273 ]
 }

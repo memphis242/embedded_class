@@ -60,11 +60,11 @@ void CCP2_Compare_Init_Default(uint16_t comp_val){
  * 
  * Returns: none
  */
-void CCP1_Compare_Init_Default(uint16_t comp_val){
+void CCP1_Capture_Init_Default(void){
     CCP1M_CAPTURE_DEFAULT;
     ENABLE_CCP1_INTERRUPT;
 }
-void CCP2_Compare_Init_Default(uint16_t comp_val){
+void CCP2_Capture_Init_Default(void){
     CCP2M_CAPTURE_DEFAULT;
     ENABLE_CCP2_INTERRUPT;
 }
