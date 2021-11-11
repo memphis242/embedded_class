@@ -26,7 +26,7 @@
  * CCP1 capture is triggered and an interrupt is generated, I will set the elapsed
  * time in a uint32_t time_elapsed variable (which will be able to hold up to
  * 2^32 100ns counts, which amounts to about 7 min; time_elapsed will account for
- * timer1_overflow_count and the value captured in the CCPR1 register-pair.
+ * any timer1 overflows and the value captured in the CCPR1 register-pair.
  * This elapsed time value is then displayed.
  * 
  * NOTE: Since Timer1 is 16-bit and we are using a prescalar of 1 on an instruction
@@ -158,7 +158,7 @@ void __interrupt() isr(void){
      * ****************************************************
      */
     if(CCP1_IF_BIT && CCP1_INT_ENABLE_BIT){
-        elapsed_time += (uint32_t) CCPR1;
+        elapsed_time = elapsed_time + (uint32_t) CCPR1 - 30000000u;    // minus 3s 
 		game_done_flag = 0x01u;
         
 		// Clear flag
