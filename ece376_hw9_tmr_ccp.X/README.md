@@ -19,7 +19,7 @@ Part of the requirement must be to measure time to 100ns (i.e. use Timer1 Captur
 4. Validation: Collect data to validate your design works.
 5. Demo  
 
-##### My Demo link: 
+##### My Demo link: https://youtu.be/Y_mhbS2GqI0  
 
 #### Timer1 Compare
 Problem 6-10) Use Timer1 Compare to output precise frequencies. Some suggestions are:  
