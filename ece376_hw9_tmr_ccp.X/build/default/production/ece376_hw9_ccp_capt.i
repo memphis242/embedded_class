@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "ece376_hw9_ccp_capt.c" 2
-# 50 "ece376_hw9_ccp_capt.c"
+# 54 "ece376_hw9_ccp_capt.c"
 #pragma config OSC = HSPLL
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
@@ -4440,7 +4440,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 107 "ece376_hw9_ccp_capt.c" 2
+# 111 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
@@ -4527,7 +4527,7 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 108 "ece376_hw9_ccp_capt.c" 2
+# 112 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
@@ -4584,7 +4584,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 109 "ece376_hw9_ccp_capt.c" 2
+# 113 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
@@ -4724,7 +4724,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 110 "ece376_hw9_ccp_capt.c" 2
+# 114 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "inc\\ccp.h" 1
 # 154 "inc\\ccp.h"
@@ -4738,14 +4738,14 @@ void CCP1_Compare_Init_Default(uint16_t comp_val);
 void CCP2_Compare_Init_Default(uint16_t comp_val);
 void CCP1_Capture_Init_Default(void);
 void CCP1_Capture_Init_Default(void);
-# 111 "ece376_hw9_ccp_capt.c" 2
+# 115 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "inc\\timer.h" 1
 # 63 "inc\\timer.h"
 void Timer1_Init_Default(void);
 void Timer1_Enable(void);
 void Timer1_Disable(void);
-# 112 "ece376_hw9_ccp_capt.c" 2
+# 116 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "inc\\lcd_driver.h" 1
 # 207 "inc\\lcd_driver.h"
@@ -4784,8 +4784,8 @@ uint8_t LCD_set_cursor_position(uint8_t line, uint8_t pos_on_line);
 uint8_t LCD_write_characters(char * toWrite, uint8_t size);
 uint8_t LCD_turn_off_cursor(void);
 uint8_t LCD_turn_on_cursor(void);
-# 113 "ece376_hw9_ccp_capt.c" 2
-# 124 "ece376_hw9_ccp_capt.c"
+# 117 "ece376_hw9_ccp_capt.c" 2
+# 128 "ece376_hw9_ccp_capt.c"
 volatile static uint32_t elapsed_time = 0u;
 volatile static uint32_t timer1_overflow_count = 0u;
 volatile static uint8_t game_done_flag = 0x00u;
@@ -4823,7 +4823,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 
     if(PIR1bits.CCP1IF && PIE1bits.CCP1IE){
-        elapsed_time += (uint32_t) CCPR1;
+        elapsed_time = elapsed_time + (uint32_t) CCPR1 - 30000000u;
   game_done_flag = 0x01u;
 
 
@@ -4862,7 +4862,7 @@ void main(void) {
     LATDbits.LATD0 = 0u;
     LCD_clear_display();
     LCD_set_cursor_position(1,1);
-# 224 "ece376_hw9_ccp_capt.c"
+# 228 "ece376_hw9_ccp_capt.c"
     char rcon_reg_string[16] = "RCON: ";
     char stkptr_reg_string[16] = "STKPTR: ";
     strcat(rcon_reg_string, hex_to_bit_string( (uint8_t)RCON ) );
@@ -4872,6 +4872,10 @@ void main(void) {
     for(uint8_t i=0; i<14; i++) LCD_write_data_byte_4bit(rcon_reg_string[i]);
     LCD_set_cursor_position(2,1);
     for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(stkptr_reg_string[i]);
+
+
+    RCONbits.POR = 1u;
+    RCONbits.BOR = 1u;
 
     while(!PORTBbits.RB0);
     LCD_clear_display();
@@ -4914,7 +4918,7 @@ void main(void) {
 
 
             while(!game_done_flag);
-# 285 "ece376_hw9_ccp_capt.c"
+# 293 "ece376_hw9_ccp_capt.c"
             uint16_t num_of_seconds = (uint16_t) (elapsed_time / 10000000u);
             uint16_t num_of_ms = (uint16_t) ((elapsed_time % 10000000u) / 10000u);
             uint16_t num_of_us = (uint16_t) ((elapsed_time % 10000000u) % 10000u) / 10u;
@@ -4926,7 +4930,6 @@ void main(void) {
             LCD_set_cursor_position(1,1);
             for(uint8_t i=0; i<7; i++) LCD_write_data_byte_4bit(result_msg_title[i]);
             LCD_set_cursor_position(2,1);
-
             for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(result_msg[i]);
 
             _delay((unsigned long)((3000)*(40000000u/4000.0)));

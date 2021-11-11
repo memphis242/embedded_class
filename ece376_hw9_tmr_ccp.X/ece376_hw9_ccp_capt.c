@@ -235,6 +235,10 @@ void main(void) {
     LCD_set_cursor_position(2,1);
     for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(stkptr_reg_string[i]);
     
+    // Set the ~POR and ~BOR bits so that we can tell if this is what happens with the rest next time around...
+    RCONbits.POR = 1u;
+    RCONbits.BOR = 1u;
+    
     while(!DEBUG_BUTTON);       // Wait until user presses the debug button to continue
     LCD_clear_display();
     LCD_set_cursor_position(1,1);
