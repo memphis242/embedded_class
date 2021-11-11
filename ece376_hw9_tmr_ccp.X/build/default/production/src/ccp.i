@@ -4489,7 +4489,7 @@ typedef enum { TMR1_CCP1, TMR1_CCPx, TM3_CCP2, TM3_CCPx} tmr_ccp_pair_t;
 void CCP1_Compare_Init_Default(uint16_t comp_val);
 void CCP2_Compare_Init_Default(uint16_t comp_val);
 void CCP1_Capture_Init_Default(void);
-void CCP1_Capture_Init_Default(void);
+void CCP2_Capture_Init_Default(void);
 # 10 "src/ccp.c" 2
 
 # 1 "inc\\timer.h" 1

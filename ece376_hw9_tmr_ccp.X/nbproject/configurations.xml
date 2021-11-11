@@ -24,6 +24,7 @@
       </logicalFolder>
       <itemPath>ece376_hw9_ccp_comp.c</itemPath>
       <itemPath>ece376_hw9_ccp_capt.c</itemPath>
+      <itemPath>ccp_capt_test.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -113,7 +114,7 @@
       </HI-TECH-COMP>
       <HI-TECH-LINK>
         <property key="additional-options-checksum" value=""/>
-        <property key="additional-options-code-offset" value="0x800"/>
+        <property key="additional-options-code-offset" value=""/>
         <property key="additional-options-command-line" value=""/>
         <property key="additional-options-errata" value=""/>
         <property key="additional-options-extend-address" value="false"/>

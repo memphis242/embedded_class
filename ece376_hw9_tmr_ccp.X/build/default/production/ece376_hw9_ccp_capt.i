@@ -4737,7 +4737,7 @@ typedef enum { TMR1_CCP1, TMR1_CCPx, TM3_CCP2, TM3_CCPx} tmr_ccp_pair_t;
 void CCP1_Compare_Init_Default(uint16_t comp_val);
 void CCP2_Compare_Init_Default(uint16_t comp_val);
 void CCP1_Capture_Init_Default(void);
-void CCP1_Capture_Init_Default(void);
+void CCP2_Capture_Init_Default(void);
 # 115 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "inc\\timer.h" 1
@@ -4784,6 +4784,9 @@ uint8_t LCD_set_cursor_position(uint8_t line, uint8_t pos_on_line);
 uint8_t LCD_write_characters(char * toWrite, uint8_t size);
 uint8_t LCD_turn_off_cursor(void);
 uint8_t LCD_turn_on_cursor(void);
+
+
+void LCD_write_uint32_number(uint32_t num);
 # 117 "ece376_hw9_ccp_capt.c" 2
 # 128 "ece376_hw9_ccp_capt.c"
 volatile static uint32_t elapsed_time = 0u;
@@ -4793,6 +4796,10 @@ const static char init_msg[] = "Init success!";
 const static char start_game_msg[] = "Game begun!";
 const static char result_msg_title[] = "Result:";
 static char result_msg[17];
+static uint16_t num_of_seconds = 0u;
+static uint16_t num_of_ms = 0u;
+static uint16_t num_of_us = 0u;
+volatile static uint8_t isr_count = 1u;
 
 
 
@@ -4812,6 +4819,11 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
     if(PIR1bits.TMR1IF && PIE1bits.TMR1IE) {
 
+
+
+
+
+
         elapsed_time += 0x10000u;
 
         (PIR1bits.TMR1IF = 0u);
@@ -4824,7 +4836,9 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
     if(PIR1bits.CCP1IF && PIE1bits.CCP1IE){
         elapsed_time = elapsed_time + (uint32_t) CCPR1 - 30000000u;
+
   game_done_flag = 0x01u;
+        T1CON &= ~0x01;
 
 
   (PIR1bits.CCP1IF = 0u);
@@ -4862,7 +4876,7 @@ void main(void) {
     LATDbits.LATD0 = 0u;
     LCD_clear_display();
     LCD_set_cursor_position(1,1);
-# 228 "ece376_hw9_ccp_capt.c"
+# 243 "ece376_hw9_ccp_capt.c"
     char rcon_reg_string[16] = "RCON: ";
     char stkptr_reg_string[16] = "STKPTR: ";
     strcat(rcon_reg_string, hex_to_bit_string( (uint8_t)RCON ) );
@@ -4891,6 +4905,11 @@ void main(void) {
     CCP1_Capture_Init_Default();
 
 
+
+
+
+
+
     PORTB = 0x00;
     PORTC = 0x00;
     PORTD = 0x00;
@@ -4900,9 +4919,7 @@ void main(void) {
 
   if(PORTBbits.RB0) {
             elapsed_time = 0u;
-
-
-            Timer1_Enable();
+            T1CON |= 0x01;
             (INTCONbits.PEIE = 1u);
             (INTCONbits.GIE = 1);
 
@@ -4917,11 +4934,15 @@ void main(void) {
             LATDbits.LATD0 = 1u;
 
 
+
+
+
+
             while(!game_done_flag);
-# 293 "ece376_hw9_ccp_capt.c"
-            uint16_t num_of_seconds = (uint16_t) (elapsed_time / 10000000u);
-            uint16_t num_of_ms = (uint16_t) ((elapsed_time % 10000000u) / 10000u);
-            uint16_t num_of_us = (uint16_t) ((elapsed_time % 10000000u) % 10000u) / 10u;
+# 315 "ece376_hw9_ccp_capt.c"
+            num_of_seconds = (uint16_t) (elapsed_time / 10000000u);
+            num_of_ms = (uint16_t) ((elapsed_time % 10000000u) / 10000u);
+            num_of_us = (uint16_t) ((elapsed_time % 10000000u) % 10000u) / 10u;
 
 
 
@@ -4932,16 +4953,16 @@ void main(void) {
             LCD_set_cursor_position(2,1);
             for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(result_msg[i]);
 
+
             _delay((unsigned long)((3000)*(40000000u/4000.0)));
             _delay((unsigned long)((2000)*(40000000u/4000.0)));
 
 
             LATDbits.LATD0 = 0u;
+            elapsed_time = 0u;
             LCD_clear_display();
             game_done_flag = 0x00;
-            Timer1_Disable();
-            (INTCONbits.PEIE = 0u);
-            (INTCONbits.GIE = 0);
+
         }
 
  }

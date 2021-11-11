@@ -3,15 +3,15 @@
   <executable name="dist/default/production\ece376_hw9_tmr_ccp.X.production.hex">
     <memory name="program">
       <units>bytes</units>
-      <length>63488</length>
-      <used>6022</used>
-      <free>57466</free>
+      <length>65536</length>
+      <used>6057</used>
+      <free>59479</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>3968</length>
-      <used>280</used>
-      <free>3688</free>
+      <used>291</used>
+      <free>3677</free>
     </memory>
   </executable>
 </project>

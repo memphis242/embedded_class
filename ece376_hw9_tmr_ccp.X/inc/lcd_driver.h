@@ -240,6 +240,9 @@ uint8_t LCD_write_characters(char * toWrite, uint8_t size);
 uint8_t LCD_turn_off_cursor(void);
 uint8_t LCD_turn_on_cursor(void);
 
+// Higher level functions
+void LCD_write_uint32_number(uint32_t num);
+
 
 
 #endif	/* endif for the IFNDEF LCD_DRIVER_H */

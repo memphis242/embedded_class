@@ -4496,17 +4496,18 @@ typedef enum { TMR1_CCP1, TMR1_CCPx, TM3_CCP2, TM3_CCPx} tmr_ccp_pair_t;
 void CCP1_Compare_Init_Default(uint16_t comp_val);
 void CCP2_Compare_Init_Default(uint16_t comp_val);
 void CCP1_Capture_Init_Default(void);
-void CCP1_Capture_Init_Default(void);
+void CCP2_Capture_Init_Default(void);
 # 11 "src/timer.c" 2
 # 31 "src/timer.c"
 void Timer1_Init_Default(void){
     T1CON = 0x80;
+    (PIE1bits.TMR1IE = 1u);
 }
-# 43 "src/timer.c"
+# 44 "src/timer.c"
 void Timer1_Enable(void){
     T1CON |= 0x01;
 }
-# 55 "src/timer.c"
+# 56 "src/timer.c"
 void Timer1_Disable(void){
     T1CON &= ~0x01;
 }

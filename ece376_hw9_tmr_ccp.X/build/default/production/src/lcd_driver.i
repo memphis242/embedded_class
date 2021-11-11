@@ -4508,6 +4508,9 @@ uint8_t LCD_set_cursor_position(uint8_t line, uint8_t pos_on_line);
 uint8_t LCD_write_characters(char * toWrite, uint8_t size);
 uint8_t LCD_turn_off_cursor(void);
 uint8_t LCD_turn_on_cursor(void);
+
+
+void LCD_write_uint32_number(uint32_t num);
 # 11 "src/lcd_driver.c" 2
 
 
@@ -4930,4 +4933,35 @@ uint8_t LCD_turn_on_cursor(void){
     current_disp_ctrl |= 0x02u;
 
     return 1;
+}
+
+
+
+void LCD_write_uint32_number(uint32_t num){
+
+
+    uint8_t num_of_digits = 0u;
+    if(num < 10u) num_of_digits = 1u;
+    else if(num < 100u) num_of_digits = 2u;
+    else if(num < 1000u) num_of_digits = 3u;
+    else if(num < 10000u) num_of_digits = 4u;
+    else if(num < 100000u) num_of_digits = 5u;
+    else if(num < 1000000u) num_of_digits = 6u;
+    else if(num < 10000000u) num_of_digits = 7u;
+    else if(num < 100000000u) num_of_digits = 8u;
+    else if(num < 1000000000u) num_of_digits = 9u;
+    else if(num < 10000000000u) num_of_digits = 10u;
+
+
+    uint8_t digits[10] = {0u};
+    for(uint8_t i=0; i<num_of_digits; i++){
+        digits[i] = num % 10;
+        num /= 10;
+    }
+
+
+    for(int8_t i=(num_of_digits-1); i>=0; i--){
+        LCD_write_data_byte_4bit( (char) digits[i] + '0');
+    }
+
 }

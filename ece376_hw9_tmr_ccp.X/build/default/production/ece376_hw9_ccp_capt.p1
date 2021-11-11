@@ -34,6 +34,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4352
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 4352: extern volatile unsigned short CCPR1 __attribute__((address(0xFBE)));
 [v _CCPR1 `Vus ~T0 @X0 0 e@4030 ]
+"5224
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 5224: extern volatile unsigned char T1CON __attribute__((address(0xFCD)));
+[v _T1CON `Vuc ~T0 @X0 0 e@4045 ]
 [p mainexit ]
 "1824
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 1824: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
@@ -90,8 +93,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\string.h: 36: char *strcat (char *restrict, const char *restrict);
 [v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
-"138 ece376_hw9_ccp_capt.c
-[; ;ece376_hw9_ccp_capt.c: 138: static char * hex_to_bit_string(uint8_t hex_val);
+"142 ece376_hw9_ccp_capt.c
+[; ;ece376_hw9_ccp_capt.c: 142: static char * hex_to_bit_string(uint8_t hex_val);
 [v _hex_to_bit_string `(*uc ~T0 @X0 0 sf1`uc ]
 "5348 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 5348: extern volatile unsigned char RCON __attribute__((address(0xFD0)));
@@ -160,12 +163,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "63 inc\timer.h
 [; ;inc\timer.h: 63: void Timer1_Init_Default(void);
 [v _Timer1_Init_Default `(v ~T0 @X0 0 ef ]
-"163 inc\ccp.h
-[; ;inc\ccp.h: 163: void CCP1_Capture_Init_Default(void);
+"162 inc\ccp.h
+[; ;inc\ccp.h: 162: void CCP1_Capture_Init_Default(void);
 [v _CCP1_Capture_Init_Default `(v ~T0 @X0 0 ef ]
-"64 inc\timer.h
-[; ;inc\timer.h: 64: void Timer1_Enable(void);
-[v _Timer1_Enable `(v ~T0 @X0 0 ef ]
 "6380 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h: 6380:     struct {
 [s S263 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -187,9 +187,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS262 ~T0 @X0 0 e@4082 ]
 "113 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"65 inc\timer.h
-[; ;inc\timer.h: 65: void Timer1_Disable(void);
-[v _Timer1_Disable `(v ~T0 @X0 0 ef ]
 "54 ece376_hw9_ccp_capt.c
 [p x OSC  =  HSPLL       ]
 "55
@@ -743,87 +740,114 @@ Version 4.0 HI-TECH Software Intermediate Code
 "134
 [; ;ece376_hw9_ccp_capt.c: 134: static char result_msg[17];
 [v _result_msg `uc ~T0 @X0 -> 17 `i s ]
+"135
+[; ;ece376_hw9_ccp_capt.c: 135: static uint16_t num_of_seconds = 0u;
+[v _num_of_seconds `us ~T0 @X0 1 s ]
+[i _num_of_seconds
+-> -> 0 `ui `us
+]
+"136
+[; ;ece376_hw9_ccp_capt.c: 136: static uint16_t num_of_ms = 0u;
+[v _num_of_ms `us ~T0 @X0 1 s ]
+[i _num_of_ms
+-> -> 0 `ui `us
+]
+"137
+[; ;ece376_hw9_ccp_capt.c: 137: static uint16_t num_of_us = 0u;
+[v _num_of_us `us ~T0 @X0 1 s ]
+[i _num_of_us
+-> -> 0 `ui `us
+]
+"138
+[; ;ece376_hw9_ccp_capt.c: 138: volatile static uint8_t isr_count = 1u;
+[v _isr_count `Vuc ~T0 @X0 1 s ]
+[i _isr_count
+-> -> 1 `ui `uc
+]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"146
-[; ;ece376_hw9_ccp_capt.c: 146: void __attribute__((picinterrupt(("")))) isr(void){
+"150
+[; ;ece376_hw9_ccp_capt.c: 150: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T39 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"152
-[; ;ece376_hw9_ccp_capt.c: 152:     if(PIR1bits.TMR1IF && PIE1bits.TMR1IE) {
+"156
+[; ;ece376_hw9_ccp_capt.c: 156:     if(PIR1bits.TMR1IF && PIE1bits.TMR1IE) {
 [e $ ! && != -> . . _PIR1bits 0 0 `i -> 0 `i != -> . . _PIE1bits 0 0 `i -> 0 `i 274  ]
 {
-"154
-[; ;ece376_hw9_ccp_capt.c: 154:         elapsed_time += 0x10000u;
+"163
+[; ;ece376_hw9_ccp_capt.c: 163:         elapsed_time += 0x10000u;
 [e =+ _elapsed_time -> -> 65536 `ul `Vul ]
-"156
-[; ;ece376_hw9_ccp_capt.c: 156:         (PIR1bits.TMR1IF = 0u);
+"165
+[; ;ece376_hw9_ccp_capt.c: 165:         (PIR1bits.TMR1IF = 0u);
 [e = . . _PIR1bits 0 0 -> -> 0 `ui `uc ]
-"157
-[; ;ece376_hw9_ccp_capt.c: 157:     }
+"166
+[; ;ece376_hw9_ccp_capt.c: 166:     }
 }
 [e :U 274 ]
-"164
-[; ;ece376_hw9_ccp_capt.c: 164:     if(PIR1bits.CCP1IF && PIE1bits.CCP1IE){
+"173
+[; ;ece376_hw9_ccp_capt.c: 173:     if(PIR1bits.CCP1IF && PIE1bits.CCP1IE){
 [e $ ! && != -> . . _PIR1bits 0 2 `i -> 0 `i != -> . . _PIE1bits 0 2 `i -> 0 `i 275  ]
 {
-"165
-[; ;ece376_hw9_ccp_capt.c: 165:         elapsed_time = elapsed_time + (uint32_t) CCPR1 - 30000000u;
+"174
+[; ;ece376_hw9_ccp_capt.c: 174:         elapsed_time = elapsed_time + (uint32_t) CCPR1 - 30000000u;
 [e = _elapsed_time - + _elapsed_time -> _CCPR1 `ul -> 30000000 `ul ]
-"166
-[; ;ece376_hw9_ccp_capt.c: 166:   game_done_flag = 0x01u;
+"176
+[; ;ece376_hw9_ccp_capt.c: 176:   game_done_flag = 0x01u;
 [e = _game_done_flag -> -> 1 `ui `uc ]
-"169
-[; ;ece376_hw9_ccp_capt.c: 169:   (PIR1bits.CCP1IF = 0u);
+"177
+[; ;ece376_hw9_ccp_capt.c: 177:         T1CON &= ~0x01;
+[e =& _T1CON -> ~ -> 1 `i `Vuc ]
+"180
+[; ;ece376_hw9_ccp_capt.c: 180:   (PIR1bits.CCP1IF = 0u);
 [e = . . _PIR1bits 0 2 -> -> 0 `ui `uc ]
-"170
-[; ;ece376_hw9_ccp_capt.c: 170:     }
+"181
+[; ;ece376_hw9_ccp_capt.c: 181:     }
 }
 [e :U 275 ]
-"172
-[; ;ece376_hw9_ccp_capt.c: 172:     return;
+"183
+[; ;ece376_hw9_ccp_capt.c: 183:     return;
 [e $UE 273  ]
-"173
-[; ;ece376_hw9_ccp_capt.c: 173: }
+"184
+[; ;ece376_hw9_ccp_capt.c: 184: }
 [e :UE 273 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"176
-[; ;ece376_hw9_ccp_capt.c: 176: void main(void) {
+"187
+[; ;ece376_hw9_ccp_capt.c: 187: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"184
-[; ;ece376_hw9_ccp_capt.c: 184:  TRISC |= (1u << 2);
-[e =| _TRISC -> << -> 1 `ui -> 2 `i `Vuc ]
-"185
-[; ;ece376_hw9_ccp_capt.c: 185:  ADCON1 |= 0x0F;
-[e =| _ADCON1 -> -> 15 `i `Vuc ]
-"186
-[; ;ece376_hw9_ccp_capt.c: 186:  TRISB |= (1u << 0);
-[e =| _TRISB -> << -> 1 `ui -> 0 `i `Vuc ]
-"187
-[; ;ece376_hw9_ccp_capt.c: 187:     TRISD &= ~(1u << 0);
-[e =& _TRISD -> ~ << -> 1 `ui -> 0 `i `Vuc ]
-"189
-[; ;ece376_hw9_ccp_capt.c: 189:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"190
-[; ;ece376_hw9_ccp_capt.c: 190:     PORTC = 0x00;
-[e = _PORTC -> -> 0 `i `uc ]
-"191
-[; ;ece376_hw9_ccp_capt.c: 191:     PORTD = 0x00;
-[e = _PORTD -> -> 0 `i `uc ]
-"194
-[; ;ece376_hw9_ccp_capt.c: 194:  LCD_Init_ECE376();
-[e ( _LCD_Init_ECE376 ..  ]
 "195
-[; ;ece376_hw9_ccp_capt.c: 195:     LCD_set_cursor_position(1,1);
-[e ( _LCD_set_cursor_position (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;ece376_hw9_ccp_capt.c: 195:  TRISC |= (1u << 2);
+[e =| _TRISC -> << -> 1 `ui -> 2 `i `Vuc ]
 "196
-[; ;ece376_hw9_ccp_capt.c: 196:     for(uint8_t i=0; i<13; i++){
+[; ;ece376_hw9_ccp_capt.c: 196:  ADCON1 |= 0x0F;
+[e =| _ADCON1 -> -> 15 `i `Vuc ]
+"197
+[; ;ece376_hw9_ccp_capt.c: 197:  TRISB |= (1u << 0);
+[e =| _TRISB -> << -> 1 `ui -> 0 `i `Vuc ]
+"198
+[; ;ece376_hw9_ccp_capt.c: 198:     TRISD &= ~(1u << 0);
+[e =& _TRISD -> ~ << -> 1 `ui -> 0 `i `Vuc ]
+"200
+[; ;ece376_hw9_ccp_capt.c: 200:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
+"201
+[; ;ece376_hw9_ccp_capt.c: 201:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
+"202
+[; ;ece376_hw9_ccp_capt.c: 202:     PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
+"205
+[; ;ece376_hw9_ccp_capt.c: 205:  LCD_Init_ECE376();
+[e ( _LCD_Init_ECE376 ..  ]
+"206
+[; ;ece376_hw9_ccp_capt.c: 206:     LCD_set_cursor_position(1,1);
+[e ( _LCD_set_cursor_position (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"207
+[; ;ece376_hw9_ccp_capt.c: 207:     for(uint8_t i=0; i<13; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -831,36 +855,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 278  ]
 [e :U 277 ]
 {
-"197
-[; ;ece376_hw9_ccp_capt.c: 197:         LCD_write_data_byte_4bit(init_msg[i]);
+"208
+[; ;ece376_hw9_ccp_capt.c: 208:         LCD_write_data_byte_4bit(init_msg[i]);
 [e ( _LCD_write_data_byte_4bit (1 -> *U + &U _init_msg * -> _i `ux -> -> # *U &U _init_msg `ui `ux `uc ]
-"198
-[; ;ece376_hw9_ccp_capt.c: 198:     }
+"209
+[; ;ece376_hw9_ccp_capt.c: 209:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 13 `i 277  ]
 [e :U 278 ]
 }
-"199
-[; ;ece376_hw9_ccp_capt.c: 199:     LATDbits.LATD0 = 1u;
+"210
+[; ;ece376_hw9_ccp_capt.c: 210:     LATDbits.LATD0 = 1u;
 [e = . . _LATDbits 0 0 -> -> 1 `ui `uc ]
-"200
-[; ;ece376_hw9_ccp_capt.c: 200:     _delay((unsigned long)((2000)*(40000000u/4000.0)));
+"211
+[; ;ece376_hw9_ccp_capt.c: 211:     _delay((unsigned long)((2000)*(40000000u/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 40000000 `ul `d .4000.0 `ul ]
-"201
-[; ;ece376_hw9_ccp_capt.c: 201:     LATDbits.LATD0 = 0u;
+"212
+[; ;ece376_hw9_ccp_capt.c: 212:     LATDbits.LATD0 = 0u;
 [e = . . _LATDbits 0 0 -> -> 0 `ui `uc ]
-"202
-[; ;ece376_hw9_ccp_capt.c: 202:     LCD_clear_display();
+"213
+[; ;ece376_hw9_ccp_capt.c: 213:     LCD_clear_display();
 [e ( _LCD_clear_display ..  ]
-"203
-[; ;ece376_hw9_ccp_capt.c: 203:     LCD_set_cursor_position(1,1);
+"214
+[; ;ece376_hw9_ccp_capt.c: 214:     LCD_set_cursor_position(1,1);
 [e ( _LCD_set_cursor_position (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[v F3014 `uc ~T0 @X0 -> 16 `i s ]
-[i F3014
+[v F3020 `uc ~T0 @X0 -> 16 `i s ]
+[i F3020
 :U ..
-"228
-[; ;ece376_hw9_ccp_capt.c: 228:     char rcon_reg_string[16] = "RCON: ";
+"243
+[; ;ece376_hw9_ccp_capt.c: 243:     char rcon_reg_string[16] = "RCON: ";
 -> 82 `c
 -> 67 `c
 -> 79 `c
@@ -871,12 +895,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _rcon_reg_string `uc ~T0 @X0 -> 16 `i a ]
-[e = _rcon_reg_string F3014 ]
-[v F3016 `uc ~T0 @X0 -> 16 `i s ]
-[i F3016
+[e = _rcon_reg_string F3020 ]
+[v F3022 `uc ~T0 @X0 -> 16 `i s ]
+[i F3022
 :U ..
-"229
-[; ;ece376_hw9_ccp_capt.c: 229:     char stkptr_reg_string[16] = "STKPTR: ";
+"244
+[; ;ece376_hw9_ccp_capt.c: 244:     char stkptr_reg_string[16] = "STKPTR: ";
 -> 83 `c
 -> 84 `c
 -> 75 `c
@@ -889,18 +913,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _stkptr_reg_string `uc ~T0 @X0 -> 16 `i a ]
-[e = _stkptr_reg_string F3016 ]
-"230
-[; ;ece376_hw9_ccp_capt.c: 230:     strcat(rcon_reg_string, hex_to_bit_string( (uint8_t)RCON ) );
+[e = _stkptr_reg_string F3022 ]
+"245
+[; ;ece376_hw9_ccp_capt.c: 245:     strcat(rcon_reg_string, hex_to_bit_string( (uint8_t)RCON ) );
 [e ( _strcat (2 , &U _rcon_reg_string -> ( _hex_to_bit_string (1 _RCON `*Cuc ]
-"231
-[; ;ece376_hw9_ccp_capt.c: 231:     strcat(stkptr_reg_string, hex_to_bit_string( (uint8_t)STKPTR ) );
+"246
+[; ;ece376_hw9_ccp_capt.c: 246:     strcat(stkptr_reg_string, hex_to_bit_string( (uint8_t)STKPTR ) );
 [e ( _strcat (2 , &U _stkptr_reg_string -> ( _hex_to_bit_string (1 _STKPTR `*Cuc ]
-"233
-[; ;ece376_hw9_ccp_capt.c: 233:     LCD_set_cursor_position(1,1);
+"248
+[; ;ece376_hw9_ccp_capt.c: 248:     LCD_set_cursor_position(1,1);
 [e ( _LCD_set_cursor_position (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"234
-[; ;ece376_hw9_ccp_capt.c: 234:     for(uint8_t i=0; i<14; i++) LCD_write_data_byte_4bit(rcon_reg_string[i]);
+"249
+[; ;ece376_hw9_ccp_capt.c: 249:     for(uint8_t i=0; i<14; i++) LCD_write_data_byte_4bit(rcon_reg_string[i]);
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -912,11 +936,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < -> _i `i -> 14 `i 280  ]
 [e :U 281 ]
 }
-"235
-[; ;ece376_hw9_ccp_capt.c: 235:     LCD_set_cursor_position(2,1);
+"250
+[; ;ece376_hw9_ccp_capt.c: 250:     LCD_set_cursor_position(2,1);
 [e ( _LCD_set_cursor_position (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"236
-[; ;ece376_hw9_ccp_capt.c: 236:     for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(stkptr_reg_string[i]);
+"251
+[; ;ece376_hw9_ccp_capt.c: 251:     for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(stkptr_reg_string[i]);
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -928,65 +952,65 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < -> _i `i -> 16 `i 283  ]
 [e :U 284 ]
 }
-"239
-[; ;ece376_hw9_ccp_capt.c: 239:     RCONbits.POR = 1u;
+"254
+[; ;ece376_hw9_ccp_capt.c: 254:     RCONbits.POR = 1u;
 [e = . . _RCONbits 6 1 -> -> 1 `ui `uc ]
-"240
-[; ;ece376_hw9_ccp_capt.c: 240:     RCONbits.BOR = 1u;
+"255
+[; ;ece376_hw9_ccp_capt.c: 255:     RCONbits.BOR = 1u;
 [e = . . _RCONbits 6 0 -> -> 1 `ui `uc ]
-"242
-[; ;ece376_hw9_ccp_capt.c: 242:     while(!PORTBbits.RB0);
+"257
+[; ;ece376_hw9_ccp_capt.c: 257:     while(!PORTBbits.RB0);
 [e $U 286  ]
 [e :U 287 ]
 [e :U 286 ]
 [e $ ! != -> . . _PORTBbits 0 0 `i -> 0 `i 287  ]
 [e :U 288 ]
-"243
-[; ;ece376_hw9_ccp_capt.c: 243:     LCD_clear_display();
-[e ( _LCD_clear_display ..  ]
-"244
-[; ;ece376_hw9_ccp_capt.c: 244:     LCD_set_cursor_position(1,1);
-[e ( _LCD_set_cursor_position (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"245
-[; ;ece376_hw9_ccp_capt.c: 245:     _delay((unsigned long)((2000)*(40000000u/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 40000000 `ul `d .4000.0 `ul ]
-"252
-[; ;ece376_hw9_ccp_capt.c: 252:  Timer1_Init_Default();
-[e ( _Timer1_Init_Default ..  ]
-"253
-[; ;ece376_hw9_ccp_capt.c: 253:     CCP1_Capture_Init_Default();
-[e ( _CCP1_Capture_Init_Default ..  ]
-"256
-[; ;ece376_hw9_ccp_capt.c: 256:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"257
-[; ;ece376_hw9_ccp_capt.c: 257:     PORTC = 0x00;
-[e = _PORTC -> -> 0 `i `uc ]
 "258
-[; ;ece376_hw9_ccp_capt.c: 258:     PORTD = 0x00;
+[; ;ece376_hw9_ccp_capt.c: 258:     LCD_clear_display();
+[e ( _LCD_clear_display ..  ]
+"259
+[; ;ece376_hw9_ccp_capt.c: 259:     LCD_set_cursor_position(1,1);
+[e ( _LCD_set_cursor_position (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"260
+[; ;ece376_hw9_ccp_capt.c: 260:     _delay((unsigned long)((2000)*(40000000u/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 40000000 `ul `d .4000.0 `ul ]
+"267
+[; ;ece376_hw9_ccp_capt.c: 267:  Timer1_Init_Default();
+[e ( _Timer1_Init_Default ..  ]
+"268
+[; ;ece376_hw9_ccp_capt.c: 268:     CCP1_Capture_Init_Default();
+[e ( _CCP1_Capture_Init_Default ..  ]
+"276
+[; ;ece376_hw9_ccp_capt.c: 276:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
+"277
+[; ;ece376_hw9_ccp_capt.c: 277:     PORTC = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
+"278
+[; ;ece376_hw9_ccp_capt.c: 278:     PORTD = 0x00;
 [e = _PORTD -> -> 0 `i `uc ]
-"261
-[; ;ece376_hw9_ccp_capt.c: 261:  while(1){
+"281
+[; ;ece376_hw9_ccp_capt.c: 281:  while(1){
 [e :U 290 ]
 {
-"263
-[; ;ece376_hw9_ccp_capt.c: 263:   if(PORTBbits.RB0) {
+"283
+[; ;ece376_hw9_ccp_capt.c: 283:   if(PORTBbits.RB0) {
 [e $ ! != -> . . _PORTBbits 0 0 `i -> 0 `i 292  ]
 {
-"264
-[; ;ece376_hw9_ccp_capt.c: 264:             elapsed_time = 0u;
+"284
+[; ;ece376_hw9_ccp_capt.c: 284:             elapsed_time = 0u;
 [e = _elapsed_time -> -> 0 `ui `ul ]
-"267
-[; ;ece376_hw9_ccp_capt.c: 267:             Timer1_Enable();
-[e ( _Timer1_Enable ..  ]
-"268
-[; ;ece376_hw9_ccp_capt.c: 268:             (INTCONbits.PEIE = 1u);
+"285
+[; ;ece376_hw9_ccp_capt.c: 285:             T1CON |= 0x01;
+[e =| _T1CON -> -> 1 `i `Vuc ]
+"286
+[; ;ece376_hw9_ccp_capt.c: 286:             (INTCONbits.PEIE = 1u);
 [e = . . _INTCONbits 1 6 -> -> 1 `ui `uc ]
-"269
-[; ;ece376_hw9_ccp_capt.c: 269:             (INTCONbits.GIE = 1);
+"287
+[; ;ece376_hw9_ccp_capt.c: 287:             (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"272
-[; ;ece376_hw9_ccp_capt.c: 272:             for(uint8_t i=0; i<11; i++) LCD_write_data_byte_4bit(start_game_msg[i]);
+"290
+[; ;ece376_hw9_ccp_capt.c: 290:             for(uint8_t i=0; i<11; i++) LCD_write_data_byte_4bit(start_game_msg[i]);
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -998,48 +1022,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < -> _i `i -> 11 `i 293  ]
 [e :U 294 ]
 }
-"273
-[; ;ece376_hw9_ccp_capt.c: 273:             _delay((unsigned long)((1000)*(40000000u/4000.0)));
+"291
+[; ;ece376_hw9_ccp_capt.c: 291:             _delay((unsigned long)((1000)*(40000000u/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 40000000 `ul `d .4000.0 `ul ]
-"274
-[; ;ece376_hw9_ccp_capt.c: 274:             LCD_clear_display();
+"292
+[; ;ece376_hw9_ccp_capt.c: 292:             LCD_clear_display();
 [e ( _LCD_clear_display ..  ]
-"275
-[; ;ece376_hw9_ccp_capt.c: 275:             _delay((unsigned long)((2000)*(40000000u/4000.0)));
+"293
+[; ;ece376_hw9_ccp_capt.c: 293:             _delay((unsigned long)((2000)*(40000000u/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 40000000 `ul `d .4000.0 `ul ]
-"276
-[; ;ece376_hw9_ccp_capt.c: 276:             _delay((unsigned long)((2000)*(40000000u/4000.0)));
+"294
+[; ;ece376_hw9_ccp_capt.c: 294:             _delay((unsigned long)((2000)*(40000000u/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 40000000 `ul `d .4000.0 `ul ]
-"279
-[; ;ece376_hw9_ccp_capt.c: 279:             LATDbits.LATD0 = 1u;
+"297
+[; ;ece376_hw9_ccp_capt.c: 297:             LATDbits.LATD0 = 1u;
 [e = . . _LATDbits 0 0 -> -> 1 `ui `uc ]
-"282
-[; ;ece376_hw9_ccp_capt.c: 282:             while(!game_done_flag);
+"304
+[; ;ece376_hw9_ccp_capt.c: 304:             while(!game_done_flag);
 [e $U 296  ]
 [e :U 297 ]
 [e :U 296 ]
 [e $ ! != -> _game_done_flag `i -> 0 `i 297  ]
 [e :U 298 ]
-"293
-[; ;ece376_hw9_ccp_capt.c: 293:             uint16_t num_of_seconds = (uint16_t) (elapsed_time / 10000000u);
-[v _num_of_seconds `us ~T0 @X0 1 a ]
+"315
+[; ;ece376_hw9_ccp_capt.c: 315:             num_of_seconds = (uint16_t) (elapsed_time / 10000000u);
 [e = _num_of_seconds -> / _elapsed_time -> 10000000 `ul `us ]
-"294
-[; ;ece376_hw9_ccp_capt.c: 294:             uint16_t num_of_ms = (uint16_t) ((elapsed_time % 10000000u) / 10000u);
-[v _num_of_ms `us ~T0 @X0 1 a ]
+"316
+[; ;ece376_hw9_ccp_capt.c: 316:             num_of_ms = (uint16_t) ((elapsed_time % 10000000u) / 10000u);
 [e = _num_of_ms -> / % _elapsed_time -> 10000000 `ul -> -> 10000 `ui `ul `us ]
-"295
-[; ;ece376_hw9_ccp_capt.c: 295:             uint16_t num_of_us = (uint16_t) ((elapsed_time % 10000000u) % 10000u) / 10u;
-[v _num_of_us `us ~T0 @X0 1 a ]
+"317
+[; ;ece376_hw9_ccp_capt.c: 317:             num_of_us = (uint16_t) ((elapsed_time % 10000000u) % 10000u) / 10u;
 [e = _num_of_us -> / -> -> % % _elapsed_time -> 10000000 `ul -> -> 10000 `ui `ul `us `ui -> 10 `ui `us ]
-"299
-[; ;ece376_hw9_ccp_capt.c: 299:             sprintf(result_msg, "%-3us:%-3ums:%-3uus", num_of_seconds, num_of_ms, num_of_us);
+"321
+[; ;ece376_hw9_ccp_capt.c: 321:             sprintf(result_msg, "%-3us:%-3ums:%-3uus", num_of_seconds, num_of_ms, num_of_us);
 [e ( _sprintf (1 , , , (. , &U _result_msg :s 1C -> _num_of_seconds `ui -> _num_of_ms `ui -> _num_of_us `ui ]
-"301
-[; ;ece376_hw9_ccp_capt.c: 301:             LCD_set_cursor_position(1,1);
+"323
+[; ;ece376_hw9_ccp_capt.c: 323:             LCD_set_cursor_position(1,1);
 [e ( _LCD_set_cursor_position (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"302
-[; ;ece376_hw9_ccp_capt.c: 302:             for(uint8_t i=0; i<7; i++) LCD_write_data_byte_4bit(result_msg_title[i]);
+"324
+[; ;ece376_hw9_ccp_capt.c: 324:             for(uint8_t i=0; i<7; i++) LCD_write_data_byte_4bit(result_msg_title[i]);
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -1051,11 +1072,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < -> _i `i -> 7 `i 299  ]
 [e :U 300 ]
 }
-"303
-[; ;ece376_hw9_ccp_capt.c: 303:             LCD_set_cursor_position(2,1);
+"325
+[; ;ece376_hw9_ccp_capt.c: 325:             LCD_set_cursor_position(2,1);
 [e ( _LCD_set_cursor_position (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"304
-[; ;ece376_hw9_ccp_capt.c: 304:             for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(result_msg[i]);
+"326
+[; ;ece376_hw9_ccp_capt.c: 326:             for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(result_msg[i]);
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -1067,59 +1088,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < -> _i `i -> 16 `i 302  ]
 [e :U 303 ]
 }
-"306
-[; ;ece376_hw9_ccp_capt.c: 306:             _delay((unsigned long)((3000)*(40000000u/4000.0)));
+"329
+[; ;ece376_hw9_ccp_capt.c: 329:             _delay((unsigned long)((3000)*(40000000u/4000.0)));
 [e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 40000000 `ul `d .4000.0 `ul ]
-"307
-[; ;ece376_hw9_ccp_capt.c: 307:             _delay((unsigned long)((2000)*(40000000u/4000.0)));
+"330
+[; ;ece376_hw9_ccp_capt.c: 330:             _delay((unsigned long)((2000)*(40000000u/4000.0)));
 [e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 40000000 `ul `d .4000.0 `ul ]
-"310
-[; ;ece376_hw9_ccp_capt.c: 310:             LATDbits.LATD0 = 0u;
+"333
+[; ;ece376_hw9_ccp_capt.c: 333:             LATDbits.LATD0 = 0u;
 [e = . . _LATDbits 0 0 -> -> 0 `ui `uc ]
-"311
-[; ;ece376_hw9_ccp_capt.c: 311:             LCD_clear_display();
+"334
+[; ;ece376_hw9_ccp_capt.c: 334:             elapsed_time = 0u;
+[e = _elapsed_time -> -> 0 `ui `ul ]
+"335
+[; ;ece376_hw9_ccp_capt.c: 335:             LCD_clear_display();
 [e ( _LCD_clear_display ..  ]
-"312
-[; ;ece376_hw9_ccp_capt.c: 312:             game_done_flag = 0x00;
+"336
+[; ;ece376_hw9_ccp_capt.c: 336:             game_done_flag = 0x00;
 [e = _game_done_flag -> -> 0 `i `uc ]
-"313
-[; ;ece376_hw9_ccp_capt.c: 313:             Timer1_Disable();
-[e ( _Timer1_Disable ..  ]
-"314
-[; ;ece376_hw9_ccp_capt.c: 314:             (INTCONbits.PEIE = 0u);
-[e = . . _INTCONbits 1 6 -> -> 0 `ui `uc ]
-"315
-[; ;ece376_hw9_ccp_capt.c: 315:             (INTCONbits.GIE = 0);
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"316
-[; ;ece376_hw9_ccp_capt.c: 316:         }
+"338
+[; ;ece376_hw9_ccp_capt.c: 338:         }
 }
 [e :U 292 ]
-"318
-[; ;ece376_hw9_ccp_capt.c: 318:  }
+"340
+[; ;ece376_hw9_ccp_capt.c: 340:  }
 }
 [e :U 289 ]
 [e $U 290  ]
 [e :U 291 ]
-"320
-[; ;ece376_hw9_ccp_capt.c: 320:     return;
+"342
+[; ;ece376_hw9_ccp_capt.c: 342:     return;
 [e $UE 276  ]
-"321
-[; ;ece376_hw9_ccp_capt.c: 321: }
+"343
+[; ;ece376_hw9_ccp_capt.c: 343: }
 [e :UE 276 ]
 }
-"324
-[; ;ece376_hw9_ccp_capt.c: 324: static char * hex_to_bit_string(uint8_t hex_val){
+"346
+[; ;ece376_hw9_ccp_capt.c: 346: static char * hex_to_bit_string(uint8_t hex_val){
 [v _hex_to_bit_string `(*uc ~T0 @X0 1 sf1`uc ]
 {
 [e :U _hex_to_bit_string ]
 [v _hex_val `uc ~T0 @X0 1 r1 ]
 [f ]
-"326
-[; ;ece376_hw9_ccp_capt.c: 326:     static char bit_string[9];
-[v F3028 `uc ~T0 @X0 -> 9 `i s bit_string ]
-"328
-[; ;ece376_hw9_ccp_capt.c: 328:     for(uint8_t i=0; i<8; i++){
+"348
+[; ;ece376_hw9_ccp_capt.c: 348:     static char bit_string[9];
+[v F3031 `uc ~T0 @X0 -> 9 `i s bit_string ]
+"350
+[; ;ece376_hw9_ccp_capt.c: 350:     for(uint8_t i=0; i<8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
@@ -1127,25 +1142,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 307  ]
 [e :U 306 ]
 {
-"329
-[; ;ece376_hw9_ccp_capt.c: 329:         bit_string[i] = (hex_val & (0x1 << (7-i))) ? '1' : '0';
-[e = *U + &U F3028 * -> _i `ux -> -> # *U &U F3028 `ui `ux -> ? != & -> _hex_val `i << -> 1 `i - -> 7 `i -> _i `i -> 0 `i : -> 49 `ui -> 48 `ui `uc ]
-"330
-[; ;ece376_hw9_ccp_capt.c: 330:     }
+"351
+[; ;ece376_hw9_ccp_capt.c: 351:         bit_string[i] = (hex_val & (0x1 << (7-i))) ? '1' : '0';
+[e = *U + &U F3031 * -> _i `ux -> -> # *U &U F3031 `ui `ux -> ? != & -> _hex_val `i << -> 1 `i - -> 7 `i -> _i `i -> 0 `i : -> 49 `ui -> 48 `ui `uc ]
+"352
+[; ;ece376_hw9_ccp_capt.c: 352:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 8 `i 306  ]
 [e :U 307 ]
 }
-"331
-[; ;ece376_hw9_ccp_capt.c: 331:     bit_string[8] = '\0';
-[e = *U + &U F3028 * -> -> -> 8 `i `ui `ux -> -> # *U &U F3028 `ui `ux -> -> 0 `ui `uc ]
-"333
-[; ;ece376_hw9_ccp_capt.c: 333:     return bit_string;
-[e ) &U F3028 ]
+"353
+[; ;ece376_hw9_ccp_capt.c: 353:     bit_string[8] = '\0';
+[e = *U + &U F3031 * -> -> -> 8 `i `ui `ux -> -> # *U &U F3031 `ui `ux -> -> 0 `ui `uc ]
+"355
+[; ;ece376_hw9_ccp_capt.c: 355:     return bit_string;
+[e ) &U F3031 ]
 [e $UE 305  ]
-"335
-[; ;ece376_hw9_ccp_capt.c: 335: }
+"357
+[; ;ece376_hw9_ccp_capt.c: 357: }
 [e :UE 305 ]
 }
 [p f _sprintf 8422408 ]

@@ -1598,3 +1598,137 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;src/lcd_driver.c: 623: }
 [e :UE 327 ]
 }
+"627
+[; ;src/lcd_driver.c: 627: void LCD_write_uint32_number(uint32_t num){
+[v _LCD_write_uint32_number `(v ~T0 @X0 1 ef1`ul ]
+{
+[e :U _LCD_write_uint32_number ]
+[v _num `ul ~T0 @X0 1 r1 ]
+[f ]
+"630
+[; ;src/lcd_driver.c: 630:     uint8_t num_of_digits = 0u;
+[v _num_of_digits `uc ~T0 @X0 1 a ]
+[e = _num_of_digits -> -> 0 `ui `uc ]
+"631
+[; ;src/lcd_driver.c: 631:     if(num < 10u) num_of_digits = 1u;
+[e $ ! < _num -> -> 10 `ui `ul 332  ]
+[e = _num_of_digits -> -> 1 `ui `uc ]
+[e $U 333  ]
+"632
+[; ;src/lcd_driver.c: 632:     else if(num < 100u) num_of_digits = 2u;
+[e :U 332 ]
+[e $ ! < _num -> -> 100 `ui `ul 334  ]
+[e = _num_of_digits -> -> 2 `ui `uc ]
+[e $U 335  ]
+"633
+[; ;src/lcd_driver.c: 633:     else if(num < 1000u) num_of_digits = 3u;
+[e :U 334 ]
+[e $ ! < _num -> -> 1000 `ui `ul 336  ]
+[e = _num_of_digits -> -> 3 `ui `uc ]
+[e $U 337  ]
+"634
+[; ;src/lcd_driver.c: 634:     else if(num < 10000u) num_of_digits = 4u;
+[e :U 336 ]
+[e $ ! < _num -> -> 10000 `ui `ul 338  ]
+[e = _num_of_digits -> -> 4 `ui `uc ]
+[e $U 339  ]
+"635
+[; ;src/lcd_driver.c: 635:     else if(num < 100000u) num_of_digits = 5u;
+[e :U 338 ]
+[e $ ! < _num -> 100000 `ul 340  ]
+[e = _num_of_digits -> -> 5 `ui `uc ]
+[e $U 341  ]
+"636
+[; ;src/lcd_driver.c: 636:     else if(num < 1000000u) num_of_digits = 6u;
+[e :U 340 ]
+[e $ ! < _num -> 1000000 `ul 342  ]
+[e = _num_of_digits -> -> 6 `ui `uc ]
+[e $U 343  ]
+"637
+[; ;src/lcd_driver.c: 637:     else if(num < 10000000u) num_of_digits = 7u;
+[e :U 342 ]
+[e $ ! < _num -> 10000000 `ul 344  ]
+[e = _num_of_digits -> -> 7 `ui `uc ]
+[e $U 345  ]
+"638
+[; ;src/lcd_driver.c: 638:     else if(num < 100000000u) num_of_digits = 8u;
+[e :U 344 ]
+[e $ ! < _num -> 100000000 `ul 346  ]
+[e = _num_of_digits -> -> 8 `ui `uc ]
+[e $U 347  ]
+"639
+[; ;src/lcd_driver.c: 639:     else if(num < 1000000000u) num_of_digits = 9u;
+[e :U 346 ]
+[e $ ! < _num -> 1000000000 `ul 348  ]
+[e = _num_of_digits -> -> 9 `ui `uc ]
+[e $U 349  ]
+"640
+[; ;src/lcd_driver.c: 640:     else if(num < 10000000000u) num_of_digits = 10u;
+[e :U 348 ]
+[e $ ! < -> _num `uo -> 10000000000 `uo 350  ]
+[e = _num_of_digits -> -> 10 `ui `uc ]
+[e :U 350 ]
+[e :U 349 ]
+[e :U 347 ]
+[e :U 345 ]
+[e :U 343 ]
+[e :U 341 ]
+[e :U 339 ]
+[e :U 337 ]
+[e :U 335 ]
+[e :U 333 ]
+[v F2549 `uc ~T0 @X0 -> 10 `i s ]
+[i F2549
+:U ..
+"643
+[; ;src/lcd_driver.c: 643:     uint8_t digits[10] = {0u};
+-> -> 0 `ui `uc
+..
+]
+[v _digits `uc ~T0 @X0 -> 10 `i a ]
+[e = _digits F2549 ]
+"644
+[; ;src/lcd_driver.c: 644:     for(uint8_t i=0; i<num_of_digits; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 354  ]
+[e :U 351 ]
+{
+"645
+[; ;src/lcd_driver.c: 645:         digits[i] = num % 10;
+[e = *U + &U _digits * -> _i `ux -> -> # *U &U _digits `ui `ux -> % _num -> -> -> 10 `i `l `ul `uc ]
+"646
+[; ;src/lcd_driver.c: 646:         num /= 10;
+[e =/ _num -> -> -> 10 `i `l `ul ]
+"647
+[; ;src/lcd_driver.c: 647:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 354 ]
+[e $ < -> _i `i -> _num_of_digits `i 351  ]
+[e :U 352 ]
+}
+"650
+[; ;src/lcd_driver.c: 650:     for(int8_t i=(num_of_digits-1); i>=0; i--){
+{
+[v _i `c ~T0 @X0 1 a ]
+[e = _i -> - -> _num_of_digits `i -> 1 `i `c ]
+[e $ >= -> _i `i -> 0 `i 355  ]
+[e $U 356  ]
+[e :U 355 ]
+{
+"651
+[; ;src/lcd_driver.c: 651:         LCD_write_data_byte_4bit( (char) digits[i] + '0');
+[e ( _LCD_write_data_byte_4bit (1 -> + -> -> *U + &U _digits * -> -> _i `uc `ux -> -> # *U &U _digits `ui `ux `uc `ui -> 48 `ui `uc ]
+"652
+[; ;src/lcd_driver.c: 652:     }
+}
+[e -- _i -> -> 1 `i `c ]
+[e $ >= -> _i `i -> 0 `i 355  ]
+[e :U 356 ]
+}
+"654
+[; ;src/lcd_driver.c: 654: }
+[e :UE 331 ]
+}
