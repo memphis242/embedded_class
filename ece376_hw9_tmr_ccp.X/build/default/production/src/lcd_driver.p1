@@ -1663,11 +1663,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _num_of_digits -> -> 9 `ui `uc ]
 [e $U 349  ]
 "640
-[; ;src/lcd_driver.c: 640:     else if(num < 10000000000u) num_of_digits = 10u;
+[; ;src/lcd_driver.c: 640:     else num_of_digits = 10u;
 [e :U 348 ]
-[e $ ! < -> _num `uo -> 10000000000 `uo 350  ]
 [e = _num_of_digits -> -> 10 `ui `uc ]
-[e :U 350 ]
 [e :U 349 ]
 [e :U 347 ]
 [e :U 345 ]
@@ -1692,8 +1690,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 354  ]
-[e :U 351 ]
+[e $U 353  ]
+[e :U 350 ]
 {
 "645
 [; ;src/lcd_driver.c: 645:         digits[i] = num % 10;
@@ -1705,18 +1703,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;src/lcd_driver.c: 647:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 354 ]
-[e $ < -> _i `i -> _num_of_digits `i 351  ]
-[e :U 352 ]
+[e :U 353 ]
+[e $ < -> _i `i -> _num_of_digits `i 350  ]
+[e :U 351 ]
 }
 "650
-[; ;src/lcd_driver.c: 650:     for(int8_t i=(num_of_digits-1); i>=0; i--){
+[; ;src/lcd_driver.c: 650:     for(int8_t i=((int8_t)num_of_digits-1); i>=0; i--){
 {
 [v _i `c ~T0 @X0 1 a ]
-[e = _i -> - -> _num_of_digits `i -> 1 `i `c ]
-[e $ >= -> _i `i -> 0 `i 355  ]
-[e $U 356  ]
-[e :U 355 ]
+[e = _i -> - -> -> _num_of_digits `c `i -> 1 `i `c ]
+[e $ >= -> _i `i -> 0 `i 354  ]
+[e $U 355  ]
+[e :U 354 ]
 {
 "651
 [; ;src/lcd_driver.c: 651:         LCD_write_data_byte_4bit( (char) digits[i] + '0');
@@ -1725,8 +1723,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;src/lcd_driver.c: 652:     }
 }
 [e -- _i -> -> 1 `i `c ]
-[e $ >= -> _i `i -> 0 `i 355  ]
-[e :U 356 ]
+[e $ >= -> _i `i -> 0 `i 354  ]
+[e :U 355 ]
 }
 "654
 [; ;src/lcd_driver.c: 654: }

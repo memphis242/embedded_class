@@ -891,44 +891,7 @@ static int vfpfcnvrt(FILE *fp, char *fmt[], va_list ap)
 
         flags = width = 0;
         prec = -1;
-
-
-
-        done = 0;
-        while (!done) {
-            switch ((*fmt)[0]) {
-                case '-' :
-                    flags |= (1 << 0);
-                    ++*fmt;
-                    break;
-                case '0' :
-                    flags |= (1 << 1);
-                    ++*fmt;
-                    break;
-                case '+' :
-                    flags |= (1 << 2);
-                    ++*fmt;
-                    break;
-                case ' ' :
-                    flags |= (1 << 3);
-                    ++*fmt;
-                    break;
-                case '#' :
-                    flags |= (1 << 4);
-                    ++*fmt;
-                    break;
-                default:
-                    done = 1;
-                    break;
-            }
-        }
-        if (flags & (1 << 0)) {
-            flags &= ~(1 << 1);
-        }
-
-
-
-
+# 745 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\sources\\c99\\common\\doprnt.c"
         if ((*fmt)[0] == '*') {
             ++*fmt;
             width = (*(int *)__va_arg(*(int **)ap, (int)0));

@@ -4950,7 +4950,7 @@ void LCD_write_uint32_number(uint32_t num){
     else if(num < 10000000u) num_of_digits = 7u;
     else if(num < 100000000u) num_of_digits = 8u;
     else if(num < 1000000000u) num_of_digits = 9u;
-    else if(num < 10000000000u) num_of_digits = 10u;
+    else num_of_digits = 10u;
 
 
     uint8_t digits[10] = {0u};
@@ -4960,7 +4960,7 @@ void LCD_write_uint32_number(uint32_t num){
     }
 
 
-    for(int8_t i=(num_of_digits-1); i>=0; i--){
+    for(int8_t i=((int8_t)num_of_digits-1); i>=0; i--){
         LCD_write_data_byte_4bit( (char) digits[i] + '0');
     }
 

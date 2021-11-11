@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "ece376_hw9_ccp_capt.c" 2
-# 54 "ece376_hw9_ccp_capt.c"
+# 62 "ece376_hw9_ccp_capt.c"
 #pragma config OSC = HSPLL
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
@@ -22,7 +22,7 @@
 #pragma config WDTPS = 32768
 
 
-#pragma config CCP2MX = PORTC
+#pragma config CCP2MX = PORTBE
 #pragma config PBADEN = OFF
 #pragma config LPT1OSC = OFF
 #pragma config MCLRE = ON
@@ -4440,7 +4440,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 111 "ece376_hw9_ccp_capt.c" 2
+# 119 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
@@ -4527,7 +4527,7 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 112 "ece376_hw9_ccp_capt.c" 2
+# 120 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
@@ -4584,7 +4584,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 113 "ece376_hw9_ccp_capt.c" 2
+# 121 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
@@ -4724,7 +4724,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 114 "ece376_hw9_ccp_capt.c" 2
+# 122 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "inc\\ccp.h" 1
 # 154 "inc\\ccp.h"
@@ -4738,14 +4738,14 @@ void CCP1_Compare_Init_Default(uint16_t comp_val);
 void CCP2_Compare_Init_Default(uint16_t comp_val);
 void CCP1_Capture_Init_Default(void);
 void CCP2_Capture_Init_Default(void);
-# 115 "ece376_hw9_ccp_capt.c" 2
+# 123 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "inc\\timer.h" 1
 # 63 "inc\\timer.h"
 void Timer1_Init_Default(void);
 void Timer1_Enable(void);
 void Timer1_Disable(void);
-# 116 "ece376_hw9_ccp_capt.c" 2
+# 124 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "inc\\lcd_driver.h" 1
 # 207 "inc\\lcd_driver.h"
@@ -4787,19 +4787,21 @@ uint8_t LCD_turn_on_cursor(void);
 
 
 void LCD_write_uint32_number(uint32_t num);
-# 117 "ece376_hw9_ccp_capt.c" 2
-# 128 "ece376_hw9_ccp_capt.c"
+# 125 "ece376_hw9_ccp_capt.c" 2
+# 136 "ece376_hw9_ccp_capt.c"
 volatile static uint32_t elapsed_time = 0u;
-volatile static uint32_t timer1_overflow_count = 0u;
+volatile static uint32_t time1 = 0u;
+volatile static uint32_t time2 = 0u;
+volatile static uint32_t reaction_time = 0u;
+static uint16_t num_of_seconds = 0u;
+static uint16_t num_of_ms = 0u;
+static uint16_t num_of_us = 0u;
+
 volatile static uint8_t game_done_flag = 0x00u;
 const static char init_msg[] = "Init success!";
 const static char start_game_msg[] = "Game begun!";
 const static char result_msg_title[] = "Result:";
 static char result_msg[17];
-static uint16_t num_of_seconds = 0u;
-static uint16_t num_of_ms = 0u;
-static uint16_t num_of_us = 0u;
-volatile static uint8_t isr_count = 1u;
 
 
 
@@ -4818,12 +4820,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 
     if(PIR1bits.TMR1IF && PIE1bits.TMR1IE) {
-
-
-
-
-
-
         elapsed_time += 0x10000u;
 
         (PIR1bits.TMR1IF = 0u);
@@ -4835,7 +4831,8 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 
     if(PIR1bits.CCP1IF && PIE1bits.CCP1IE){
-        elapsed_time = elapsed_time + (uint32_t) CCPR1 - 30000000u;
+        time2 = elapsed_time + (uint32_t) CCPR1;
+        reaction_time = time2 - time1;
 
   game_done_flag = 0x01u;
         T1CON &= ~0x01;
@@ -4844,21 +4841,27 @@ void __attribute__((picinterrupt(("")))) isr(void){
   (PIR1bits.CCP1IF = 0u);
     }
 
+
+
+
+
+    if(PIR2bits.CCP2IF && PIE2bits.CCP2IE){
+        time1 = elapsed_time + (uint32_t) CCPR2;
+
+
+  (PIR2bits.CCP2IF = 0u);
+    }
+
     return;
 }
 
 
 void main(void) {
-
-
-
-
-
-
-
+# 212 "ece376_hw9_ccp_capt.c"
  TRISC |= (1u << 2);
  ADCON1 |= 0x0F;
  TRISB |= (1u << 0);
+    TRISB |= (1u << 3);
     TRISD &= ~(1u << 0);
 
     PORTB = 0x00;
@@ -4876,37 +4879,12 @@ void main(void) {
     LATDbits.LATD0 = 0u;
     LCD_clear_display();
     LCD_set_cursor_position(1,1);
-# 243 "ece376_hw9_ccp_capt.c"
-    char rcon_reg_string[16] = "RCON: ";
-    char stkptr_reg_string[16] = "STKPTR: ";
-    strcat(rcon_reg_string, hex_to_bit_string( (uint8_t)RCON ) );
-    strcat(stkptr_reg_string, hex_to_bit_string( (uint8_t)STKPTR ) );
-
-    LCD_set_cursor_position(1,1);
-    for(uint8_t i=0; i<14; i++) LCD_write_data_byte_4bit(rcon_reg_string[i]);
-    LCD_set_cursor_position(2,1);
-    for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(stkptr_reg_string[i]);
-
-
-    RCONbits.POR = 1u;
-    RCONbits.BOR = 1u;
-
-    while(!PORTBbits.RB0);
-    LCD_clear_display();
-    LCD_set_cursor_position(1,1);
-    _delay((unsigned long)((2000)*(40000000u/4000.0)));
-
-
-
 
 
 
  Timer1_Init_Default();
     CCP1_Capture_Init_Default();
-
-
-
-
+    CCP2_Capture_Init_Default();
 
 
 
@@ -4928,25 +4906,20 @@ void main(void) {
             _delay((unsigned long)((1000)*(40000000u/4000.0)));
             LCD_clear_display();
             _delay((unsigned long)((2000)*(40000000u/4000.0)));
-            _delay((unsigned long)((2000)*(40000000u/4000.0)));
 
 
             LATDbits.LATD0 = 1u;
 
 
-
-
-
-
             while(!game_done_flag);
-# 315 "ece376_hw9_ccp_capt.c"
-            num_of_seconds = (uint16_t) (elapsed_time / 10000000u);
-            num_of_ms = (uint16_t) ((elapsed_time % 10000000u) / 10000u);
-            num_of_us = (uint16_t) ((elapsed_time % 10000000u) % 10000u) / 10u;
+# 275 "ece376_hw9_ccp_capt.c"
+            num_of_seconds = (uint16_t) (reaction_time / 10000000u);
+            num_of_ms = (uint16_t) ((reaction_time % 10000000u) / 10000u);
+            num_of_us = (uint16_t) ((reaction_time % 10000000u) % 10000u) / 10u;
 
 
 
-            sprintf(result_msg, "%-3us:%-3ums:%-3uus", num_of_seconds, num_of_ms, num_of_us);
+            sprintf(result_msg, "%3us:%3ums:%3uus", num_of_seconds, num_of_ms, num_of_us);
 
             LCD_set_cursor_position(1,1);
             for(uint8_t i=0; i<7; i++) LCD_write_data_byte_4bit(result_msg_title[i]);
