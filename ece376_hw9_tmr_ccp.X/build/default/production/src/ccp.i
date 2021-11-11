@@ -4498,23 +4498,27 @@ void Timer1_Init_Default(void);
 void Timer1_Enable(void);
 void Timer1_Disable(void);
 # 11 "src/ccp.c" 2
-# 41 "src/ccp.c"
+# 42 "src/ccp.c"
 void CCP1_Compare_Init_Default(uint16_t comp_val){
     (CCP1CON = 0xB);
+    (T3CON &= ~0x48);
     (CCPR1 = comp_val);
     (PIE1bits.CCP1IE = 1u);
 }
 void CCP2_Compare_Init_Default(uint16_t comp_val){
     (CCP2CON = 0xB);
+    (T3CON &= ~0x48);
     (CCPR2 = comp_val);
     (PIE2bits.CCP2IE = 1u);
 }
-# 63 "src/ccp.c"
+# 66 "src/ccp.c"
 void CCP1_Capture_Init_Default(void){
     (CCP1CON = 0x5);
+    (T3CON &= ~0x48);
     (PIE1bits.CCP1IE = 1u);
 }
 void CCP2_Capture_Init_Default(void){
     (CCP2CON = 0x5);
+    (T3CON &= ~0x48);
     (PIE2bits.CCP2IE = 1u);
 }

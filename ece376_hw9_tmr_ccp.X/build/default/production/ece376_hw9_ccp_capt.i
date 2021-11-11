@@ -4529,6 +4529,203 @@ typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
 # 108 "ece376_hw9_ccp_capt.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 109 "ece376_hw9_ccp_capt.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 110 "ece376_hw9_ccp_capt.c" 2
+
 # 1 "inc\\ccp.h" 1
 # 154 "inc\\ccp.h"
 typedef enum { TMR1_CCP1, TMR1_CCPx, TM3_CCP2, TM3_CCPx} tmr_ccp_pair_t;
@@ -4541,17 +4738,17 @@ void CCP1_Compare_Init_Default(uint16_t comp_val);
 void CCP2_Compare_Init_Default(uint16_t comp_val);
 void CCP1_Capture_Init_Default(void);
 void CCP1_Capture_Init_Default(void);
-# 109 "ece376_hw9_ccp_capt.c" 2
+# 111 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "inc\\timer.h" 1
 # 63 "inc\\timer.h"
 void Timer1_Init_Default(void);
 void Timer1_Enable(void);
 void Timer1_Disable(void);
-# 110 "ece376_hw9_ccp_capt.c" 2
+# 112 "ece376_hw9_ccp_capt.c" 2
 
 # 1 "inc\\lcd_driver.h" 1
-# 206 "inc\\lcd_driver.h"
+# 207 "inc\\lcd_driver.h"
 enum lcd_display_t {
     QAPASS_EBAY,
     QAPASS_AMAZON,
@@ -4587,15 +4784,19 @@ uint8_t LCD_set_cursor_position(uint8_t line, uint8_t pos_on_line);
 uint8_t LCD_write_characters(char * toWrite, uint8_t size);
 uint8_t LCD_turn_off_cursor(void);
 uint8_t LCD_turn_on_cursor(void);
-# 111 "ece376_hw9_ccp_capt.c" 2
-
-
-
-
+# 113 "ece376_hw9_ccp_capt.c" 2
+# 124 "ece376_hw9_ccp_capt.c"
 volatile static uint32_t elapsed_time = 0u;
 volatile static uint32_t timer1_overflow_count = 0u;
 volatile static uint8_t game_done_flag = 0x00u;
 const static char init_msg[] = "Init success!";
+const static char start_game_msg[] = "Game begun!";
+const static char result_msg_title[] = "Result:";
+static char result_msg[17];
+
+
+
+static char * hex_to_bit_string(uint8_t hex_val);
 
 
 
@@ -4610,7 +4811,8 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 
     if(PIR1bits.TMR1IF && PIE1bits.TMR1IE) {
-        timer1_overflow_count++;
+
+        elapsed_time += 0x10000u;
 
         (PIR1bits.TMR1IF = 0u);
     }
@@ -4621,7 +4823,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
 
     if(PIR1bits.CCP1IF && PIE1bits.CCP1IE){
-        elapsed_time = ((uint32_t) 0xFFFFFFFF * timer1_overflow_count) + (uint32_t) CCPR1;
+        elapsed_time += (uint32_t) CCPR1;
   game_done_flag = 0x01u;
 
 
@@ -4647,6 +4849,7 @@ void main(void) {
 
     PORTB = 0x00;
     PORTC = 0x00;
+    PORTD = 0x00;
 
 
  LCD_Init_ECE376();
@@ -4654,15 +4857,39 @@ void main(void) {
     for(uint8_t i=0; i<13; i++){
         LCD_write_data_byte_4bit(init_msg[i]);
     }
-
+    LATDbits.LATD0 = 1u;
     _delay((unsigned long)((2000)*(40000000u/4000.0)));
+    LATDbits.LATD0 = 0u;
     LCD_clear_display();
     LCD_set_cursor_position(1,1);
+# 224 "ece376_hw9_ccp_capt.c"
+    char rcon_reg_string[16] = "RCON: ";
+    char stkptr_reg_string[16] = "STKPTR: ";
+    strcat(rcon_reg_string, hex_to_bit_string( (uint8_t)RCON ) );
+    strcat(stkptr_reg_string, hex_to_bit_string( (uint8_t)STKPTR ) );
+
+    LCD_set_cursor_position(1,1);
+    for(uint8_t i=0; i<14; i++) LCD_write_data_byte_4bit(rcon_reg_string[i]);
+    LCD_set_cursor_position(2,1);
+    for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(stkptr_reg_string[i]);
+
+    while(!PORTBbits.RB0);
+    LCD_clear_display();
+    LCD_set_cursor_position(1,1);
+    _delay((unsigned long)((2000)*(40000000u/4000.0)));
+
+
+
+
 
 
  Timer1_Init_Default();
     CCP1_Capture_Init_Default();
 
+
+    PORTB = 0x00;
+    PORTC = 0x00;
+    PORTD = 0x00;
 
 
  while(1){
@@ -4676,15 +4903,59 @@ void main(void) {
             (INTCONbits.GIE = 1);
 
 
+            for(uint8_t i=0; i<11; i++) LCD_write_data_byte_4bit(start_game_msg[i]);
+            _delay((unsigned long)((1000)*(40000000u/4000.0)));
+            LCD_clear_display();
+            _delay((unsigned long)((2000)*(40000000u/4000.0)));
+            _delay((unsigned long)((2000)*(40000000u/4000.0)));
+
+
+            LATDbits.LATD0 = 1u;
+
+
             while(!game_done_flag);
-# 209 "ece376_hw9_ccp_capt.c"
+# 285 "ece376_hw9_ccp_capt.c"
             uint16_t num_of_seconds = (uint16_t) (elapsed_time / 10000000u);
             uint16_t num_of_ms = (uint16_t) ((elapsed_time % 10000000u) / 10000u);
             uint16_t num_of_us = (uint16_t) ((elapsed_time % 10000000u) % 10000u) / 10u;
 
+
+
+            sprintf(result_msg, "%-3us:%-3ums:%-3uus", num_of_seconds, num_of_ms, num_of_us);
+
+            LCD_set_cursor_position(1,1);
+            for(uint8_t i=0; i<7; i++) LCD_write_data_byte_4bit(result_msg_title[i]);
+            LCD_set_cursor_position(2,1);
+
+            for(uint8_t i=0; i<16; i++) LCD_write_data_byte_4bit(result_msg[i]);
+
+            _delay((unsigned long)((3000)*(40000000u/4000.0)));
+            _delay((unsigned long)((2000)*(40000000u/4000.0)));
+
+
+            LATDbits.LATD0 = 0u;
+            LCD_clear_display();
+            game_done_flag = 0x00;
+            Timer1_Disable();
+            (INTCONbits.PEIE = 0u);
+            (INTCONbits.GIE = 0);
         }
 
  }
 
     return;
+}
+
+
+static char * hex_to_bit_string(uint8_t hex_val){
+
+    static char bit_string[9];
+
+    for(uint8_t i=0; i<8; i++){
+        bit_string[i] = (hex_val & (0x1 << (7-i))) ? '1' : '0';
+    }
+    bit_string[8] = '\0';
+
+    return bit_string;
+
 }

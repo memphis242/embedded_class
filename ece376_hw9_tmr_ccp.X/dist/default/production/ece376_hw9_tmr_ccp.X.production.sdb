@@ -17,6 +17,16 @@ MODE_8BIT 1
 ]
 "7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
+"72 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+[v _pad pad `(i  1 s 2 pad ]
+"615
+[v _utoa utoa `(i  1 s 2 utoa ]
+"692
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+"1390
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\float.c
@@ -29,10 +39,26 @@ MODE_8BIT 1
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\isdigit.c
+[v _isdigit isdigit `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\isspace.c
+[v _isspace isspace `(i  1 e 2 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\llmod.c
 [v ___llmod __llmod `(ul  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -41,15 +67,25 @@ MODE_8BIT 1
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strcat.c
+[v _strcat strcat `(*.39uc  1 e 2 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"126 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
+"142 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
 [v _isr isr `IIH(v  1 e 1 0 ]
-"155
+"172
 [v _main main `(v  1 e 1 0 ]
-"63 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/ccp.c
+"317
+[v _hex_to_bit_string hex_to_bit_string `(*.39uc  1 s 2 hex_to_bit_string ]
+"66 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/ccp.c
 [v _CCP1_Capture_Init_Default CCP1_Capture_Init_Default `(v  1 e 1 0 ]
 "45 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/lcd_driver.c
 [v _LCD_enable_toggle LCD_enable_toggle `(v  1 s 1 LCD_enable_toggle ]
@@ -71,9 +107,11 @@ MODE_8BIT 1
 [v _Timer1_Init_Default Timer1_Init_Default `(v  1 e 1 0 ]
 "43
 [v _Timer1_Enable Timer1_Enable `(v  1 e 1 0 ]
+"55
+[v _Timer1_Disable Timer1_Disable `(v  1 e 1 0 ]
 "189 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S357 . 1 `uc 1 RB0 1 0 :1:0 
+[s S440 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -83,7 +121,7 @@ MODE_8BIT 1
 `uc 1 RB7 1 0 :1:7 
 ]
 "230
-[s S366 . 1 `uc 1 INT0 1 0 :1:0 
+[s S449 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -92,7 +130,7 @@ MODE_8BIT 1
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S375 . 1 `uc 1 AN12 1 0 :1:0 
+[s S458 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -101,16 +139,16 @@ MODE_8BIT 1
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S384 . 1 `uc 1 . 1 0 :3:0 
+[s S467 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S387 . 1 `S357 1 . 1 0 `S366 1 . 1 0 `S375 1 . 1 0 `S384 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES387  1 e 1 @3969 ]
+[u S470 . 1 `S440 1 . 1 0 `S449 1 . 1 0 `S458 1 . 1 0 `S467 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES470  1 e 1 @3969 ]
 "360
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
 "535
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
-[s S163 . 1 `uc 1 RD0 1 0 :1:0 
+[s S204 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -120,7 +158,7 @@ MODE_8BIT 1
 `uc 1 RD7 1 0 :1:7 
 ]
 "572
-[s S172 . 1 `uc 1 PSP0 1 0 :1:0 
+[s S213 . 1 `uc 1 PSP0 1 0 :1:0 
 `uc 1 PSP1 1 0 :1:1 
 `uc 1 PSP2 1 0 :1:2 
 `uc 1 PSP3 1 0 :1:3 
@@ -129,17 +167,17 @@ MODE_8BIT 1
 `uc 1 PSP6 1 0 :1:6 
 `uc 1 PSP7 1 0 :1:7 
 ]
-[s S181 . 1 `uc 1 . 1 0 :5:0 
+[s S222 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 P1B 1 0 :1:5 
 `uc 1 P1C 1 0 :1:6 
 `uc 1 P1D 1 0 :1:7 
 ]
-[s S186 . 1 `uc 1 . 1 0 :7:0 
+[s S227 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S189 . 1 `S163 1 . 1 0 `S172 1 . 1 0 `S181 1 . 1 0 `S186 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES189  1 e 1 @3971 ]
-[s S116 . 1 `uc 1 LATC0 1 0 :1:0 
+[u S230 . 1 `S204 1 . 1 0 `S213 1 . 1 0 `S222 1 . 1 0 `S227 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES230  1 e 1 @3971 ]
+[s S164 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -149,7 +187,7 @@ MODE_8BIT 1
 `uc 1 LATC7 1 0 :1:7 
 ]
 "1131
-[s S125 . 1 `uc 1 LC0 1 0 :1:0 
+[s S173 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -158,15 +196,36 @@ MODE_8BIT 1
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S134 . 1 `S116 1 . 1 0 `S125 1 . 1 0 ]
-[v _LATCbits LATCbits `VES134  1 e 1 @3979 ]
+[u S182 . 1 `S164 1 . 1 0 `S173 1 . 1 0 ]
+[v _LATCbits LATCbits `VES182  1 e 1 @3979 ]
+[s S117 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"1243
+[s S126 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S135 . 1 `S117 1 . 1 0 `S126 1 . 1 0 ]
+[v _LATDbits LATDbits `VES135  1 e 1 @3980 ]
 "1602
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "1824
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "2046
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S26 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S27 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -176,13 +235,13 @@ MODE_8BIT 1
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "2519
-[s S35 . 1 `uc 1 . 1 0 :4:0 
+[s S36 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 ]
-[u S39 . 1 `S26 1 . 1 0 `S35 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES39  1 e 1 @3997 ]
-[s S295 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S40 . 1 `S27 1 . 1 0 `S36 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES40  1 e 1 @3997 ]
+[s S344 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -192,13 +251,13 @@ MODE_8BIT 1
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "2596
-[s S304 . 1 `uc 1 . 1 0 :4:0 
+[s S353 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S308 . 1 `S295 1 . 1 0 `S304 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES308  1 e 1 @3998 ]
-[s S58 . 1 `uc 1 CCP2IE 1 0 :1:0 
+[u S357 . 1 `S344 1 . 1 0 `S353 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES357  1 e 1 @3998 ]
+[s S59 . 1 `uc 1 CCP2IE 1 0 :1:0 
 `uc 1 TMR3IE 1 0 :1:1 
 `uc 1 HLVDIE 1 0 :1:2 
 `uc 1 BCLIE 1 0 :1:3 
@@ -208,11 +267,13 @@ MODE_8BIT 1
 `uc 1 OSCFIE 1 0 :1:7 
 ]
 "2749
-[s S67 . 1 `uc 1 . 1 0 :2:0 
+[s S68 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LVDIE 1 0 :1:2 
 ]
-[u S70 . 1 `S58 1 . 1 0 `S67 1 . 1 0 ]
-[v _PIE2bits PIE2bits `VES70  1 e 1 @4000 ]
+[u S71 . 1 `S59 1 . 1 0 `S68 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES71  1 e 1 @4000 ]
+"3529
+[v _T3CON T3CON `VEuc  1 e 1 @4017 ]
 "4155
 [v _CCP2CON CCP2CON `VEuc  1 e 1 @4026 ]
 "4234
@@ -225,7 +286,9 @@ MODE_8BIT 1
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "5224
 [v _T1CON T1CON `VEuc  1 e 1 @4045 ]
-[s S424 . 1 `uc 1 RBIF 1 0 :1:0 
+"5348
+[v _RCON RCON `VEuc  1 e 1 @4048 ]
+[s S509 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -235,7 +298,7 @@ MODE_8BIT 1
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "6406
-[s S433 . 1 `uc 1 . 1 0 :1:0 
+[s S518 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -244,20 +307,36 @@ MODE_8BIT 1
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S442 . 1 `uc 1 . 1 0 :6:0 
+[s S527 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S446 . 1 `S424 1 . 1 0 `S433 1 . 1 0 `S442 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES446  1 e 1 @4082 ]
-"115 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
+[u S531 . 1 `S509 1 . 1 0 `S518 1 . 1 0 `S527 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES531  1 e 1 @4082 ]
+"6586
+[v _STKPTR STKPTR `VEuc  1 e 1 @4092 ]
+"55 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"66
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+"69
+[v _nout nout `i  1 s 2 nout ]
+"124 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
 [v _elapsed_time elapsed_time `VEul  1 s 4 elapsed_time ]
-"116
+"125
 [v _timer1_overflow_count timer1_overflow_count `VEul  1 s 4 timer1_overflow_count ]
-"117
+"126
 [v _game_done_flag game_done_flag `VEuc  1 s 1 game_done_flag ]
-"118
+"127
 [v _init_msg init_msg `C[14]uc  1 s 14 init_msg ]
+"128
+[v _start_game_msg start_game_msg `C[12]uc  1 s 12 start_game_msg ]
+"129
+[v _result_msg_title result_msg_title `C[8]uc  1 s 8 result_msg_title ]
+"130
+[v _result_msg result_msg `[17]uc  1 s 17 result_msg ]
 "16 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/lcd_driver.c
 [v _CURRENT_DISP CURRENT_DISP `E2464  1 s 1 CURRENT_DISP ]
 "17
@@ -272,45 +351,258 @@ MODE_8BIT 1
 [v _current_func_set current_func_set `uc  1 s 1 current_func_set ]
 "26
 [v _address_counter address_counter `uc  1 s 1 address_counter ]
-"155 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
+"172 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
 [v _main main `(v  1 e 1 0 ]
 {
-"174
-[v main@i i `uc  1 a 1 38 ]
-"218
+"297
+[v main@i_624 i `uc  1 a 1 47 ]
+"294
+[v main@i_623 i `uc  1 a 1 46 ]
+"264
+[v main@i_618 i `uc  1 a 1 45 ]
+"287
+[v main@num_of_us num_of_us `us  1 a 2 40 ]
+"286
+[v main@num_of_ms num_of_ms `us  1 a 2 38 ]
+"285
+[v main@num_of_seconds num_of_seconds `us  1 a 2 36 ]
+"232
+[v main@i_598 i `uc  1 a 1 44 ]
+"230
+[v main@i_597 i `uc  1 a 1 43 ]
+"192
+[v main@i i `uc  1 a 1 42 ]
+"225
+[v main@stkptr_reg_string stkptr_reg_string `[16]uc  1 a 16 16 ]
+"224
+[v main@rcon_reg_string rcon_reg_string `[16]uc  1 a 16 0 ]
+"199
+[v main@F3014 F3014 `[16]uc  1 s 16 F3014 ]
+"224
+[v main@F3016 F3016 `[16]uc  1 s 16 F3016 ]
+"314
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strcat.c
+[v _strcat strcat `(*.39uc  1 e 2 0 ]
+{
+[v strcat@dest dest `*.39uc  1 p 2 12 ]
+[v strcat@src src `*.39Cuc  1 p 2 14 ]
+"7
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+{
+"6
+[v strcpy@d d `*.39uc  1 a 2 10 ]
+"5
+[v strcpy@s s `*.39Cuc  1 a 2 8 ]
+"3
+[v strcpy@dest dest `*.39uc  1 p 2 4 ]
+[v strcpy@src src `*.39Cuc  1 p 2 6 ]
+"9
+} 0
+"9 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[s S1068 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+"13
+[v sprintf@f f `S1068  1 a 6 103 ]
+"12
+[v sprintf@ap ap `[1]*.39v  1 a 2 101 ]
+"9
+[v sprintf@s s `*.39uc  1 p 2 89 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 91 ]
+"23
+} 0
+"1390 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1393
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 87 ]
+[s S1094 _IO_FILE 0 ]
+"1390
+[v vfprintf@fp fp `*.39S1094  1 p 2 81 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 83 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 85 ]
+"1404
+} 0
+"692
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+"697
+[v vfpfcnvrt@llu llu `uo  1 a 8 69 ]
+"695
+[v vfpfcnvrt@done done `i  1 a 2 77 ]
+[s S1094 _IO_FILE 0 ]
+"692
+[v vfpfcnvrt@fp fp `*.39S1094  1 p 2 59 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 61 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 63 ]
+"1387
+} 0
+"615
+[v _utoa utoa `(i  1 s 2 utoa ]
+{
+"618
+[v utoa@n n `uo  1 a 8 49 ]
+"617
+[v utoa@i i `i  1 a 2 57 ]
+[v utoa@w w `i  1 a 2 47 ]
+[v utoa@p p `i  1 a 2 45 ]
+[s S1094 _IO_FILE 0 ]
+"615
+[v utoa@fp fp `*.39S1094  1 p 2 27 ]
+[v utoa@d d `uo  1 p 8 29 ]
+"641
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+"74
+[v pad@w w `i  1 a 2 25 ]
+[v pad@i i `i  1 a 2 23 ]
+[s S1094 _IO_FILE 0 ]
+"72
+[v pad@fp fp `*.39S1094  1 p 2 16 ]
+[v pad@buf buf `*.39uc  1 p 2 18 ]
+[v pad@p p `i  1 p 2 20 ]
+"95
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"7
+[v strlen@a a `*.39Cuc  1 a 2 2 ]
+"5
+[v strlen@s s `*.39Cuc  1 p 2 0 ]
+"12
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v fputs@i i `i  1 a 2 14 ]
+"10
+[v fputs@c c `uc  1 a 1 13 ]
+"8
+[v fputs@s s `*.39Cuc  1 p 2 9 ]
+[s S1068 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S1068  1 p 2 11 ]
+"19
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 0 ]
+[s S1068 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S1068  1 p 2 2 ]
+"24
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"9 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
+{
+"12
+[v ___lomod@counter counter `uc  1 a 1 16 ]
+"9
+[v ___lomod@dividend dividend `uo  1 p 8 0 ]
+[v ___lomod@divisor divisor `uo  1 p 8 8 ]
+"27
+} 0
+"9 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+{
+"12
+[v ___lodiv@quotient quotient `uo  1 a 8 16 ]
+"13
+[v ___lodiv@counter counter `uc  1 a 1 24 ]
+"9
+[v ___lodiv@dividend dividend `uo  1 p 8 0 ]
+[v ___lodiv@divisor divisor `uo  1 p 8 8 ]
+"32
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
+{
+"6
+[v atoi@n n `i  1 a 2 20 ]
+[v atoi@neg neg `i  1 a 2 13 ]
+"4
+[v atoi@s s `*.25Cuc  1 p 2 7 ]
+"16
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\isspace.c
+[v _isspace isspace `(i  1 e 2 0 ]
+{
+[v isspace@c c `i  1 p 2 0 ]
+"8
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\isdigit.c
+[v _isdigit isdigit `(i  1 e 2 0 ]
+{
+[v isdigit@c c `i  1 p 2 0 ]
+"8
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"317 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
+[v _hex_to_bit_string hex_to_bit_string `(*.39uc  1 s 2 hex_to_bit_string ]
+{
+[v hex_to_bit_string@hex_val hex_val `uc  1 a 1 wreg ]
+"321
+[v hex_to_bit_string@i i `uc  1 a 1 7 ]
+"317
+[v hex_to_bit_string@hex_val hex_val `uc  1 a 1 wreg ]
+"319
+[v hex_to_bit_string@bit_string bit_string `[9]uc  1 s 9 bit_string ]
+"321
+[v hex_to_bit_string@hex_val hex_val `uc  1 a 1 4 ]
+"328
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
-[v ___lwdiv@quotient quotient `ui  1 a 2 17 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 13 ]
 "11
-[v ___lwdiv@counter counter `uc  1 a 1 19 ]
+[v ___lwdiv@counter counter `uc  1 a 1 15 ]
 "7
-[v ___lwdiv@dividend dividend `ui  1 p 2 13 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 15 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 9 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 11 ]
 "30
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\llmod.c
 [v ___llmod __llmod `(ul  1 e 4 0 ]
 {
 "10
-[v ___llmod@counter counter `uc  1 a 1 12 ]
+[v ___llmod@counter counter `uc  1 a 1 8 ]
 "7
-[v ___llmod@dividend dividend `ul  1 p 4 4 ]
-[v ___llmod@divisor divisor `ul  1 p 4 8 ]
+[v ___llmod@dividend dividend `ul  1 p 4 0 ]
+[v ___llmod@divisor divisor `ul  1 p 4 4 ]
 "25
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
 "10
-[v ___lldiv@quotient quotient `ul  1 a 4 21 ]
+[v ___lldiv@quotient quotient `ul  1 a 4 17 ]
 "11
-[v ___lldiv@counter counter `uc  1 a 1 25 ]
+[v ___lldiv@counter counter `uc  1 a 1 21 ]
 "7
-[v ___lldiv@dividend dividend `ul  1 p 4 13 ]
-[v ___lldiv@divisor divisor `ul  1 p 4 17 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 9 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 13 ]
 "30
 } 0
 "31 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/timer.c
@@ -323,13 +615,18 @@ MODE_8BIT 1
 {
 "45
 } 0
+"55
+[v _Timer1_Disable Timer1_Disable `(v  1 e 1 0 ]
+{
+"57
+} 0
 "126 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/lcd_driver.c
 [v _LCD_write_data_byte_4bit LCD_write_data_byte_4bit `(v  1 e 1 0 ]
 {
 [v LCD_write_data_byte_4bit@data data `uc  1 a 1 wreg ]
 [v LCD_write_data_byte_4bit@data data `uc  1 a 1 wreg ]
 "128
-[v LCD_write_data_byte_4bit@data data `uc  1 a 1 7 ]
+[v LCD_write_data_byte_4bit@data data `uc  1 a 1 3 ]
 "140
 } 0
 "500
@@ -337,12 +634,12 @@ MODE_8BIT 1
 {
 [v LCD_set_cursor_position@line line `uc  1 a 1 wreg ]
 "506
-[v LCD_set_cursor_position@ddram_addr ddram_addr `uc  1 a 1 9 ]
+[v LCD_set_cursor_position@ddram_addr ddram_addr `uc  1 a 1 5 ]
 "500
 [v LCD_set_cursor_position@line line `uc  1 a 1 wreg ]
-[v LCD_set_cursor_position@pos_on_line pos_on_line `uc  1 p 1 8 ]
+[v LCD_set_cursor_position@pos_on_line pos_on_line `uc  1 p 1 4 ]
 "502
-[v LCD_set_cursor_position@line line `uc  1 a 1 10 ]
+[v LCD_set_cursor_position@line line `uc  1 a 1 6 ]
 "534
 } 0
 "427
@@ -356,7 +653,7 @@ MODE_8BIT 1
 [v LCD_write_instr_byte_8bit@instr instr `uc  1 a 1 wreg ]
 [v LCD_write_instr_byte_8bit@instr instr `uc  1 a 1 wreg ]
 "202
-[v LCD_write_instr_byte_8bit@instr instr `uc  1 a 1 7 ]
+[v LCD_write_instr_byte_8bit@instr instr `uc  1 a 1 3 ]
 "212
 } 0
 "224
@@ -370,7 +667,7 @@ MODE_8BIT 1
 [v LCD_write_instr_byte_4bit@instr instr `uc  1 a 1 wreg ]
 [v LCD_write_instr_byte_4bit@instr instr `uc  1 a 1 wreg ]
 "177
-[v LCD_write_instr_byte_4bit@instr instr `uc  1 a 1 7 ]
+[v LCD_write_instr_byte_4bit@instr instr `uc  1 a 1 3 ]
 "189
 } 0
 "45
@@ -378,13 +675,13 @@ MODE_8BIT 1
 {
 "86
 } 0
-"63 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/ccp.c
+"66 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\src/ccp.c
 [v _CCP1_Capture_Init_Default CCP1_Capture_Init_Default `(v  1 e 1 0 ]
 {
-"66
+"70
 } 0
-"126 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
+"142 C:\git\embedded_class\ece376_hw9_tmr_ccp.X\ece376_hw9_ccp_capt.c
 [v _isr isr `IIH(v  1 e 1 0 ]
 {
-"152
+"169
 } 0
