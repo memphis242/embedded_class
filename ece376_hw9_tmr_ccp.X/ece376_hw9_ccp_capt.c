@@ -41,6 +41,10 @@
  * 
  * More can be understood by reading the code. Or contact me for questions.
  * 
+ * TODO:
+ *      1- Account for user pressing CCP1 button BEFORE LED lights up...
+ *      2- Generate random time between 2 to 7 seconds for LED lighting up...
+ * 
  */
 
 
