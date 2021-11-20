@@ -1,4 +1,4 @@
-# 1 "question1.c"
+# 1 "src/ccp.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,61 +6,11 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "question1.c" 2
-# 11 "question1.c"
-#pragma config OSC = HSPLL
-#pragma config FCMEN = OFF
-#pragma config IESO = OFF
+# 1 "src/ccp.c" 2
 
 
-#pragma config PWRT = OFF
-#pragma config BOREN = SBORDIS
-#pragma config BORV = 3
 
 
-#pragma config WDT = OFF
-#pragma config WDTPS = 32768
-
-
-#pragma config CCP2MX = PORTBE
-#pragma config PBADEN = OFF
-#pragma config LPT1OSC = OFF
-#pragma config MCLRE = ON
-
-
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-
-
-#pragma config CP0 = OFF
-#pragma config CP1 = OFF
-#pragma config CP2 = OFF
-#pragma config CP3 = OFF
-
-
-#pragma config CPB = OFF
-#pragma config CPD = OFF
-
-
-#pragma config WRT0 = OFF
-#pragma config WRT1 = OFF
-#pragma config WRT2 = OFF
-#pragma config WRT3 = OFF
-
-
-#pragma config WRTC = OFF
-#pragma config WRTB = OFF
-#pragma config WRTD = OFF
-
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-
-
-#pragma config EBTRB = OFF
 
 
 
@@ -4439,8 +4389,10 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 67 "question1.c" 2
+# 9 "src/ccp.c" 2
 
+# 1 "inc\\ccp.h" 1
+# 58 "inc\\ccp.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4526,144 +4478,47 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 68 "question1.c" 2
-
-# 1 "inc\\adc.h" 1
-# 208 "inc\\adc.h"
-typedef enum { ADC_ACQT_0TAD, ADC_ACQT_2TAD, ADC_ACQT_4TAD, ADC_ACQT_6TAD, ADC_ACQT_8TAD, ADC_ACQT_12TAD, ADC_ACQT_16TAD, ADC_ACQT_20TAD } adc_acqt_t;
-typedef enum { ADC_CLK_FOSC2=0u, ADC_CLK_FOSC4=4u, ADC_CLK_FOSC8=1u, ADC_CLK_FOSC16=5u, ADC_CLK_FOSC32=2u, ADC_CLK_FOSC64=6u, ADC_CLK_FRC=3u } adc_clk_t;
-typedef enum { ADC_AN0, ADC_AN1, ADC_AN2, ADC_AN3, ADC_AN4, ADC_AN5, ADC_AN6, ADC_AN7, ADC_AN8, ADC_AN9, ADC_AN10, ADC_AN11, ADC_AN12 } adc_pin_t;
-typedef enum { ADC_VREF, ADC_NOT_VREF } adc_vref_t;
-
-
-void adc_init(adc_pin_t adc_pin, adc_vref_t adc_vref, adc_acqt_t adc_acqt, adc_clk_t adc_clk);
-void adc_init_default(void);
-void adc_use_ccp2(void);
-# 69 "question1.c" 2
-# 119 "question1.c"
-typedef enum { GREEN, YELLOW, RED } traffic_light_t;
-typedef enum { PRESCALE_1, PRESCALE_4, PRESCALE_16 } tmr2_prescaler_t;
+# 58 "inc\\ccp.h" 2
+# 154 "inc\\ccp.h"
+typedef enum { TMR1_CCP1, TMR1_CCPx, TM3_CCP2, TM3_CCPx} tmr_ccp_pair_t;
 
 
 
-volatile static uint16_t tmr2_interrupt_flag_count = 0x0000u;
-volatile static traffic_light_t current_light = RED;
-volatile static uint16_t green_light_time = 5000u;
 
 
-void tmr2_init_default(void);
+void CCP1_Compare_Init_Default(uint16_t comp_val);
+void CCP2_Compare_Init_Default(uint16_t comp_val);
+void CCP1_Capture_Init_Default(void);
+void CCP2_Capture_Init_Default(void);
+# 10 "src/ccp.c" 2
 
-
-
-void __attribute__((picinterrupt(("")))) isr(void) {
-
-
-    if((PIR1bits.TMR2IF) && (PIE1bits.TMR2IE)) {
-
-        tmr2_interrupt_flag_count++;
-
-        switch(current_light) {
-
-            case RED:
-                if(tmr2_interrupt_flag_count >= 5000u) {
-
-                    current_light = YELLOW;
-                    (LATCbits.LATC2 = 0u);
-                    (LATCbits.LATC0 = 0u);
-                    (LATCbits.LATC1 = 1u);
-
-
-                    tmr2_interrupt_flag_count = 0x0000u;
-                }
-                break;
-
-            case YELLOW:
-                 if(tmr2_interrupt_flag_count >= 1000u) {
-
-                    current_light = GREEN;
-                    (LATCbits.LATC1 = 0u);
-                    (LATCbits.LATC2 = 0u);
-                    (LATCbits.LATC0 = 1u);
-
-
-                    tmr2_interrupt_flag_count = 0x0000u;
-                }
-                break;
-
-            case GREEN:
-                if(tmr2_interrupt_flag_count >= green_light_time) {
-
-                    current_light = RED;
-                    (LATCbits.LATC0 = 0u);
-                    (LATCbits.LATC1 = 0u);
-                    (LATCbits.LATC2 = 1u);
-
-
-                    tmr2_interrupt_flag_count = 0x0000u;
-                }
-                break;
-
-        }
-
-        (PIR1bits.TMR2IF = 0u);
-    }
-
-
-    if((PIR1bits.ADIF) && (PIE1bits.ADIE)) {
-
-         green_light_time = 5000u + (ADRES * 10u);
-
-
-
-         PORTD = (uint8_t) (ADRES & 0x0FF);
-
-        (PIR1bits.ADIF = 0u);
-    }
-
-
+# 1 "inc\\timer.h" 1
+# 63 "inc\\timer.h"
+void Timer1_Init_Default(void);
+void Timer1_Enable(void);
+void Timer1_Disable(void);
+# 11 "src/ccp.c" 2
+# 42 "src/ccp.c"
+void CCP1_Compare_Init_Default(uint16_t comp_val){
+    (CCP1CON = 0xB);
+    (T3CON &= ~0x48);
+    (CCPR1 = comp_val);
+    (PIE1bits.CCP1IE = 1u);
 }
-
-
-void main(void) {
-
-
-    (TRISC &= ~(0x07u));
-    TRISD = 0u;
-    PORTC = 0u;
-    PORTD = 0u;
-
-    tmr2_init_default();
-
-    adc_init_default();
-
-
-    (INTCONbits.PEIE = 1u);
-    (INTCONbits.GIE = 1);
-
-
-    while(1) {
-        _delay((unsigned long)((500u)*(40000000U/4000.0)));
-        (ADCON0bits.GODONE = 1u);
-    }
-
-    return;
+void CCP2_Compare_Init_Default(uint16_t comp_val){
+    (CCP2CON = 0xB);
+    (T3CON &= ~0x48);
+    (CCPR2 = comp_val);
+    (PIE2bits.CCP2IE = 1u);
 }
-
-
-
-
-void tmr2_init_default(void) {
-
-
-    (T2CONbits.T2CKPS = (PRESCALE_4));
-    (T2CON |= 9u << 3u);
-    (PR2 = (249u));
-
-
-    (PIR1bits.TMR2IF = 0u);
-    (PIE1bits.TMR2IE = 1u);
-
-
-    (T2CONbits.TMR2ON = 1u);
-
+# 66 "src/ccp.c"
+void CCP1_Capture_Init_Default(void){
+    (CCP1CON = 0x5);
+    (T3CON &= ~0x48);
+    (PIE1bits.CCP1IE = 1u);
+}
+void CCP2_Capture_Init_Default(void){
+    (CCP2CON = 0x5);
+    (T3CON &= ~0x48);
+    (PIE2bits.CCP2IE = 1u);
 }

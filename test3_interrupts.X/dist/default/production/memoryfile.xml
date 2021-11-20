@@ -3,9 +3,9 @@
   <executable name="dist/default/production\test3_interrupts.X.production.hex">
     <memory name="program">
       <units>bytes</units>
-      <length>65536</length>
-      <used>523</used>
-      <free>65013</free>
+      <length>63488</length>
+      <used>541</used>
+      <free>62947</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

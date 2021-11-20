@@ -125,7 +125,7 @@
 #define ADCON0_CHS(x)           (ADCON0bits.CHS = (x))
 #define ADCON0_CHS_DEFAULT      (ADCON0bits.CHS = 0x0u)     // AN0 = RA0
 #define ADC_TRIS_DEFAULT        (TRISAbits.RA0 = 1u)        // RA0 as input
-#define ADC_START_CONVERSION    (ADCON0bits.GO = 1u)
+#define ADC_START_CONVERSION    (ADCON0bits.GODONE = 1u)
 #define ADC_IN_PROGRESS         (ADCON0bits.GO_NOT_DONE)
 #define ADC_ON                  (ADCON0bits.ADON = 1u)
 #define ADC_OFF                 (ADCON0bits.ADON = 0u)

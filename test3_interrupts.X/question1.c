@@ -112,7 +112,7 @@
  */
 #define TMR2_ON                         (T2CONbits.TMR2ON = 1u)
 #define TMR2_SET_PRESCALER(X)           (T2CONbits.T2CKPS = (X))    // USE WITH tmr2_prescaler_t!! Only three possibilites!
-#define TMR2_SET_POSTSCALER(X)          (T2CON = (T2CON & 0x78) | (X << 3u))    // For some reason, no complete bit-field for T2OUTPS in xc.h...
+#define TMR2_SET_POSTSCALER(X)          (T2CON |= X << 3u)    // For some reason, no complete bit-field for T2OUTPS in xc.h...
 #define TMR2_SET_PERIOD(X)              (PR2 = (X))
 
 // Enumerations
@@ -134,6 +134,7 @@ void __interrupt() isr(void) {
     
     // Timer2 Interrupt
     if(TMR2_IF_BIT && TMR2_IE_BIT) {        // Timer2 interrupt flag is set and enabled?
+        
         tmr2_interrupt_flag_count++;    // Increment interrupt counter (how many ms have passed)
         
         switch(current_light) {
@@ -165,7 +166,7 @@ void __interrupt() isr(void) {
                 break;
                 
             case GREEN:
-                if(tmr2_interrupt_flag_count >= green_light_time) {    // Has 1 second gone by?
+                if(tmr2_interrupt_flag_count >= green_light_time) {    // Has 5+ seconds gone by?
                     // If yes, then next light red should go on
                     current_light = RED;
                     GREEN_LIGHT_OFF;
@@ -187,7 +188,10 @@ void __interrupt() isr(void) {
         // Update green_light_time
          green_light_time = 5000u + (ADRES * 10u);  // Approximately converts 0 to 1023 of ADRES into 0 to 10,000 for ms
                                                     // which amounts to the 0 to 10s additional time put in for green light
-        
+         
+         // Just to help see what the ADRES is at...
+         PORTD = (uint8_t) (ADRES & 0x0FF);
+         
         ADC_CLEAR_IF;
     }
     
@@ -199,17 +203,21 @@ void main(void) {
     
     // Initialize I/O
     TRIS_LIGHTS;
+    TRISD = 0u;     // I will use PORTD to display the lower byte of ADRES
+    PORTC = 0u;
+    PORTD = 0u;
     // Initialize Timer2
     tmr2_init_default();
     // Initialize ADC read random voltage on AN0 --> RA0 pin
     adc_init_default();
     
     // Enable all globally unmasked interrupts
+    ENABLE_PERIPHERAL_INTERRUPTS;
     ei();
     
     // Event-handler --> Will just update the green_light_time variable every 1s by starting an ADC conversion for it
     while(1) {
-        __delay_ms(1000u);
+        __delay_ms(500u);
         ADC_START_CONVERSION;
     }
     
@@ -223,7 +231,7 @@ void tmr2_init_default(void) {
     
     // Set up timing
     TMR2_SET_PRESCALER(PRESCALE_4);
-    TMR2_SET_POSTSCALER(10u);
+    TMR2_SET_POSTSCALER(9u);
     TMR2_SET_PERIOD(249u);
     
     // Set up interrupt-related stuff
