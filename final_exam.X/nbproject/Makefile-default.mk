@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=src/adc.c src/ccp.c src/timer.c question1.c
+SOURCEFILES_QUOTED_IF_SPACED=src/adc.c src/ccp.c src/timer.c question1.c question2.c question3.c question4.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/adc.p1 ${OBJECTDIR}/src/ccp.p1 ${OBJECTDIR}/src/timer.p1 ${OBJECTDIR}/question1.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/src/adc.p1.d ${OBJECTDIR}/src/ccp.p1.d ${OBJECTDIR}/src/timer.p1.d ${OBJECTDIR}/question1.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/src/adc.p1 ${OBJECTDIR}/src/ccp.p1 ${OBJECTDIR}/src/timer.p1 ${OBJECTDIR}/question1.p1 ${OBJECTDIR}/question2.p1 ${OBJECTDIR}/question3.p1 ${OBJECTDIR}/question4.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/src/adc.p1.d ${OBJECTDIR}/src/ccp.p1.d ${OBJECTDIR}/src/timer.p1.d ${OBJECTDIR}/question1.p1.d ${OBJECTDIR}/question2.p1.d ${OBJECTDIR}/question3.p1.d ${OBJECTDIR}/question4.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/src/adc.p1 ${OBJECTDIR}/src/ccp.p1 ${OBJECTDIR}/src/timer.p1 ${OBJECTDIR}/question1.p1
+OBJECTFILES=${OBJECTDIR}/src/adc.p1 ${OBJECTDIR}/src/ccp.p1 ${OBJECTDIR}/src/timer.p1 ${OBJECTDIR}/question1.p1 ${OBJECTDIR}/question2.p1 ${OBJECTDIR}/question3.p1 ${OBJECTDIR}/question4.p1
 
 # Source Files
-SOURCEFILES=src/adc.c src/ccp.c src/timer.c question1.c
+SOURCEFILES=src/adc.c src/ccp.c src/timer.c question1.c question2.c question3.c question4.c
 
 
 
@@ -126,6 +126,30 @@ ${OBJECTDIR}/question1.p1: question1.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/question1.d ${OBJECTDIR}/question1.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/question1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/question2.p1: question2.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/question2.p1.d 
+	@${RM} ${OBJECTDIR}/question2.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"src" -I"inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/question2.p1 question2.c 
+	@-${MV} ${OBJECTDIR}/question2.d ${OBJECTDIR}/question2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/question2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/question3.p1: question3.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/question3.p1.d 
+	@${RM} ${OBJECTDIR}/question3.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"src" -I"inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/question3.p1 question3.c 
+	@-${MV} ${OBJECTDIR}/question3.d ${OBJECTDIR}/question3.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/question3.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/question4.p1: question4.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/question4.p1.d 
+	@${RM} ${OBJECTDIR}/question4.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"src" -I"inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/question4.p1 question4.c 
+	@-${MV} ${OBJECTDIR}/question4.d ${OBJECTDIR}/question4.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/question4.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/src/adc.p1: src/adc.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/src" 
@@ -158,6 +182,30 @@ ${OBJECTDIR}/question1.p1: question1.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"src" -I"inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/question1.p1 question1.c 
 	@-${MV} ${OBJECTDIR}/question1.d ${OBJECTDIR}/question1.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/question1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/question2.p1: question2.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/question2.p1.d 
+	@${RM} ${OBJECTDIR}/question2.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"src" -I"inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/question2.p1 question2.c 
+	@-${MV} ${OBJECTDIR}/question2.d ${OBJECTDIR}/question2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/question2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/question3.p1: question3.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/question3.p1.d 
+	@${RM} ${OBJECTDIR}/question3.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"src" -I"inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/question3.p1 question3.c 
+	@-${MV} ${OBJECTDIR}/question3.d ${OBJECTDIR}/question3.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/question3.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/question4.p1: question4.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/question4.p1.d 
+	@${RM} ${OBJECTDIR}/question4.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -I"src" -I"inc" -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/question4.p1 question4.c 
+	@-${MV} ${OBJECTDIR}/question4.d ${OBJECTDIR}/question4.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/question4.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

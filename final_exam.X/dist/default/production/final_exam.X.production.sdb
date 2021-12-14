@@ -24,18 +24,6 @@ ADC_CLK_FOSC32 2
 ADC_CLK_FOSC64 6
 ADC_CLK_FRC 3
 ]
-"133 C:\git\embedded_class\final_exam.X\question1.c
-[e E2509 . `uc
-GREEN 0
-YELLOW 1
-RED 2
-]
-"241
-[e E2514 . `uc
-PRESCALE_1 0
-PRESCALE_4 1
-PRESCALE_16 2
-]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\float.c
@@ -56,45 +44,20 @@ PRESCALE_16 2
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"141 C:\git\embedded_class\final_exam.X\question1.c
-[v _isr isr `IIH(v  1 e 1 0 ]
-"210
+"148 C:\git\embedded_class\final_exam.X\question2.c
 [v _main main `(v  1 e 1 0 ]
-"238
-[v _tmr2_init_default tmr2_init_default `(v  1 e 1 0 ]
 "37 C:\git\embedded_class\final_exam.X\src/adc.c
 [v _adc_init_default adc_init_default `(v  1 e 1 0 ]
-"360 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h
+"189 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4620.h
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"360
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
 "535
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
-[s S429 . 1 `uc 1 LATC0 1 0 :1:0 
-`uc 1 LATC1 1 0 :1:1 
-`uc 1 LATC2 1 0 :1:2 
-`uc 1 LATC3 1 0 :1:3 
-`uc 1 LATC4 1 0 :1:4 
-`uc 1 LATC5 1 0 :1:5 
-`uc 1 LATC6 1 0 :1:6 
-`uc 1 LATC7 1 0 :1:7 
-]
-"1131
-[s S438 . 1 `uc 1 LC0 1 0 :1:0 
-`uc 1 LC1 1 0 :1:1 
-`uc 1 LC2 1 0 :1:2 
-`uc 1 LC3 1 0 :1:3 
-`uc 1 LC4 1 0 :1:4 
-`uc 1 LC5 1 0 :1:5 
-`uc 1 LC6 1 0 :1:6 
-`uc 1 LC7 1 0 :1:7 
-]
-[u S447 . 1 `S429 1 . 1 0 `S438 1 . 1 0 ]
-[v _LATCbits LATCbits `VES447  1 e 1 @3979 ]
 [s S127 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
@@ -244,85 +207,15 @@ PRESCALE_16 2
 [v _ADCON0bits ADCON0bits `VES88  1 e 1 @4034 ]
 "4648
 [v _ADRES ADRES `VEus  1 e 2 @4035 ]
-"5036
-[v _T2CON T2CON `VEuc  1 e 1 @4042 ]
-[s S573 . 1 `uc 1 T2CKPS 1 0 :2:0 
-`uc 1 TMR2ON 1 0 :1:2 
-`uc 1 TOUTPS 1 0 :4:3 
-]
-"5057
-[s S577 . 1 `uc 1 T2CKPS0 1 0 :1:0 
-`uc 1 T2CKPS1 1 0 :1:1 
-`uc 1 . 1 0 :1:2 
-`uc 1 T2OUTPS0 1 0 :1:3 
-`uc 1 T2OUTPS1 1 0 :1:4 
-`uc 1 T2OUTPS2 1 0 :1:5 
-`uc 1 T2OUTPS3 1 0 :1:6 
-]
-[u S585 . 1 `S573 1 . 1 0 `S577 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES585  1 e 1 @4042 ]
-"5107
-[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
 "5224
 [v _T1CON T1CON `VEuc  1 e 1 @4045 ]
-[s S479 . 1 `uc 1 RBIF 1 0 :1:0 
-`uc 1 INT0IF 1 0 :1:1 
-`uc 1 TMR0IF 1 0 :1:2 
-`uc 1 RBIE 1 0 :1:3 
-`uc 1 INT0IE 1 0 :1:4 
-`uc 1 TMR0IE 1 0 :1:5 
-`uc 1 PEIE_GIEL 1 0 :1:6 
-`uc 1 GIE_GIEH 1 0 :1:7 
-]
-"6406
-[s S488 . 1 `uc 1 . 1 0 :1:0 
-`uc 1 INT0F 1 0 :1:1 
-`uc 1 T0IF 1 0 :1:2 
-`uc 1 . 1 0 :1:3 
-`uc 1 INT0E 1 0 :1:4 
-`uc 1 T0IE 1 0 :1:5 
-`uc 1 PEIE 1 0 :1:6 
-`uc 1 GIE 1 0 :1:7 
-]
-[s S497 . 1 `uc 1 . 1 0 :6:0 
-`uc 1 GIEL 1 0 :1:6 
-`uc 1 GIEH 1 0 :1:7 
-]
-[u S501 . 1 `S479 1 . 1 0 `S488 1 . 1 0 `S497 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES501  1 e 1 @4082 ]
-"132 C:\git\embedded_class\final_exam.X\question1.c
-[v _tmr2_interrupt_flag_count tmr2_interrupt_flag_count `VEus  1 s 2 tmr2_interrupt_flag_count ]
-"133
-[v _current_light current_light `VEE2509  1 s 1 current_light ]
-"134
-[v _green_light_time green_light_time `VEus  1 s 2 green_light_time ]
-"210
+"148 C:\git\embedded_class\final_exam.X\question2.c
 [v _main main `(v  1 e 1 0 ]
 {
-"233
-} 0
-"238
-[v _tmr2_init_default tmr2_init_default `(v  1 e 1 0 ]
-{
-"252
+"162
 } 0
 "37 C:\git\embedded_class\final_exam.X\src/adc.c
 [v _adc_init_default adc_init_default `(v  1 e 1 0 ]
 {
 "57
-} 0
-"141 C:\git\embedded_class\final_exam.X\question1.c
-[v _isr isr `IIH(v  1 e 1 0 ]
-{
-"207
-} 0
-"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
-{
-"17
-[v ___wmul@product product `ui  1 a 2 4 ]
-"15
-[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
-"53
 } 0

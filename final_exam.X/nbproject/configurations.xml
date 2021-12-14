@@ -23,6 +23,9 @@
         <itemPath>src/timer.c</itemPath>
       </logicalFolder>
       <itemPath>question1.c</itemPath>
+      <itemPath>question2.c</itemPath>
+      <itemPath>question3.c</itemPath>
+      <itemPath>question4.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
